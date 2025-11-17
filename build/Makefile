@@ -168,6 +168,43 @@ SFML_Example3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example3.dir/build.make CMakeFiles/SFML_Example3.dir/build
 .PHONY : SFML_Example3/fast
 
+#=============================================================================
+# Target rules for targets named Projet_INFO
+
+# Build rule for target.
+Projet_INFO: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Projet_INFO
+.PHONY : Projet_INFO
+
+# fast build rule for target.
+Projet_INFO/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/build
+.PHONY : Projet_INFO/fast
+
+Code/main.o: Code/main.cpp.o
+.PHONY : Code/main.o
+
+# target to build an object file
+Code/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/Code/main.cpp.o
+.PHONY : Code/main.cpp.o
+
+Code/main.i: Code/main.cpp.i
+.PHONY : Code/main.i
+
+# target to preprocess a source file
+Code/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/Code/main.cpp.i
+.PHONY : Code/main.cpp.i
+
+Code/main.s: Code/main.cpp.s
+.PHONY : Code/main.s
+
+# target to generate assembly for a file
+Code/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/Code/main.cpp.s
+.PHONY : Code/main.cpp.s
+
 test_SFML/Car.o: test_SFML/Car.cpp.o
 .PHONY : test_SFML/Car.o
 
@@ -368,10 +405,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Projet_INFO"
 	@echo "... SFML_Example"
 	@echo "... SFML_Example1"
 	@echo "... SFML_Example2"
 	@echo "... SFML_Example3"
+	@echo "... Code/main.o"
+	@echo "... Code/main.i"
+	@echo "... Code/main.s"
 	@echo "... test_SFML/Car.o"
 	@echo "... test_SFML/Car.i"
 	@echo "... test_SFML/Car.s"

@@ -8,7 +8,7 @@ if(MSVC)
     set(SFML_DIR "/home/kali/COURS/Autre/SFML_3.0.2/lib/cmake/SFML")
 endif(MSVC)
 
-    set(DEFS "PATH_IMG=\"${CMAKE_CURRENT_SOURCE_DIR}/img/\"")
+set(DEFS "PATH_IMG=\"${CMAKE_CURRENT_SOURCE_DIR}/Pictures/\"")
     add_compile_definitions(${DEFS})
 
 find_package(SFML 3 COMPONENTS Window Graphics System REQUIRED)
@@ -20,3 +20,4 @@ add_executable (SFML_Example "test_SFML/main.cpp" "test_SFML/Car.cpp")
 add_executable (SFML_Example1 "test_SFML1/main.cpp" "test_SFML1/Follower.cpp" "test_SFML1/Leader.cpp")
 add_executable (SFML_Example2 "test_SFML2/main.cpp")
 add_executable (SFML_Example3 "test_SFML3/main.cpp" "test_SFML3/Plane.cpp")
+add_executable (Projet_INFO "Code/main.cpp" "Code/Sources.hpp")

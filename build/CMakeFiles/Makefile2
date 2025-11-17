@@ -67,6 +67,7 @@ all: CMakeFiles/SFML_Example.dir/all
 all: CMakeFiles/SFML_Example1.dir/all
 all: CMakeFiles/SFML_Example2.dir/all
 all: CMakeFiles/SFML_Example3.dir/all
+all: CMakeFiles/Projet_INFO.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
@@ -74,6 +75,7 @@ codegen: CMakeFiles/SFML_Example.dir/codegen
 codegen: CMakeFiles/SFML_Example1.dir/codegen
 codegen: CMakeFiles/SFML_Example2.dir/codegen
 codegen: CMakeFiles/SFML_Example3.dir/codegen
+codegen: CMakeFiles/Projet_INFO.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -85,6 +87,7 @@ clean: CMakeFiles/SFML_Example.dir/clean
 clean: CMakeFiles/SFML_Example1.dir/clean
 clean: CMakeFiles/SFML_Example2.dir/clean
 clean: CMakeFiles/SFML_Example3.dir/clean
+clean: CMakeFiles/Projet_INFO.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -94,7 +97,7 @@ clean: CMakeFiles/SFML_Example3.dir/clean
 CMakeFiles/SFML_Example.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example.dir/build.make CMakeFiles/SFML_Example.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example.dir/build.make CMakeFiles/SFML_Example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=1,2,3 "Built target SFML_Example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=3,4,5 "Built target SFML_Example"
 .PHONY : CMakeFiles/SFML_Example.dir/all
 
 # Build rule for subdir invocation for target.
@@ -111,7 +114,7 @@ SFML_Example: CMakeFiles/SFML_Example.dir/rule
 # codegen rule for target.
 CMakeFiles/SFML_Example.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example.dir/build.make CMakeFiles/SFML_Example.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target SFML_Example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=3,4,5 "Finished codegen for target SFML_Example"
 .PHONY : CMakeFiles/SFML_Example.dir/codegen
 
 # clean rule for target.
@@ -126,7 +129,7 @@ CMakeFiles/SFML_Example.dir/clean:
 CMakeFiles/SFML_Example1.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example1.dir/build.make CMakeFiles/SFML_Example1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example1.dir/build.make CMakeFiles/SFML_Example1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=4,5,6,7 "Built target SFML_Example1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=6,7,8,9 "Built target SFML_Example1"
 .PHONY : CMakeFiles/SFML_Example1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -143,7 +146,7 @@ SFML_Example1: CMakeFiles/SFML_Example1.dir/rule
 # codegen rule for target.
 CMakeFiles/SFML_Example1.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example1.dir/build.make CMakeFiles/SFML_Example1.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=4,5,6,7 "Finished codegen for target SFML_Example1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=6,7,8,9 "Finished codegen for target SFML_Example1"
 .PHONY : CMakeFiles/SFML_Example1.dir/codegen
 
 # clean rule for target.
@@ -158,7 +161,7 @@ CMakeFiles/SFML_Example1.dir/clean:
 CMakeFiles/SFML_Example2.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example2.dir/build.make CMakeFiles/SFML_Example2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example2.dir/build.make CMakeFiles/SFML_Example2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=8,9 "Built target SFML_Example2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=10,11 "Built target SFML_Example2"
 .PHONY : CMakeFiles/SFML_Example2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -175,7 +178,7 @@ SFML_Example2: CMakeFiles/SFML_Example2.dir/rule
 # codegen rule for target.
 CMakeFiles/SFML_Example2.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example2.dir/build.make CMakeFiles/SFML_Example2.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=8,9 "Finished codegen for target SFML_Example2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=10,11 "Finished codegen for target SFML_Example2"
 .PHONY : CMakeFiles/SFML_Example2.dir/codegen
 
 # clean rule for target.
@@ -190,7 +193,7 @@ CMakeFiles/SFML_Example2.dir/clean:
 CMakeFiles/SFML_Example3.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example3.dir/build.make CMakeFiles/SFML_Example3.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example3.dir/build.make CMakeFiles/SFML_Example3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=10,11,12 "Built target SFML_Example3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=12,13,14 "Built target SFML_Example3"
 .PHONY : CMakeFiles/SFML_Example3.dir/all
 
 # Build rule for subdir invocation for target.
@@ -207,13 +210,45 @@ SFML_Example3: CMakeFiles/SFML_Example3.dir/rule
 # codegen rule for target.
 CMakeFiles/SFML_Example3.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example3.dir/build.make CMakeFiles/SFML_Example3.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=10,11,12 "Finished codegen for target SFML_Example3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=12,13,14 "Finished codegen for target SFML_Example3"
 .PHONY : CMakeFiles/SFML_Example3.dir/codegen
 
 # clean rule for target.
 CMakeFiles/SFML_Example3.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SFML_Example3.dir/build.make CMakeFiles/SFML_Example3.dir/clean
 .PHONY : CMakeFiles/SFML_Example3.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Projet_INFO.dir
+
+# All Build rule for target.
+CMakeFiles/Projet_INFO.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=1,2 "Built target Projet_INFO"
+.PHONY : CMakeFiles/Projet_INFO.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Projet_INFO.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kali/COURS/Projet_INFO/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Projet_INFO.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kali/COURS/Projet_INFO/build/CMakeFiles 0
+.PHONY : CMakeFiles/Projet_INFO.dir/rule
+
+# Convenience name for target.
+Projet_INFO: CMakeFiles/Projet_INFO.dir/rule
+.PHONY : Projet_INFO
+
+# codegen rule for target.
+CMakeFiles/Projet_INFO.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kali/COURS/Projet_INFO/build/CMakeFiles --progress-num=1,2 "Finished codegen for target Projet_INFO"
+.PHONY : CMakeFiles/Projet_INFO.dir/codegen
+
+# clean rule for target.
+CMakeFiles/Projet_INFO.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/clean
+.PHONY : CMakeFiles/Projet_INFO.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
