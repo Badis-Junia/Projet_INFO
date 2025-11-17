@@ -1,0 +1,6 @@
+/home/kali/COURS/Projet_INFO/build/CMakeFiles/SFML_Example.dir
+/home/kali/COURS/Projet_INFO/build/CMakeFiles/SFML_Example1.dir
+/home/kali/COURS/Projet_INFO/build/CMakeFiles/SFML_Example2.dir
+/home/kali/COURS/Projet_INFO/build/CMakeFiles/SFML_Example3.dir
+/home/kali/COURS/Projet_INFO/build/CMakeFiles/edit_cache.dir
+/home/kali/COURS/Projet_INFO/build/CMakeFiles/rebuild_cache.dir
