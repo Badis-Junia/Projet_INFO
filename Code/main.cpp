@@ -10,7 +10,7 @@
 // #pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 #endif
 
-const std::string path_image(PATH_IMG);
+const std::string path_image("../Pictures/");
 
 int main() {
 
