@@ -16,8 +16,8 @@ link_libraries(SFML::Graphics SFML::Window SFML::System)
 
 
 
-add_executable (SFML_Example "test_SFML/main.cpp" "test_SFML/Car.cpp")
-add_executable (SFML_Example1 "test_SFML1/main.cpp" "test_SFML1/Follower.cpp" "test_SFML1/Leader.cpp")
-add_executable (SFML_Example2 "test_SFML2/main.cpp")
-add_executable (SFML_Example3 "test_SFML3/main.cpp" "test_SFML3/Plane.cpp")
+# add_executable (SFML_Example "test_SFML/main.cpp" "test_SFML/Car.cpp")
+# add_executable (SFML_Example1 "test_SFML1/main.cpp" "test_SFML1/Follower.cpp" "test_SFML1/Leader.cpp")
+# add_executable (SFML_Example2 "test_SFML2/main.cpp")
+# add_executable (SFML_Example3 "test_SFML3/main.cpp" "test_SFML3/Plane.cpp")
 add_executable (Projet_INFO "Code/main.cpp" "Code/Sources.hpp")

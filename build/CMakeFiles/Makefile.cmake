@@ -170,9 +170,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/SFML_Example.dir/DependInfo.cmake"
-  "CMakeFiles/SFML_Example1.dir/DependInfo.cmake"
-  "CMakeFiles/SFML_Example2.dir/DependInfo.cmake"
-  "CMakeFiles/SFML_Example3.dir/DependInfo.cmake"
   "CMakeFiles/Projet_INFO.dir/DependInfo.cmake"
   )
