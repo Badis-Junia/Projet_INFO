@@ -4,10 +4,13 @@
 #include <vector>
 #include <map>
 #include <fstream>
+#include <memory>
+
+
 class Agent {
 protected:
     int id;
-    std::thread thread_;
+    std::thread monthread;
     bool actif;
 
 public:
@@ -26,20 +29,24 @@ public:
 class Avion : public Agent {
 private:
     std::string compagnie;
-    double positionX, positionY, altitude;
+    double positionX, positionY, positionZ;
     double vitesse;
     std::string etat;
     bool urgence;
+    double carburant;
+    double consommation;
 
 public:
     Avion(const std::string& id, const std::string& compagnie);
     ~Avion();
     void run() override;
-    void majposition();
-    void atterisage();
+    void majPosition();
+    void atterrissage();
     void decollage();
-    void Urgence(bool etatUrgence);
+    void declarerUrgence(bool etatUrgence);
     bool estEnUrgence() const;
+    double getCarburant() const;
+    void consommerCarburant();
 
 };
 
@@ -47,9 +54,10 @@ public:
 
 
 
+
 class Controleur : public Agent {
 protected:
-    std::mutex mtx;
+    std::mutex mutex;
     std::vector<Avion> avionsSousControle;
 
 public:
@@ -63,17 +71,20 @@ public:
 
 
 
+
 class ControleurApproche : public Controleur {
 private:
-    Controleur* twr; // lien vers la tour de contrôle
+    Controleur* tour; 
+    std::vector<Avion*> fileAttente;
 
 public:
-    ControleurApproche(const std::string& id, Controleur* twr);
+    ControleurApproche(const std::string& id, Controleur* tour);
     void assignerTrajectoire(Avion* avion);
     void gererUrgence(Avion* avion);
     void demanderAutorisationAtterrissage(Avion* avion);
     void run() override;
 };
+
 
 
 
@@ -94,11 +105,17 @@ public:
 
 
 
+
 class InterfaceGraphique {
+private:
+    std::mutex mutexAffichage;
+
 public:
     void afficherAPP(const std::vector<Avion*>& avions);
     void afficherTWR(const std::vector<Avion*>& avions);
+    void afficherCCR(const std::vector<Avion*>& avions);
 };
+
 
 
 
@@ -107,16 +124,19 @@ public:
 class TourControle : public Controleur {
 private:
     bool pisteLibre;
-    std::map<std::string, bool> parkings; // P1, P2, P3...
-    std::mutex pisteMutex;
+    std::map<std::string, bool> parkings;
+    std::mutex mutexPiste;
+    std::vector<Avion*> fileAttenteDecollage;
 
 public:
     TourControle(const std::string& id, int nbParkings);
     bool autoriserAtterrissage(Avion* avion);
     bool autoriserDecollage(Avion* avion);
     void libererPiste();
+    void attribuerParking(Avion* avion);
     void run() override;
 };
+
 
 
 
@@ -128,13 +148,16 @@ private:
     std::unique_ptr<CentreControleRegional> ccr;
     std::unique_ptr<ControleurApproche> app;
     std::unique_ptr<TourControle> twr;
+    InterfaceGraphique interface;
 
 public:
     Monde();
     void initialiser();
     void demarrerSimulation();
     void arreterSimulation();
+    void ajouterAvion(std::unique_ptr<Avion> avion);
 };
+
 
 
 
@@ -142,11 +165,11 @@ public:
 
 class Journal {
 private:
-    std::mutex mtx;
+    std::mutex mutex;
     std::ofstream fichier;
 
 public:
     Journal(const std::string& nomFichier);
     void log(const std::string& message);
+    ~Journal();
 };
-
