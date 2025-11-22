@@ -21,29 +21,30 @@ int main() {
 
     sf::Texture backgroundImage(path_image + "background.png");
     sf::Sprite backgroundSprite(backgroundImage);
+    sf::Texture avion(path_image + "avion.png");
+    sf::Sprite avionsprite(avion);
 
-	if (!backgroundImage.loadFromFile(path_image + "background.png"))
-	{
+	if (!backgroundImage.loadFromFile(path_image + "background.png") || !avion.loadFromFile(path_image + "avion.png")) {
         std::cerr << "Erreur pendant le chargement des images" << std::endl;
         return 0;
 	}
 
 	backgroundSprite.setTexture(backgroundImage);
+	avionsprite.setTexture(avion);
 
 
-	while (app.isOpen()) 
-	{
-		while (const std::optional event = app.pollEvent())
-		{
+	while (app.isOpen()) {
+		while (const std::optional event = app.pollEvent()) {
 			if ((event->is<sf::Event::KeyPressed>() && event->getIf<sf::Event::KeyPressed>()->code == sf::Keyboard::Key::Escape) ||
-				event->is<sf::Event::Closed>())
-			{
+				event->is<sf::Event::Closed>()) {
 				app.close();
 			}
 		}
 
+
 		app.clear();
 		app.draw(backgroundSprite);
+		app.draw(avionsprite);
 		app.display();
 	}
 
