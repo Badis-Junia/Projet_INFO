@@ -7,7 +7,7 @@
 
 
 #ifdef _MSC_VER
-// #pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
+
 #endif
 
 const std::string path_image("../Pictures/");
@@ -25,13 +25,13 @@ int main() {
 	if (!backgroundImage.loadFromFile(path_image + "background.png"))
 	{
         std::cerr << "Erreur pendant le chargement des images" << std::endl;
-		return EXIT_FAILURE; // On ferme le programme
+        return 0;
 	}
 
 	backgroundSprite.setTexture(backgroundImage);
 
 
-	while (app.isOpen()) // Boucle principale
+	while (app.isOpen()) 
 	{
 		while (const std::optional event = app.pollEvent())
 		{
@@ -41,7 +41,7 @@ int main() {
 				app.close();
 			}
 		}
-		// Affichages
+
 		app.clear();
 		app.draw(backgroundSprite);
 		app.display();
