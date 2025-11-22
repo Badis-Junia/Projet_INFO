@@ -14,7 +14,7 @@ const std::string path_image("../Pictures/");
 
 int main() {
 
-	const sf::Vector2u WINDOW_SIZE(800, 600);
+	const sf::Vector2u WINDOW_SIZE(1298, 805);
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60); 
 
