@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DPATH_IMG=\"/home/kali/COURS/Projet_INFO/Pictures/\" -DSFML_STATIC
 
-CXX_INCLUDES = -isystem /home/kali/COURS/Autre/SFML-3.0.2/include
+CXX_INCLUDES = -isystem /home/kali/COURS/Projet_INFO/SFML-3.0.2/include
 
 CXX_FLAGS = -std=gnu++20
 

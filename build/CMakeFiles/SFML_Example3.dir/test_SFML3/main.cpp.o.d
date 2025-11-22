@@ -188,41 +188,41 @@ CMakeFiles/SFML_Example3.dir/test_SFML3/main.cpp.o: \
  /usr/include/c++/15.2.1/bits/ranges_algobase.h \
  /usr/include/c++/15.2.1/pstl/glue_memory_defs.h \
  /usr/include/c++/15.2.1/pstl/execution_defs.h \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/BlendMode.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Export.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Config.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/CircleShape.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Shape.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Color.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Color.inl \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Drawable.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/PrimitiveType.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Rect.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Vector2.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Export.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Angle.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Angle.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/BlendMode.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Export.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Config.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/CircleShape.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Shape.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Color.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Color.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Drawable.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/PrimitiveType.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Rect.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Vector2.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Export.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Angle.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Angle.inl \
  /usr/include/c++/15.2.1/cassert /usr/include/assert.h \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Vector2.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Vector2.inl \
  /usr/include/c++/15.2.1/optional \
  /usr/include/c++/15.2.1/bits/enable_special_members.h \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Rect.inl \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/RenderStates.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/CoordinateType.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/StencilMode.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Transform.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Rect.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/RenderStates.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/CoordinateType.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/StencilMode.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Transform.hpp \
  /usr/include/c++/15.2.1/array \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Transform.inl \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Transformable.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/VertexArray.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Vertex.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/ConvexShape.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Font.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Glyph.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Texture.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/GlResource.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Export.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Transform.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Transformable.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/VertexArray.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Vertex.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/ConvexShape.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Font.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Glyph.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Texture.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/GlResource.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Export.hpp \
  /usr/include/c++/15.2.1/filesystem /usr/include/c++/15.2.1/bits/fs_fwd.h \
  /usr/include/c++/15.2.1/bits/chrono.h /usr/include/c++/15.2.1/ratio \
  /usr/include/c++/15.2.1/limits /usr/include/c++/15.2.1/ctime \
@@ -245,20 +245,20 @@ CMakeFiles/SFML_Example3.dir/test_SFML3/main.cpp.o: \
  /usr/include/c++/15.2.1/bits/hashtable_policy.h \
  /usr/include/c++/15.2.1/bits/node_handle.h \
  /usr/include/c++/15.2.1/bits/erase_if.h \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Image.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/RectangleShape.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/RenderTarget.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/View.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/RenderTexture.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/ContextSettings.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/RenderWindow.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/VideoMode.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Window.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/WindowBase.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Vulkan.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/WindowEnums.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/WindowHandle.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Time.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Image.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/RectangleShape.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/RenderTarget.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/View.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/RenderTexture.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/ContextSettings.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/RenderWindow.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/VideoMode.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Window.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/WindowBase.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Vulkan.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/WindowEnums.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/WindowHandle.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Time.hpp \
  /usr/include/c++/15.2.1/chrono /usr/include/c++/15.2.1/bits/stl_algo.h \
  /usr/include/c++/15.2.1/bits/algorithmfwd.h \
  /usr/include/c++/15.2.1/bits/stl_heap.h \
@@ -269,44 +269,44 @@ CMakeFiles/SFML_Example3.dir/test_SFML3/main.cpp.o: \
  /usr/include/c++/15.2.1/bits/formatfwd.h \
  /usr/include/c++/15.2.1/bits/unicode.h \
  /usr/include/c++/15.2.1/bits/unicode-data.h \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Time.inl \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/WindowBase.inl \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Event.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Joystick.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/String.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Utf.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Utf.inl \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/String.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Time.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/WindowBase.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Event.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Joystick.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/String.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Utf.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Utf.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/String.inl \
  /usr/include/c++/15.2.1/iterator \
  /usr/include/c++/15.2.1/bits/stream_iterator.h \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Keyboard.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Mouse.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Sensor.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Vector3.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Vector3.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Keyboard.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Mouse.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Sensor.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Vector3.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Vector3.inl \
  /usr/include/c++/15.2.1/variant \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Event.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Event.inl \
  /usr/include/c++/15.2.1/utility \
  /usr/include/c++/15.2.1/bits/stl_relops.h \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Clock.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Shader.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Glsl.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Glsl.inl \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Sprite.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/Text.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Graphics/VertexBuffer.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Clipboard.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Context.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Cursor.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/Window/Touch.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Err.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Exception.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/FileInputStream.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/InputStream.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/MemoryInputStream.hpp \
- /home/kali/COURS/Autre/SFML-3.0.2/include/SFML/System/Sleep.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Clock.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Shader.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Glsl.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Glsl.inl \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Sprite.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/Text.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Graphics/VertexBuffer.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Clipboard.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Context.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Cursor.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/Window/Touch.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Err.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Exception.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/FileInputStream.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/InputStream.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/MemoryInputStream.hpp \
+ /home/kali/COURS/Projet_INFO/SFML-3.0.2/include/SFML/System/Sleep.hpp \
  /home/kali/COURS/Projet_INFO/test_SFML3/Plane.hpp \
  /usr/include/c++/15.2.1/thread /usr/include/c++/15.2.1/stop_token \
  /usr/include/c++/15.2.1/atomic /usr/include/c++/15.2.1/bits/std_thread.h \

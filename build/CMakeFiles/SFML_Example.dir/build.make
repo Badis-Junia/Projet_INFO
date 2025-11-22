@@ -112,9 +112,9 @@ SFML_Example: CMakeFiles/SFML_Example.dir/test_SFML/main.cpp.o
 SFML_Example: CMakeFiles/SFML_Example.dir/test_SFML/Car.cpp.o
 SFML_Example: CMakeFiles/SFML_Example.dir/build.make
 SFML_Example: CMakeFiles/SFML_Example.dir/compiler_depend.ts
-SFML_Example: /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-graphics-s.a
-SFML_Example: /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-window-s.a
-SFML_Example: /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-system-s.a
+SFML_Example: /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-graphics-s.a
+SFML_Example: /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-window-s.a
+SFML_Example: /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-system-s.a
 SFML_Example: /usr/lib/libXrandr.so
 SFML_Example: /usr/lib/libXcursor.so
 SFML_Example: /usr/lib/libXrender.so

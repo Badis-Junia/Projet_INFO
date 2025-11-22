@@ -285,7 +285,7 @@ PKG_CONFIG_ARGN:STRING=
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //No help, variable specified on the command line.
-SFML_DIR:UNINITIALIZED=/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML
+SFML_DIR:UNINITIALIZED=/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML
 
 //Path to a file.
 SFML_DOC_DIR:PATH=/usr/share/doc/SFML

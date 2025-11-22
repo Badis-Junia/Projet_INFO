@@ -3,9 +3,9 @@ SFML_Example2: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/SFML_Example2.dir/test_SFML2/main.cpp.o \
-  /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-graphics-s.a \
-  /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-window-s.a \
-  /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-system-s.a \
+  /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-graphics-s.a \
+  /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-window-s.a \
+  /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-system-s.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/librt.a \
   /usr/lib/libXrandr.so \
   /usr/lib/libXcursor.so \
@@ -65,11 +65,11 @@ SFML_Example2: \
 
 CMakeFiles/SFML_Example2.dir/test_SFML2/main.cpp.o:
 
-/home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-graphics-s.a:
+/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-graphics-s.a:
 
-/home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-window-s.a:
+/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-window-s.a:
 
-/home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-system-s.a:
+/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-system-s.a:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/librt.a:
 

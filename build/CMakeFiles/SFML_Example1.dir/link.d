@@ -5,9 +5,9 @@ SFML_Example1: \
   CMakeFiles/SFML_Example1.dir/test_SFML1/main.cpp.o \
   CMakeFiles/SFML_Example1.dir/test_SFML1/Follower.cpp.o \
   CMakeFiles/SFML_Example1.dir/test_SFML1/Leader.cpp.o \
-  /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-graphics-s.a \
-  /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-window-s.a \
-  /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-system-s.a \
+  /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-graphics-s.a \
+  /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-window-s.a \
+  /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-system-s.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/librt.a \
   /usr/lib/libXrandr.so \
   /usr/lib/libXcursor.so \
@@ -71,11 +71,11 @@ CMakeFiles/SFML_Example1.dir/test_SFML1/Follower.cpp.o:
 
 CMakeFiles/SFML_Example1.dir/test_SFML1/Leader.cpp.o:
 
-/home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-graphics-s.a:
+/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-graphics-s.a:
 
-/home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-window-s.a:
+/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-window-s.a:
 
-/home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-system-s.a:
+/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-system-s.a:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/librt.a:
 

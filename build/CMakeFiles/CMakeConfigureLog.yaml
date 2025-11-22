@@ -1412,8 +1412,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ky25QN"
-      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ky25QN"
+      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-yDnhbo"
+      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-yDnhbo"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1422,13 +1422,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ky25QN'
+        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-yDnhbo'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d013e/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_d013e.dir/build.make CMakeFiles/cmTC_d013e.dir/build
-        make[1]: Entering directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ky25QN'
-        Building C object CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_13758/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_13758.dir/build.make CMakeFiles/cmTC_13758.dir/build
+        make[1]: Entering directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-yDnhbo'
+        Building C object CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         Target: x86_64-pc-linux-gnu
@@ -1436,8 +1436,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.1 20251112 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d013e.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_d013e.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccg1gz52.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_13758.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_13758.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccUUZImm.s
         GNU C23 (GCC) version 15.2.1 20251112 (x86_64-pc-linux-gnu)
         	compiled by GNU C version 15.2.1 20251112, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1451,14 +1451,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: e7e806b0d021308da32115a1780fef1e
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d013e.dir/'
-         as -v --64 -o CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o /tmp/ccg1gz52.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_13758.dir/'
+         as -v --64 -o CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o /tmp/ccUUZImm.s
         GNU assembler version 2.45.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.45.1
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_d013e
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d013e.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_13758
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13758.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper
@@ -1469,14 +1469,14 @@ events:
         gcc version 15.2.1 20251112 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d013e' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d013e.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBGzZFG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_d013e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_13758' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_13758.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQHK2ST.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_13758 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         collect2 version 15.2.1 20251112
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBGzZFG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_d013e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQHK2ST.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_13758 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.45.1
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d013e' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d013e.'
-        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o -o cmTC_d013e
-        make[1]: Leaving directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ky25QN'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_13758' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_13758.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o -o cmTC_13758
+        make[1]: Leaving directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-yDnhbo'
         
       exitCode: 0
   -
@@ -1511,13 +1511,13 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ky25QN']
+        ignore line: [Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-yDnhbo']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d013e/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_d013e.dir/build.make CMakeFiles/cmTC_d013e.dir/build]
-        ignore line: [make[1]: Entering directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ky25QN']
-        ignore line: [Building C object CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_13758/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_13758.dir/build.make CMakeFiles/cmTC_13758.dir/build]
+        ignore line: [make[1]: Entering directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-yDnhbo']
+        ignore line: [Building C object CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1525,8 +1525,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.1 20251112 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d013e.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_d013e.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccg1gz52.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_13758.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_13758.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccUUZImm.s]
         ignore line: [GNU C23 (GCC) version 15.2.1 20251112 (x86_64-pc-linux-gnu)]
         ignore line: [	compiled by GNU C version 15.2.1 20251112  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1540,14 +1540,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: e7e806b0d021308da32115a1780fef1e]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d013e.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o /tmp/ccg1gz52.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_13758.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o /tmp/ccUUZImm.s]
         ignore line: [GNU assembler version 2.45.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.45.1]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_d013e]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d013e.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_13758]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13758.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper]
@@ -1558,13 +1558,13 @@ events:
         ignore line: [gcc version 15.2.1 20251112 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d013e' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d013e.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBGzZFG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_d013e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_13758' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_13758.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQHK2ST.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_13758 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccBGzZFG.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccQHK2ST.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1579,7 +1579,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_d013e] ==> ignore
+          arg [cmTC_13758] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1591,7 +1591,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -1606,7 +1606,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 15.2.1 20251112]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccBGzZFG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_d013e /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_d013e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQHK2ST.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_13758 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_13758.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         linker tool for 'C': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1643,8 +1643,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EpTfSt"
-      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EpTfSt"
+      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-4QMhMp"
+      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-4QMhMp"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1654,13 +1654,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EpTfSt'
+        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-4QMhMp'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_32078/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_32078.dir/build.make CMakeFiles/cmTC_32078.dir/build
-        make[1]: Entering directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EpTfSt'
-        Building CXX object CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_af841/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_af841.dir/build.make CMakeFiles/cmTC_af841.dir/build
+        make[1]: Entering directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-4QMhMp'
+        Building CXX object CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         Target: x86_64-pc-linux-gnu
@@ -1668,8 +1668,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.1 20251112 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_32078.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_32078.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cci6nGSw.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af841.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_af841.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccNd9yaq.s
         GNU C++17 (GCC) version 15.2.1 20251112 (x86_64-pc-linux-gnu)
         	compiled by GNU C version 15.2.1 20251112, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1686,14 +1686,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 4f062beaae229dc32234f13ba259a70e
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_32078.dir/'
-         as -v --64 -o CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o /tmp/cci6nGSw.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af841.dir/'
+         as -v --64 -o CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccNd9yaq.s
         GNU assembler version 2.45.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.45.1
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_32078
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32078.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_af841
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af841.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper
@@ -1704,14 +1704,14 @@ events:
         gcc version 15.2.1 20251112 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_32078' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_32078.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccm0EZM1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_32078 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_af841' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_af841.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjFNOuh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_af841 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         collect2 version 15.2.1 20251112
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccm0EZM1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_32078 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjFNOuh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_af841 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.45.1
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_32078' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_32078.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_32078
-        make[1]: Leaving directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EpTfSt'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_af841' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_af841.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_af841
+        make[1]: Leaving directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-4QMhMp'
         
       exitCode: 0
   -
@@ -1752,13 +1752,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EpTfSt']
+        ignore line: [Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-4QMhMp']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_32078/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_32078.dir/build.make CMakeFiles/cmTC_32078.dir/build]
-        ignore line: [make[1]: Entering directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EpTfSt']
-        ignore line: [Building CXX object CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_af841/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_af841.dir/build.make CMakeFiles/cmTC_af841.dir/build]
+        ignore line: [make[1]: Entering directory '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-4QMhMp']
+        ignore line: [Building CXX object CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1766,8 +1766,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.1 20251112 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_32078.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_32078.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cci6nGSw.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af841.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_af841.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccNd9yaq.s]
         ignore line: [GNU C++17 (GCC) version 15.2.1 20251112 (x86_64-pc-linux-gnu)]
         ignore line: [	compiled by GNU C version 15.2.1 20251112  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1784,14 +1784,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 4f062beaae229dc32234f13ba259a70e]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_32078.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o /tmp/cci6nGSw.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af841.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccNd9yaq.s]
         ignore line: [GNU assembler version 2.45.1 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.45.1]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_32078]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32078.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_af841]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af841.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper]
@@ -1802,13 +1802,13 @@ events:
         ignore line: [gcc version 15.2.1 20251112 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_32078' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_32078.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccm0EZM1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_32078 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_af841' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_af841.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjFNOuh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_af841 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccm0EZM1.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccjFNOuh.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1823,7 +1823,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_32078] ==> ignore
+          arg [cmTC_af841] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1835,7 +1835,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1846,7 +1846,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 15.2.1 20251112]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccm0EZM1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_32078 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_32078.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjFNOuh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_af841 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_af841.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1877,7 +1877,7 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:93 (find_path)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:93 (find_path)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "SFML_DOC_DIR"
@@ -1971,9 +1971,9 @@ events:
       - "/usr/include/X11/SFML/doc/"
       - "/usr/include/X11/share/doc/SFML/"
       - "/usr/include/X11/"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/SFML/doc/"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/share/doc/SFML/"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/"
+      - "/home/kali/COURS/Projet_INFO/SFML-3.0.2/SFML/doc/"
+      - "/home/kali/COURS/Projet_INFO/SFML-3.0.2/share/doc/SFML/"
+      - "/home/kali/COURS/Projet_INFO/SFML-3.0.2/"
       - "/home/kali/Library/Frameworks/SFML/doc/"
       - "/home/kali/Library/Frameworks/share/doc/SFML/"
       - "/home/kali/Library/Frameworks/"
@@ -2085,11 +2085,11 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/FindFreetype.cmake:54 (find_path)"
+      - "SFML-3.0.2/lib/cmake/SFML/FindFreetype.cmake:54 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLGraphicsDependencies.cmake:12 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLGraphicsDependencies.cmake:12 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "FREETYPE_INCLUDE_DIR_ft2build"
@@ -2326,11 +2326,11 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/FindFreetype.cmake:73 (find_path)"
+      - "SFML-3.0.2/lib/cmake/SFML/FindFreetype.cmake:73 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLGraphicsDependencies.cmake:12 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLGraphicsDependencies.cmake:12 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "FREETYPE_INCLUDE_DIR_freetype2"
@@ -2568,11 +2568,11 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/FindFreetype.cmake:94 (find_library)"
+      - "SFML-3.0.2/lib/cmake/SFML/FindFreetype.cmake:94 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLGraphicsDependencies.cmake:12 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLGraphicsDependencies.cmake:12 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "FREETYPE_LIBRARY"
@@ -2721,8 +2721,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:172 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_X11_INCLUDE_PATH"
@@ -2825,8 +2825,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:173 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xlib_INCLUDE_PATH"
@@ -2929,8 +2929,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:179 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_ICE_INCLUDE_PATH"
@@ -3033,8 +3033,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:180 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_SM_INCLUDE_PATH"
@@ -3137,8 +3137,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:181 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xaccessrules_INCLUDE_PATH"
@@ -3241,8 +3241,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:182 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xaccessstr_INCLUDE_PATH"
@@ -3345,8 +3345,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:183 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xau_INCLUDE_PATH"
@@ -3449,8 +3449,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:184 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xaw_INCLUDE_PATH"
@@ -3570,8 +3570,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:185 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_INCLUDE_PATH"
@@ -3674,8 +3674,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:186 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_X11_xcb_INCLUDE_PATH"
@@ -3778,8 +3778,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:187 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_composite_INCLUDE_PATH"
@@ -3882,8 +3882,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:188 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_cursor_INCLUDE_PATH"
@@ -3986,8 +3986,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:189 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_damage_INCLUDE_PATH"
@@ -4090,8 +4090,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:190 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_dpms_INCLUDE_PATH"
@@ -4194,8 +4194,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:191 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_dri2_INCLUDE_PATH"
@@ -4298,8 +4298,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:192 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_dri3_INCLUDE_PATH"
@@ -4402,8 +4402,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:193 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_errors_INCLUDE_PATH"
@@ -4506,8 +4506,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:194 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_ewmh_INCLUDE_PATH"
@@ -4610,8 +4610,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:195 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_glx_INCLUDE_PATH"
@@ -4714,8 +4714,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:196 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_icccm_INCLUDE_PATH"
@@ -4818,8 +4818,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:197 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_image_INCLUDE_PATH"
@@ -4922,8 +4922,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:198 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_keysyms_INCLUDE_PATH"
@@ -5026,8 +5026,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:199 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_present_INCLUDE_PATH"
@@ -5130,8 +5130,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:200 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_randr_INCLUDE_PATH"
@@ -5234,8 +5234,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:201 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_record_INCLUDE_PATH"
@@ -5338,8 +5338,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:202 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_render_INCLUDE_PATH"
@@ -5442,8 +5442,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:203 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_render_util_INCLUDE_PATH"
@@ -5546,8 +5546,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:204 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_res_INCLUDE_PATH"
@@ -5650,8 +5650,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:205 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_screensaver_INCLUDE_PATH"
@@ -5754,8 +5754,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:206 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_shape_INCLUDE_PATH"
@@ -5858,8 +5858,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:207 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_shm_INCLUDE_PATH"
@@ -5962,8 +5962,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:208 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_sync_INCLUDE_PATH"
@@ -6066,8 +6066,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:209 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_util_INCLUDE_PATH"
@@ -6170,8 +6170,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:210 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_xf86dri_INCLUDE_PATH"
@@ -6274,8 +6274,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:211 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_xfixes_INCLUDE_PATH"
@@ -6378,8 +6378,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:212 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_xinerama_INCLUDE_PATH"
@@ -6482,8 +6482,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:213 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_xinput_INCLUDE_PATH"
@@ -6586,8 +6586,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:214 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_xkb_INCLUDE_PATH"
@@ -6690,8 +6690,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:215 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_xrm_INCLUDE_PATH"
@@ -6811,8 +6811,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:216 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_xtest_INCLUDE_PATH"
@@ -6915,8 +6915,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:217 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_xvmc_INCLUDE_PATH"
@@ -7019,8 +7019,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:218 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xcb_xv_INCLUDE_PATH"
@@ -7123,8 +7123,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:219 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xcomposite_INCLUDE_PATH"
@@ -7227,8 +7227,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:220 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xcursor_INCLUDE_PATH"
@@ -7331,8 +7331,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:221 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xdamage_INCLUDE_PATH"
@@ -7435,8 +7435,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:222 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xdbe_INCLUDE_PATH"
@@ -7539,8 +7539,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:223 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xdmcp_INCLUDE_PATH"
@@ -7643,8 +7643,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:224 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xext_INCLUDE_PATH"
@@ -7747,8 +7747,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:225 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_dpms_INCLUDE_PATH"
@@ -7851,8 +7851,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:226 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xxf86misc_INCLUDE_PATH"
@@ -7972,8 +7972,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:227 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xxf86vm_INCLUDE_PATH"
@@ -8076,8 +8076,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:228 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xfixes_INCLUDE_PATH"
@@ -8180,8 +8180,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:229 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xft_INCLUDE_PATH"
@@ -8284,8 +8284,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:230 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xi_INCLUDE_PATH"
@@ -8388,8 +8388,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:231 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xinerama_INCLUDE_PATH"
@@ -8492,8 +8492,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:232 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xkb_INCLUDE_PATH"
@@ -8596,8 +8596,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:233 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xkbcommon_INCLUDE_PATH"
@@ -8700,8 +8700,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:234 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xkbcommon_X11_INCLUDE_PATH"
@@ -8804,8 +8804,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:235 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xkblib_INCLUDE_PATH"
@@ -8908,8 +8908,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:236 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_xkbfile_INCLUDE_PATH"
@@ -9012,8 +9012,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:237 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xmu_INCLUDE_PATH"
@@ -9116,8 +9116,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:238 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xpm_INCLUDE_PATH"
@@ -9220,8 +9220,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:239 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xpresent_INCLUDE_PATH"
@@ -9324,8 +9324,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:240 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xtst_INCLUDE_PATH"
@@ -9428,8 +9428,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:241 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_XShm_INCLUDE_PATH"
@@ -9532,8 +9532,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:242 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xrandr_INCLUDE_PATH"
@@ -9636,8 +9636,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:243 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xrender_INCLUDE_PATH"
@@ -9740,8 +9740,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:244 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_XRes_INCLUDE_PATH"
@@ -9861,8 +9861,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:245 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xss_INCLUDE_PATH"
@@ -9965,8 +9965,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:246 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xshape_INCLUDE_PATH"
@@ -10069,8 +10069,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:247 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xutil_INCLUDE_PATH"
@@ -10173,8 +10173,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:248 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xt_INCLUDE_PATH"
@@ -10277,8 +10277,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:249 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_Xv_INCLUDE_PATH"
@@ -10381,8 +10381,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:250 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "X11_XSync_INCLUDE_PATH"
@@ -10485,8 +10485,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:262 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_X11_LIB"
@@ -10587,8 +10587,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:265 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_ICE_LIB"
@@ -10689,8 +10689,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:266 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_SM_LIB"
@@ -10791,8 +10791,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:267 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xau_LIB"
@@ -10893,8 +10893,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:268 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xaw_LIB"
@@ -11010,8 +11010,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:269 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_LIB"
@@ -11112,8 +11112,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:270 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_X11_xcb_LIB"
@@ -11214,8 +11214,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:271 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_composite_LIB"
@@ -11316,8 +11316,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:272 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_cursor_LIB"
@@ -11418,8 +11418,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:273 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_damage_LIB"
@@ -11520,8 +11520,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:274 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_dpms_LIB"
@@ -11622,8 +11622,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:275 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_dri2_LIB"
@@ -11724,8 +11724,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:276 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_dri3_LIB"
@@ -11826,8 +11826,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:277 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_errors_LIB"
@@ -11928,8 +11928,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:278 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_ewmh_LIB"
@@ -12030,8 +12030,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:279 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_glx_LIB"
@@ -12132,8 +12132,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:280 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_icccm_LIB"
@@ -12234,8 +12234,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:281 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_image_LIB"
@@ -12336,8 +12336,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:282 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_keysyms_LIB"
@@ -12438,8 +12438,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:283 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_present_LIB"
@@ -12540,8 +12540,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:284 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_randr_LIB"
@@ -12642,8 +12642,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:285 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_record_LIB"
@@ -12744,8 +12744,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:286 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_render_LIB"
@@ -12846,8 +12846,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:287 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_render_util_LIB"
@@ -12948,8 +12948,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:288 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_res_LIB"
@@ -13050,8 +13050,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:289 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_screensaver_LIB"
@@ -13152,8 +13152,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:290 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_shape_LIB"
@@ -13254,8 +13254,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:291 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_shm_LIB"
@@ -13356,8 +13356,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:292 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_sync_LIB"
@@ -13458,8 +13458,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:293 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_util_LIB"
@@ -13560,8 +13560,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:294 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_xf86dri_LIB"
@@ -13662,8 +13662,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:295 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_xfixes_LIB"
@@ -13764,8 +13764,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:296 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_xinerama_LIB"
@@ -13866,8 +13866,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:297 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_xinput_LIB"
@@ -13968,8 +13968,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:298 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_xkb_LIB"
@@ -14070,8 +14070,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:299 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_xrm_LIB"
@@ -14187,8 +14187,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:300 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_xtest_LIB"
@@ -14289,8 +14289,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:301 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_xvmc_LIB"
@@ -14391,8 +14391,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:302 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xcb_xv_LIB"
@@ -14493,8 +14493,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:303 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xcomposite_LIB"
@@ -14595,8 +14595,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:304 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xcursor_LIB"
@@ -14697,8 +14697,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:305 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xdamage_LIB"
@@ -14799,8 +14799,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:306 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xdmcp_LIB"
@@ -14901,8 +14901,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:307 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xext_LIB"
@@ -15003,8 +15003,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:308 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xfixes_LIB"
@@ -15105,8 +15105,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:309 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xft_LIB"
@@ -15207,8 +15207,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:310 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xi_LIB"
@@ -15309,8 +15309,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:311 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xinerama_LIB"
@@ -15411,8 +15411,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:312 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xkbcommon_LIB"
@@ -15513,8 +15513,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:313 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xkbcommon_X11_LIB"
@@ -15615,8 +15615,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:314 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_xkbfile_LIB"
@@ -15717,8 +15717,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:315 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xmu_LIB"
@@ -15819,8 +15819,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:316 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xpm_LIB"
@@ -15921,8 +15921,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:317 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xpresent_LIB"
@@ -16023,8 +16023,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:318 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xrandr_LIB"
@@ -16125,8 +16125,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:319 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xrender_LIB"
@@ -16227,8 +16227,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:320 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_XRes_LIB"
@@ -16344,8 +16344,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:321 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xss_LIB"
@@ -16446,8 +16446,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:322 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xt_LIB"
@@ -16548,8 +16548,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:323 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xtst_LIB"
@@ -16650,8 +16650,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:324 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xv_LIB"
@@ -16752,8 +16752,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:325 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xxf86misc_LIB"
@@ -16869,8 +16869,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:326 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "X11_Xxf86vm_LIB"
@@ -16973,8 +16973,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:374 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "program"
     variable: "PKG_CONFIG_EXECUTABLE"
@@ -17079,8 +17079,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:374 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "pkgcfg_lib_PKG_FONTCONFIG_fontconfig"
@@ -17135,8 +17135,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:374 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "Fontconfig_INCLUDE_DIR"
@@ -17220,8 +17220,8 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:374 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "Fontconfig_LIBRARY"
@@ -17319,34 +17319,34 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:714 (check_library_exists)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     checks:
       - "Looking for XOpenDisplay in /usr/lib/libX11.so;/usr/lib/libXext.so"
     directories:
-      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-7uWksY"
-      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-7uWksY"
+      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-5ciT1x"
+      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-5ciT1x"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML"
+      CMAKE_MODULE_PATH: "/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML"
     buildResult:
       variable: "X11_LIB_X11_SOLO"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-7uWksY'
+        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-5ciT1x'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_afe75/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_afe75.dir/build.make CMakeFiles/cmTC_afe75.dir/build
-        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-7uWksY »
-        Building C object CMakeFiles/cmTC_afe75.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_afe75.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-7uWksY/CheckFunctionExists.c
-        Linking C executable cmTC_afe75
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_afe75.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_afe75.dir/CheckFunctionExists.c.o -o cmTC_afe75  /usr/lib/libX11.so /usr/lib/libXext.so
-        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-7uWksY »
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bd1b7/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_bd1b7.dir/build.make CMakeFiles/cmTC_bd1b7.dir/build
+        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-5ciT1x »
+        Building C object CMakeFiles/cmTC_bd1b7.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_bd1b7.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-5ciT1x/CheckFunctionExists.c
+        Linking C executable cmTC_bd1b7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd1b7.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_bd1b7.dir/CheckFunctionExists.c.o -o cmTC_bd1b7  /usr/lib/libX11.so /usr/lib/libXext.so
+        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-5ciT1x »
         
       exitCode: 0
   -
@@ -17356,34 +17356,34 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:729 (check_function_exists)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     checks:
       - "Looking for gethostbyname"
     directories:
-      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-T1nzbk"
-      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-T1nzbk"
+      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-FoMb66"
+      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-FoMb66"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML"
+      CMAKE_MODULE_PATH: "/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML"
     buildResult:
       variable: "CMAKE_HAVE_GETHOSTBYNAME"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-T1nzbk'
+        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-FoMb66'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a5313/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_a5313.dir/build.make CMakeFiles/cmTC_a5313.dir/build
-        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-T1nzbk »
-        Building C object CMakeFiles/cmTC_a5313.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_a5313.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-T1nzbk/CheckFunctionExists.c
-        Linking C executable cmTC_a5313
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a5313.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_a5313.dir/CheckFunctionExists.c.o -o cmTC_a5313
-        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-T1nzbk »
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_aa439/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_aa439.dir/build.make CMakeFiles/cmTC_aa439.dir/build
+        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-FoMb66 »
+        Building C object CMakeFiles/cmTC_aa439.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_aa439.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-FoMb66/CheckFunctionExists.c
+        Linking C executable cmTC_aa439
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa439.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_aa439.dir/CheckFunctionExists.c.o -o cmTC_aa439
+        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-FoMb66 »
         
       exitCode: 0
   -
@@ -17393,34 +17393,34 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:743 (check_function_exists)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     checks:
       - "Looking for connect"
     directories:
-      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ebuANR"
-      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ebuANR"
+      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EWMPOe"
+      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EWMPOe"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML"
+      CMAKE_MODULE_PATH: "/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML"
     buildResult:
       variable: "CMAKE_HAVE_CONNECT"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ebuANR'
+        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EWMPOe'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_49748/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_49748.dir/build.make CMakeFiles/cmTC_49748.dir/build
-        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ebuANR »
-        Building C object CMakeFiles/cmTC_49748.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_49748.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ebuANR/CheckFunctionExists.c
-        Linking C executable cmTC_49748
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49748.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_49748.dir/CheckFunctionExists.c.o -o cmTC_49748
-        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-ebuANR »
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cfccc/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_cfccc.dir/build.make CMakeFiles/cmTC_cfccc.dir/build
+        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EWMPOe »
+        Building C object CMakeFiles/cmTC_cfccc.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_cfccc.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EWMPOe/CheckFunctionExists.c
+        Linking C executable cmTC_cfccc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cfccc.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_cfccc.dir/CheckFunctionExists.c.o -o cmTC_cfccc
+        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-EWMPOe »
         
       exitCode: 0
   -
@@ -17430,34 +17430,34 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:752 (check_function_exists)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     checks:
       - "Looking for remove"
     directories:
-      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-E5fuE2"
-      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-E5fuE2"
+      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-XlzPA5"
+      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-XlzPA5"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML"
+      CMAKE_MODULE_PATH: "/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML"
     buildResult:
       variable: "CMAKE_HAVE_REMOVE"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-E5fuE2'
+        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-XlzPA5'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_86c16/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_86c16.dir/build.make CMakeFiles/cmTC_86c16.dir/build
-        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-E5fuE2 »
-        Building C object CMakeFiles/cmTC_86c16.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_86c16.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-E5fuE2/CheckFunctionExists.c
-        Linking C executable cmTC_86c16
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_86c16.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_86c16.dir/CheckFunctionExists.c.o -o cmTC_86c16
-        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-E5fuE2 »
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_01cad/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_01cad.dir/build.make CMakeFiles/cmTC_01cad.dir/build
+        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-XlzPA5 »
+        Building C object CMakeFiles/cmTC_01cad.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_01cad.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-XlzPA5/CheckFunctionExists.c
+        Linking C executable cmTC_01cad
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01cad.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_01cad.dir/CheckFunctionExists.c.o -o cmTC_01cad
+        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-XlzPA5 »
         
       exitCode: 0
   -
@@ -17467,34 +17467,34 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:761 (check_function_exists)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     checks:
       - "Looking for shmat"
     directories:
-      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-bWHxHH"
-      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-bWHxHH"
+      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-M9kGmM"
+      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-M9kGmM"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML"
+      CMAKE_MODULE_PATH: "/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML"
     buildResult:
       variable: "CMAKE_HAVE_SHMAT"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-bWHxHH'
+        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-M9kGmM'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_38900/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_38900.dir/build.make CMakeFiles/cmTC_38900.dir/build
-        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-bWHxHH »
-        Building C object CMakeFiles/cmTC_38900.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_38900.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-bWHxHH/CheckFunctionExists.c
-        Linking C executable cmTC_38900
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38900.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_38900.dir/CheckFunctionExists.c.o -o cmTC_38900
-        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-bWHxHH »
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_85d78/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_85d78.dir/build.make CMakeFiles/cmTC_85d78.dir/build
+        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-M9kGmM »
+        Building C object CMakeFiles/cmTC_85d78.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_85d78.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-M9kGmM/CheckFunctionExists.c
+        Linking C executable cmTC_85d78
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85d78.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_85d78.dir/CheckFunctionExists.c.o -o cmTC_85d78
+        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-M9kGmM »
         
       exitCode: 0
   -
@@ -17504,44 +17504,44 @@ events:
       - "/usr/share/cmake/Modules/FindX11.cmake:771 (check_library_exists)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:31 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     checks:
       - "Looking for IceConnectionNumber in ICE"
     directories:
-      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-3SNZaG"
-      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-3SNZaG"
+      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-D4IFwV"
+      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-D4IFwV"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML"
+      CMAKE_MODULE_PATH: "/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML"
     buildResult:
       variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-3SNZaG'
+        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-D4IFwV'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_193b1/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_193b1.dir/build.make CMakeFiles/cmTC_193b1.dir/build
-        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-3SNZaG »
-        Building C object CMakeFiles/cmTC_193b1.dir/CheckFunctionExists.c.o
-        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_193b1.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-3SNZaG/CheckFunctionExists.c
-        Linking C executable cmTC_193b1
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_193b1.dir/link.txt --verbose=1
-        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_193b1.dir/CheckFunctionExists.c.o -o cmTC_193b1  -lICE
-        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-3SNZaG »
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d2482/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_d2482.dir/build.make CMakeFiles/cmTC_d2482.dir/build
+        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-D4IFwV »
+        Building C object CMakeFiles/cmTC_d2482.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_d2482.dir/CheckFunctionExists.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-D4IFwV/CheckFunctionExists.c
+        Linking C executable cmTC_d2482
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d2482.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_d2482.dir/CheckFunctionExists.c.o -o cmTC_d2482  -lICE
+        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-D4IFwV »
         
       exitCode: 0
   -
     kind: "find-v1"
     backtrace:
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/FindUDev.cmake:12 (find_path)"
+      - "SFML-3.0.2/lib/cmake/SFML/FindUDev.cmake:12 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:35 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:35 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "UDEV_INCLUDE_DIR"
@@ -17636,11 +17636,11 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/FindUDev.cmake:20 (find_library)"
+      - "SFML-3.0.2/lib/cmake/SFML/FindUDev.cmake:20 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:35 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:35 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "UDEV_LIBRARIES"
@@ -17737,8 +17737,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:408 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "OPENGL_INCLUDE_DIR"
@@ -17837,8 +17837,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:414 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "OPENGL_GLX_INCLUDE_DIR"
@@ -17934,8 +17934,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:415 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "OPENGL_EGL_INCLUDE_DIR"
@@ -18031,8 +18031,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:416 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "OPENGL_GLES2_INCLUDE_DIR"
@@ -18128,8 +18128,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:417 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "OPENGL_GLES3_INCLUDE_DIR"
@@ -18225,8 +18225,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:418 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "OPENGL_xmesa_INCLUDE_DIR"
@@ -18338,8 +18338,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:424 (find_path)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "path"
     variable: "OPENGL_GLU_INCLUDE_DIR"
@@ -18435,8 +18435,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:438 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "OPENGL_opengl_LIBRARY"
@@ -18532,8 +18532,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:443 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "OPENGL_glx_LIBRARY"
@@ -18672,8 +18672,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:449 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "OPENGL_egl_LIBRARY"
@@ -18812,8 +18812,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:455 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "OPENGL_gles2_LIBRARY"
@@ -18909,8 +18909,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:460 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "OPENGL_gles3_LIBRARY"
@@ -19033,8 +19033,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:466 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "OPENGL_glu_LIBRARY"
@@ -19134,8 +19134,8 @@ events:
       - "/usr/share/cmake/Modules/FindOpenGL.cmake:521 (find_library)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLWindowDependencies.cmake:42 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     mode: "library"
     variable: "OPENGL_gl_LIBRARY"
@@ -19284,34 +19284,34 @@ events:
       - "/usr/share/cmake/Modules/FindThreads.cmake:226 (_threads_check_libc)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLSystemDependencies.cmake:8 (find_dependency)"
-      - "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLSystemDependencies.cmake:8 (find_dependency)"
+      - "SFML-3.0.2/lib/cmake/SFML/SFMLConfig.cmake:146 (include)"
       - "CMakeLists.txt:14 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-BWln1S"
-      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-BWln1S"
+      source: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-f0kCCC"
+      binary: "/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-f0kCCC"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_MODULE_PATH: "/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Autre/SFML-3.0.2/lib/cmake/SFML"
+      CMAKE_MODULE_PATH: "/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML;/home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/cmake/SFML"
     buildResult:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-BWln1S'
+        Change Dir: '/home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-f0kCCC'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fa92d/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_fa92d.dir/build.make CMakeFiles/cmTC_fa92d.dir/build
-        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-BWln1S »
-        Building C object CMakeFiles/cmTC_fa92d.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_fa92d.dir/src.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-BWln1S/src.c
-        Linking C executable cmTC_fa92d
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa92d.dir/link.txt --verbose=1
-        /usr/bin/cc CMakeFiles/cmTC_fa92d.dir/src.c.o -o cmTC_fa92d
-        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-BWln1S »
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_85878/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_85878.dir/build.make CMakeFiles/cmTC_85878.dir/build
+        make[1] : on entre dans le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-f0kCCC »
+        Building C object CMakeFiles/cmTC_85878.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_85878.dir/src.c.o -c /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-f0kCCC/src.c
+        Linking C executable cmTC_85878
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85878.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_85878.dir/src.c.o -o cmTC_85878
+        make[1] : on quitte le répertoire « /home/kali/COURS/Projet_INFO/build/CMakeFiles/CMakeScratch/TryCompile-f0kCCC »
         
       exitCode: 0
 ...

@@ -112,9 +112,9 @@ SFML_Example3: CMakeFiles/SFML_Example3.dir/test_SFML3/main.cpp.o
 SFML_Example3: CMakeFiles/SFML_Example3.dir/test_SFML3/Plane.cpp.o
 SFML_Example3: CMakeFiles/SFML_Example3.dir/build.make
 SFML_Example3: CMakeFiles/SFML_Example3.dir/compiler_depend.ts
-SFML_Example3: /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-graphics-s.a
-SFML_Example3: /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-window-s.a
-SFML_Example3: /home/kali/COURS/Autre/SFML-3.0.2/lib/libsfml-system-s.a
+SFML_Example3: /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-graphics-s.a
+SFML_Example3: /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-window-s.a
+SFML_Example3: /home/kali/COURS/Projet_INFO/SFML-3.0.2/lib/libsfml-system-s.a
 SFML_Example3: /usr/lib/libXrandr.so
 SFML_Example3: /usr/lib/libXcursor.so
 SFML_Example3: /usr/lib/libXrender.so
