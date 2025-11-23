@@ -35,7 +35,7 @@ int main() {
 
 	while (app.isOpen()) {
 		while (const std::optional event = app.pollEvent()) {
-			if ((event->is<sf::Event::KeyPressed>() && event->getIf<sf::Event::KeyPressed>()->code == sf::Keyboard::Key::Escape) ||
+			if ((event->is<sf::Event::KeyPressed>() && event->getIf<sf::Event::KeyPressed>()->code == sf::Keyboard::Key::Enter) ||
 				event->is<sf::Event::Closed>()) {
 				app.close();
 			}
