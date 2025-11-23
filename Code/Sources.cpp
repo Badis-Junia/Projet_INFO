@@ -138,7 +138,7 @@ void ControleurApproche::run() {
 
 TourControle::TourControle(const std::string& id, int nbParkings) : Controleur(id), pisteLibre(true) {
     for (int i = 1; i <= nbParkings; ++i) {
-        parkings["P" + std::to_string(i)] = true;
+        parkings["Place " + std::to_string(i)] = true;
     }
 }
 
