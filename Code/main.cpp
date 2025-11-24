@@ -23,10 +23,11 @@ int lasimulation() {
     }
 
     sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), aeroportSprite(aeroportTexture), aeroport2Sprite(aeroportTexture);
-        
-    Avion avionTest("10", "AirTest");
     CentreControleRegional aeroport("10");
-    CentreControleRegional aeroport2("11");
+    CentreControleRegional aeroport2("11");        
+
+    Avion avionTest("10", "AirTest");
+
     aeroport2.setPositionX(400);
     aeroport2.setPositionY(600);
 

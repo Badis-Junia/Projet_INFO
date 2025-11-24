@@ -27,14 +27,22 @@ public:
     std::string getId() const;
 };
 
- 
+class Aeroport {
+private:
+    std::string id;
+    double positionX;
+    double positionY;
+
+public: 
+    Aeroport(std::string id, double positionX, double positionY);
+};
 
 
 
 
 class Avion : public Agent {
 private:
-    std::string compagnie;
+    Aeroport compagnie;
     double positionX, positionY, positionZ;
     double vitesse;
     std::string etat;
