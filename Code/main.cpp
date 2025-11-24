@@ -1,10 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Sources.hpp"
+#include <vector>
 
 const std::string path_image("../Pictures/");
 
-int main() {
+int lasimulation() {
     Monde monde;
     monde.initialiser();
     monde.demarrerSimulation();
@@ -13,24 +14,19 @@ int main() {
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
 
-    sf::Texture backgroundImage;
-    sf::Texture avionTexture;
-    sf::Texture tourControleTexture;
-    sf::Texture aeroportTexture;
 
+    sf::Texture backgroundImage, avionTexture, tourControleTexture, aeroportTexture;
 
     if (!backgroundImage.loadFromFile(path_image + "background.png") ||
         !avionTexture.loadFromFile(path_image + "avion.png") ||
-        !tourControleTexture.loadFromFile(path_image + "tourcontrole.png") || !aeroportTexture.loadFromFile(path_image + "aeroport.png")) {
-        std::cerr << "Erreur pendant le chargement des images" << std::endl;
-        return -1;
+        !tourControleTexture.loadFromFile(path_image + "tourcontrole.png") || 
+        !aeroportTexture.loadFromFile(path_image + "aeroport.png")) {
+            std::cerr << "Erreur pendant le chargement des images" << std::endl;
+            return -1;
     }
 
-    sf::Sprite backgroundSprite(backgroundImage);
-    sf::Sprite avionSprite(avionTexture);
-    sf::Sprite tourControleSprite(tourControleTexture);
-    sf::Sprite aeroportSprite(aeroportTexture);
-    sf::Sprite aeroport2Sprite(aeroportTexture);
+    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), tourControleSprite(tourControleTexture), aeroportSprite(aeroportTexture), aeroport2Sprite(aeroportTexture);
+    
     
     Avion avionTest("10", "AirTest");
     CentreControleRegional aeroport1("10");
@@ -81,18 +77,25 @@ int main() {
             static_cast<float>(aeroport2.getPositionY() / 10.f)
 
         ));
-
         app.clear();
-        app.draw(backgroundSprite);
-        app.draw(tourControleSprite); 
-        app.draw(aeroportSprite); 
-        app.draw(aeroport2Sprite); 
-        app.draw(avionSprite);
+
+        std::vector<sf::Sprite> tableausprite = {backgroundSprite, tourControleSprite, aeroportSprite, aeroport2Sprite, avionSprite};        
+
+        for(long unsigned int i = 0;i<tableausprite.size();i++) {
+            app.draw(tableausprite[i]);
+        }
+
+
         app.display();
     }
 
     avionTest.stop();
     monde.arreterSimulation();
 
+    return 0;
+}
+
+int main() {
+    lasimulation();
     return 0;
 }
