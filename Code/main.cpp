@@ -23,15 +23,12 @@ int lasimulation() {
     }
 
     sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), aeroportSprite(aeroportTexture), aeroport2Sprite(aeroportTexture);
-    CentreControleRegional aeroport("10");
-    CentreControleRegional aeroport2("11");        
+    Aeroport aeroport("10", 100, 200);
+    Aeroport aeroport2("11", 400, 600);        
 
     Avion avionTest("10", "AirTest");
 
-    aeroport2.setPositionX(400);
-    aeroport2.setPositionY(600);
-
-    avionTest.setPosition(100, 200, 0); 
+    avionTest.setPosition(aeroport.getPositionX(), aeroport.getPositionY(), 0); 
     avionTest.setVitesse(100.0); 
 
     
@@ -41,8 +38,8 @@ int lasimulation() {
     aeroport2Sprite.setScale(sf::Vector2f(0.2, 0.2));
 
     
-    aeroportSprite.setPosition(sf::Vector2f(100, 200));
-    aeroport2Sprite.setPosition(sf::Vector2f(400, 560));
+    aeroportSprite.setPosition(sf::Vector2f(aeroport.getPositionX(), aeroport.getPositionY()));
+    aeroport2Sprite.setPosition(sf::Vector2f(aeroport2.getPositionX(), aeroport2.getPositionY() - 40));
 
     bool volDemarre = false;
     

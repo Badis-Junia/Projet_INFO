@@ -171,6 +171,18 @@ void Avion::setVitesse(double nouvelleVitesse) {
     this->vitesse = nouvelleVitesse;
 } 
 
+void Aeroport::setPosition(double positionX, double positionY) {
+    this->positionX = positionX;
+    this->positionY = positionY;
+}
+
+double Aeroport::getPositionX() {
+    return this->positionX;
+}
+
+double Aeroport::getPositionY() {
+    return this->positionY;
+}
 
 
 

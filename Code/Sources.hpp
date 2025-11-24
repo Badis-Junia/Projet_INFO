@@ -73,6 +73,18 @@ public:
 
 
 
+class Aeroport {
+private:
+    std::string id;
+    double positionX;
+    double positionY;
+public:
+    Aeroport(const std::string & id, double positionX, double positionY) : id(id), positionX(positionX), positionY(positionY) {};
+    double getPositionX();
+    double getPositionY();
+    void setPosition(double unepositionX, double unepositionY);
+};
+
 
 class Controleur : public Agent {
 protected:
