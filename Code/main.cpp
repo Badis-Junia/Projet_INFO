@@ -76,6 +76,11 @@ int lasimulation() {
         if(go == 1) {
             avionTest.decollage();
             avionTest.setDestination(aeroport2.getPositionX(), aeroport2.getPositionY());
+            if (volDemarre && avionTest.getEtat() == "en vol" && 
+                sqrt(pow(avionTest.getPositionX() - aeroport2.getPositionX(), 2) + 
+                     pow(avionTest.getPositionY() - aeroport2.getPositionY(), 2)) < 50) {
+                avionTest.atterrissage();
+            }
             volDemarre = true;
             std::cout << "vol vers " << aeroport2.getId() << std::endl;
         }

@@ -41,7 +41,10 @@ private:
     double consommation;
     bool enDeplacement;  
     double destinationX, destinationY;  
-                                        
+    double altitudeCible;
+    double penteApproche;
+    bool enApprocheFinale;
+
 public:
     Avion(const std::string& id, const std::string& compagnie);
     ~Avion();
