@@ -59,7 +59,7 @@ public:
     void declarerUrgence(bool etatUrgence);
     bool estEnUrgence() const;
     double getCarburant() const;
-    void consommerCarburant();
+    void consommerCarburant(std::string etat);
     double getPositionX() const;
     double getPositionY() const;
     double getPositionZ() const { return positionZ; }
@@ -82,6 +82,7 @@ public:
     Aeroport(const std::string & id, double positionX, double positionY) : id(id), positionX(positionX), positionY(positionY) {};
     double getPositionX();
     double getPositionY();
+    std::string getId();
     void setPosition(double unepositionX, double unepositionY);
 };
 

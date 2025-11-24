@@ -84,7 +84,7 @@ void Avion::run() {
             majPosition();
         }
         
-        consommerCarburant();
+        consommerCarburant("en vol");
         
         if (this->carburant < 20 && !this->urgence) {
             declarerUrgence(true);
@@ -119,8 +119,11 @@ void Avion::setEnDeplacement(bool etat) {
     this->enDeplacement = etat;
 }
 
-void Avion::consommerCarburant() {
-    this->carburant -= this->consommation;
+void Avion::consommerCarburant(std::string etat) {
+    if(etat == "en vol") {
+        this->carburant -= this->consommation;
+    }
+
     if (carburant < 0) {
         this->carburant = 0;
     }
@@ -171,6 +174,11 @@ void Avion::setVitesse(double nouvelleVitesse) {
     this->vitesse = nouvelleVitesse;
 } 
 
+
+
+
+
+
 void Aeroport::setPosition(double positionX, double positionY) {
     this->positionX = positionX;
     this->positionY = positionY;
@@ -184,7 +192,9 @@ double Aeroport::getPositionY() {
     return this->positionY;
 }
 
-
+std::string Aeroport::getId() {
+    return this->id;
+}
 
  
 Controleur::Controleur(const std::string& id) : Agent(std::stoi(id)) {}

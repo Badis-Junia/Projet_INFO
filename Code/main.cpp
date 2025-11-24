@@ -23,8 +23,8 @@ int lasimulation() {
     }
 
     sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), aeroportSprite(aeroportTexture), aeroport2Sprite(aeroportTexture);
-    Aeroport aeroport("10", 100, 200);
-    Aeroport aeroport2("11", 400, 600);        
+    Aeroport aeroport("Oregon", 100, 200);
+    Aeroport aeroport2("Texas", 400, 600);        
 
     Avion avionTest("10", "AirTest");
 
@@ -32,14 +32,14 @@ int lasimulation() {
     avionTest.setVitesse(100.0); 
 
     
-    avionSprite.setScale(sf::Vector2f(1, 1));
+    avionSprite.setScale(sf::Vector2f(0.8, 0.8));
 
-    aeroportSprite.setScale(sf::Vector2f(0.2, 0.2));
-    aeroport2Sprite.setScale(sf::Vector2f(0.2, 0.2));
+    aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
+    aeroport2Sprite.setScale(sf::Vector2f(0.12, 0.12));
 
     
     aeroportSprite.setPosition(sf::Vector2f(aeroport.getPositionX(), aeroport.getPositionY()));
-    aeroport2Sprite.setPosition(sf::Vector2f(aeroport2.getPositionX(), aeroport2.getPositionY() - 40));
+    aeroport2Sprite.setPosition(sf::Vector2f(aeroport2.getPositionX(), aeroport2.getPositionY() - 20));
 
     bool volDemarre = false;
     
@@ -61,14 +61,14 @@ int lasimulation() {
             avionTest.decollage();
             avionTest.setDestination(aeroport2.getPositionX(), aeroport2.getPositionY());
             volDemarre = true;
-            std::cout << "vol vers aéroport 2" << std::endl;
+            std::cout << "vol vers " << aeroport2.getId() << std::endl;
         }
 
         avionSprite.setPosition(sf::Vector2f(static_cast<float>(avionTest.getPositionX()), static_cast<float>(avionTest.getPositionY())));
         
         static int counter = 0;
         if (counter++ % 60 == 0) {
-            std::cout << "Position avion: (" << avionTest.getPositionX() << ", " << avionTest.getPositionY() << ") - état: " << avionTest.getEtat() << std::endl;
+            std::cout << "Position avion: (" << avionTest.getPositionX() << ", " << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" << " - carburant: " << avionTest.getCarburant() << " - état: " << avionTest.getEtat() << std::endl;
         }
 
         app.clear();
