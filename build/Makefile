@@ -129,6 +129,30 @@ Projet_INFO/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/build
 .PHONY : Projet_INFO/fast
 
+Code/Sources.o: Code/Sources.cpp.o
+.PHONY : Code/Sources.o
+
+# target to build an object file
+Code/Sources.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/Code/Sources.cpp.o
+.PHONY : Code/Sources.cpp.o
+
+Code/Sources.i: Code/Sources.cpp.i
+.PHONY : Code/Sources.i
+
+# target to preprocess a source file
+Code/Sources.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/Code/Sources.cpp.i
+.PHONY : Code/Sources.cpp.i
+
+Code/Sources.s: Code/Sources.cpp.s
+.PHONY : Code/Sources.s
+
+# target to generate assembly for a file
+Code/Sources.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet_INFO.dir/build.make CMakeFiles/Projet_INFO.dir/Code/Sources.cpp.s
+.PHONY : Code/Sources.cpp.s
+
 Code/main.o: Code/main.cpp.o
 .PHONY : Code/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Projet_INFO"
+	@echo "... Code/Sources.o"
+	@echo "... Code/Sources.i"
+	@echo "... Code/Sources.s"
 	@echo "... Code/main.o"
 	@echo "... Code/main.i"
 	@echo "... Code/main.s"

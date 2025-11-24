@@ -1,5 +1,7 @@
 #include "Sources.hpp"
 #include <chrono>
+#include <iostream>
+#include <algorithm>
 
 
 Agent::Agent(const int & id) : id(id), actif(false) {}
@@ -20,8 +22,7 @@ std::string Agent::getId() const {
     return std::to_string(this->id);
 }
 
-
-
+ 
 
 
 
@@ -36,7 +37,6 @@ Avion::Avion(const std::string& id, const std::string& compagnie) : Agent(std::s
     this->carburant = 100;
     this->consommation = 0.1;
 }
-
 
 Avion::~Avion() {
     stop();
@@ -63,7 +63,7 @@ void Avion::majPosition() {
         this->positionZ -= 500;
         if (this->positionZ <= 0) {
             this->positionZ = 0;
-            this->etat = "au sol.";
+            this->etat = "au sol";
         }
     }
 }
@@ -73,6 +73,15 @@ void Avion::consommerCarburant() {
     if (carburant < 0) {
         this->carburant = 0;
     }
+}
+
+void Avion::atterrissage() {
+    this->etat = "atterissage";
+}
+
+void Avion::decollage() {
+    this->etat = "decollage";
+    this->positionZ = 0;
 }
 
 void Avion::declarerUrgence(bool etatUrgence) {
@@ -90,41 +99,71 @@ double Avion::getCarburant() const {
     return this->carburant;
 }
 
+double Avion::getPositionX() const {
+    return this->positionX;
+}
+
+double Avion::getPositionY() const {
+    return this->positionY;
+}
+
+ 
 
 
 
 
-
+ 
 Controleur::Controleur(const std::string& id) : Agent(std::stoi(id)) {}
 
-void Controleur::recevoirAvion(Avion avion) {
-    this->mutex.lock();                 
-    this->avionsSousControle.push_back(avion);
-    this->mutex.unlock();               
+void Controleur::recevoirAvion(std::unique_ptr<Avion> avion) {
+    std::lock_guard<std::mutex> lock(mutex);
+    this->avionsSousControle.push_back(std::move(avion));
 }
 
-void Controleur::libererAvion(Avion* avion) {
-    this->mutex.lock();
-    for (auto i = this->avionsSousControle.begin(); i != this->avionsSousControle.end(); ) {
-        if (i->getId() == avion->getId()) {
-            i = this->avionsSousControle.erase(i);
-        } else {
-            i++;
-        }
+void Controleur::libererAvion(const std::string& avionId) {
+    std::lock_guard<std::mutex> lock(mutex);
+    avionsSousControle.erase(
+        std::remove_if(avionsSousControle.begin(), avionsSousControle.end(),
+            [&](const std::unique_ptr<Avion>& avion) {
+                return avion->getId() == avionId;
+            }),
+        avionsSousControle.end()
+    );
+}
+
+
+ 
+
+
+
+ 
+ControleurApproche::ControleurApproche(const std::string& id, Controleur* tour) 
+    : Controleur(id), tour(tour) {}
+
+void ControleurApproche::assignerTrajectoire(Avion* avion) {
+    std::cout << "Trajectoire assignée à l'avion " << avion->getId() << std::endl;
+}
+
+void ControleurApproche::gererUrgence(Avion* avion) {
+    std::cout << "URGENCE: Gestion de l'avion " << avion->getId() << std::endl;
+    avion->atterrissage();
+}
+
+void ControleurApproche::demanderAutorisationAtterrissage(Avion* avion) {
+    if (avion->getPositionZ() <= 3000 && avion->getCarburant() > 10) {
+        std::cout << "Autorisation d'atterrissage demandée pour avion " << avion->getId() << std::endl;
     }
-    this->mutex.unlock();               
 }
-
-ControleurApproche::ControleurApproche(const std::string& id, Controleur* tour) : Controleur(id), tour(tour) {}
 
 void ControleurApproche::run() {
     while (this->actif) {
+        std::lock_guard<std::mutex> lock(mutex);
         for (auto& avion : this->avionsSousControle) {
-            if (avion.estEnUrgence()) {
-                gererUrgence(&avion);
+            if (avion->estEnUrgence()) {
+                gererUrgence(avion.get());
             } else {
-                assignerTrajectoire(&avion);
-                demanderAutorisationAtterrissage(&avion);
+                assignerTrajectoire(avion.get());
+                demanderAutorisationAtterrissage(avion.get());
             }
         }
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
@@ -132,34 +171,37 @@ void ControleurApproche::run() {
 }
 
 
+ 
 
 
 
-
-TourControle::TourControle(const std::string& id, int nbParkings) : Controleur(id), pisteLibre(true) {
-    for (int i = 1; i <= nbParkings; ++i) {
-        parkings["Place " + std::to_string(i)] = true;
-    }
-}
-
-void TourControle::run() {
-    while (this->actif) {
-        if (this->pisteLibre && !this->fileAttenteDecollage.empty()) {
-            auto avion = this->fileAttenteDecollage[0];
-            if (autoriserDecollage(avion)) {
-                this->fileAttenteDecollage.erase(this->fileAttenteDecollage.begin());
-            }
-        }
-        std::this_thread::sleep_for(std::chrono::milliseconds(200));
-    }
-}
-
-
-
-
-
-
+ 
 CentreControleRegional::CentreControleRegional(const std::string& id) : Controleur(id) {}
+
+void CentreControleRegional::ajouterApproche(ControleurApproche* app) {
+    this->approchesLiees.push_back(app);
+}
+
+void CentreControleRegional::transfererVol(const std::string& avionId, ControleurApproche* app) {
+    std::unique_ptr<Avion> avionToTransfer;
+    
+    {
+        std::lock_guard<std::mutex> lock(mutex);
+        auto it = std::find_if(avionsSousControle.begin(), avionsSousControle.end(),
+            [&](const std::unique_ptr<Avion>& avion) {
+                return avion->getId() == avionId;
+            });
+            
+        if (it != avionsSousControle.end()) {
+            avionToTransfer = std::move(*it);
+            avionsSousControle.erase(it);
+        }
+    }
+    
+    if (avionToTransfer) {
+        app->recevoirAvion(std::move(avionToTransfer));
+    }
+}
 
 void CentreControleRegional::run() {
     while (this->actif) {
@@ -167,17 +209,82 @@ void CentreControleRegional::run() {
     }
 }
 
+ 
 
 
+
+
+ 
+TourControle::TourControle(const std::string& id, int nbParkings) : Controleur(id), pisteLibre(true) {
+    for (int i = 1; i <= nbParkings; ++i) {
+        parkings["Place " + std::to_string(i)] = true;
+    }
+}
+
+bool TourControle::autoriserAtterrissage(Avion* avion) {
+    std::lock_guard<std::mutex> lock(mutexPiste);
+    if (pisteLibre) {
+        pisteLibre = false;
+        std::cout << "Autorisation d'atterrissage pour avion " << avion->getId() << std::endl;
+        return true;
+    }
+    return false;
+}
+
+bool TourControle::autoriserDecollage(Avion* avion) {
+    std::lock_guard<std::mutex> lock(mutexPiste);
+    if (pisteLibre) {
+        pisteLibre = false;
+        std::cout << "Autorisation de décollage pour avion " << avion->getId() << std::endl;
+        return true;
+    }
+    return false;
+}
+
+void TourControle::libererPiste() {
+    std::lock_guard<std::mutex> lock(mutexPiste);
+    pisteLibre = true;
+}
+
+void TourControle::attribuerParking(Avion* avion) {
+    for (auto& parking : parkings) {
+        if (parking.second) {
+            parking.second = false;
+            std::cout << "Parking " << parking.first << " attribué à avion " << avion->getId() << std::endl;
+            return;
+        }
+    }
+    std::cout << "Aucun parking disponible pour avion " << avion->getId() << std::endl;
+}
+
+void TourControle::run() {
+    while (this->actif) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    }
+}
+
+ 
+
+
+
+
+ 
+void InterfaceGraphique::afficherAPP(const std::vector<Avion*>& avions) {}
+void InterfaceGraphique::afficherTWR(const std::vector<Avion*>& avions) {}
+void InterfaceGraphique::afficherCCR(const std::vector<Avion*>& avions) {}
+
+ 
+
+ 
 
 
 
 Monde::Monde() {}
 
 void Monde::initialiser() {
-    ccr = std::unique_ptr<CentreControleRegional>(new CentreControleRegional("1"));
-    twr = std::unique_ptr<TourControle>(new TourControle("2", 5));
-    app = std::unique_ptr<ControleurApproche>(new ControleurApproche("3", twr.get()));
+    ccr = std::make_unique<CentreControleRegional>("1");
+    twr = std::make_unique<TourControle>("2", 5);
+    app = std::make_unique<ControleurApproche>("3", twr.get());
     
     ccr->ajouterApproche(app.get());
 }
@@ -194,21 +301,25 @@ void Monde::arreterSimulation() {
     ccr->stop();
 }
 
+void Monde::ajouterAvion(std::unique_ptr<Avion> avion) {
+    avions.push_back(std::move(avion));
+}
+
+
+ 
 
 
 
-
-
+ 
 Journal::Journal(const std::string& nomFichier) {
     fichier.open(nomFichier);
 }
 
 void Journal::log(const std::string& message) {
-    this->mutex.lock();
+    std::lock_guard<std::mutex> lock(mutex);
     if (fichier.is_open()) {
         fichier << message << std::endl;
     }
-    this->mutex.unlock();
 }
 
 Journal::~Journal() {

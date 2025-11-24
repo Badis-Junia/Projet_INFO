@@ -1,5 +1,5 @@
-#include<string>
-#include<thread>
+#include <string>
+#include <thread>
 #include <mutex>
 #include <vector>
 #include <map>
@@ -15,13 +15,19 @@ protected:
 
 public:
     Agent(const int & id);
+    virtual ~Agent() = default;
+    
+      
+    Agent(const Agent&) = delete;
+    Agent& operator=(const Agent&) = delete;
+    
     virtual void run() = 0;
     void start();
     void stop();
-
     std::string getId() const;
 };
 
+ 
 
 
 
@@ -39,6 +45,11 @@ private:
 public:
     Avion(const std::string& id, const std::string& compagnie);
     ~Avion();
+    
+      
+    Avion(const Avion&) = delete;
+    Avion& operator=(const Avion&) = delete;
+    
     void run() override;
     void majPosition();
     void atterrissage();
@@ -47,10 +58,13 @@ public:
     bool estEnUrgence() const;
     double getCarburant() const;
     void consommerCarburant();
-
+    double getPositionX() const;
+    double getPositionY() const;
+    double getPositionZ() const { return positionZ; }
+    std::string getEtat() const { return etat; }
 };
 
-
+ 
 
 
 
@@ -58,16 +72,21 @@ public:
 class Controleur : public Agent {
 protected:
     std::mutex mutex;
-    std::vector<Avion> avionsSousControle;
+    std::vector<std::unique_ptr<Avion>> avionsSousControle;   
 
 public:
     Controleur(const std::string& id);
-    virtual void recevoirAvion(Avion avion);
-    virtual void libererAvion(Avion* avion);
+    
+      
+    Controleur(const Controleur&) = delete;
+    Controleur& operator=(const Controleur&) = delete;
+    
+    virtual void recevoirAvion(std::unique_ptr<Avion> avion);   
+    virtual void libererAvion(const std::string& avionId);   
     virtual void run() override = 0;
 };
 
-
+ 
 
 
 
@@ -79,13 +98,18 @@ private:
 
 public:
     ControleurApproche(const std::string& id, Controleur* tour);
+    
+      
+    ControleurApproche(const ControleurApproche&) = delete;
+    ControleurApproche& operator=(const ControleurApproche&) = delete;
+    
     void assignerTrajectoire(Avion* avion);
     void gererUrgence(Avion* avion);
     void demanderAutorisationAtterrissage(Avion* avion);
     void run() override;
 };
 
-
+ 
 
 
 
@@ -96,12 +120,17 @@ private:
 
 public:
     CentreControleRegional(const std::string& id);
+    
+      
+    CentreControleRegional(const CentreControleRegional&) = delete;
+    CentreControleRegional& operator=(const CentreControleRegional&) = delete;
+    
     void ajouterApproche(ControleurApproche* app);
-    void transfererVol(Avion* avion, ControleurApproche* app);
+    void transfererVol(const std::string& avionId, ControleurApproche* app);   
     void run() override;
 };
 
-
+ 
 
 
 
@@ -116,7 +145,7 @@ public:
     void afficherCCR(const std::vector<Avion*>& avions);
 };
 
-
+ 
 
 
 
@@ -130,6 +159,11 @@ private:
 
 public:
     TourControle(const std::string& id, int nbParkings);
+    
+      
+    TourControle(const TourControle&) = delete;
+    TourControle& operator=(const TourControle&) = delete;
+    
     bool autoriserAtterrissage(Avion* avion);
     bool autoriserDecollage(Avion* avion);
     void libererPiste();
@@ -137,7 +171,7 @@ public:
     void run() override;
 };
 
-
+ 
 
 
 
@@ -158,7 +192,7 @@ public:
     void ajouterAvion(std::unique_ptr<Avion> avion);
 };
 
-
+ 
 
 
 

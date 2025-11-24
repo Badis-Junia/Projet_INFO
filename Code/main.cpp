@@ -1,54 +1,61 @@
-// #include <cstdlib>
-// #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Sources.hpp"
 
-
-
-#ifdef _MSC_VER
-
-#endif
-
 const std::string path_image("../Pictures/");
 
 int main() {
+    Monde monde;
+    monde.initialiser();
+    monde.demarrerSimulation();
 
-	const sf::Vector2u WINDOW_SIZE(1298, 805);
+    const sf::Vector2u WINDOW_SIZE(1298, 805);
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
-    app.setFramerateLimit(60); 
+    app.setFramerateLimit(60);
 
+    sf::Texture backgroundImage;
+    sf::Texture avionTexture;
 
-    sf::Texture backgroundImage(path_image + "background.png");
-    sf::Sprite backgroundSprite(backgroundImage);
-    sf::Texture avion(path_image + "avion.png");
-    sf::Sprite avionsprite(avion);
-
-	if (!backgroundImage.loadFromFile(path_image + "background.png") || !avion.loadFromFile(path_image + "avion.png")) {
+    if (!backgroundImage.loadFromFile(path_image + "background.png") ||
+        !avionTexture.loadFromFile(path_image + "avion.png")) {
         std::cerr << "Erreur pendant le chargement des images" << std::endl;
-        return 0;
-	}
+        return -1;
+    }
 
-	backgroundSprite.setTexture(backgroundImage);
-	avionsprite.setTexture(avion);
+    sf::Sprite backgroundSprite(backgroundImage);
+    sf::Sprite avionSprite(avionTexture);
+    avionSprite.setScale(sf::Vector2f(0.2f, 0.2f));
+
+    Avion avionTest("10", "AirTest");
+    avionTest.start();
+
+    while (app.isOpen()) {
+
+        while (std::optional event = app.pollEvent()) {
+            if (event->is<sf::Event::Closed>()) {
+                app.close();
+            }
+            if (auto* keyEvent = event->getIf<sf::Event::KeyPressed>()) {
+                if (keyEvent->code == sf::Keyboard::Key::Enter) {
+                    app.close();
+                }
+            }
+        }
 
 
-	while (app.isOpen()) {
-		while (const std::optional event = app.pollEvent()) {
-			if ((event->is<sf::Event::KeyPressed>() && event->getIf<sf::Event::KeyPressed>()->code == sf::Keyboard::Key::Enter) ||
-				event->is<sf::Event::Closed>()) {
-				app.close();
-			}
-		}
+        avionSprite.setPosition(sf::Vector2f(
+            static_cast<float>(avionTest.getPositionX() / 10.f), 
+            static_cast<float>(avionTest.getPositionY() / 10.f)
+        ));
 
+        app.clear();
+        app.draw(backgroundSprite);
+        app.draw(avionSprite);
+        app.display();
+    }
 
-		app.clear();
-		app.draw(backgroundSprite);
-		app.draw(avionsprite);
-		app.display();
-	}
+    avionTest.stop();
+    monde.arreterSimulation();
 
     return 0;
 }
-
-
