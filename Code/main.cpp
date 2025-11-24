@@ -41,11 +41,11 @@ int main() {
     tourControleSprite.setScale(sf::Vector2f(0.3f, 0.3f));
     tourControleSprite.setPosition(sf::Vector2f(1000.f, 500.f)); 
 
-    aeroportSprite.setPosition(sf::Vector2f(aeroport1.getPositionX(), aeroport1.getPositionY()));
+
     aeroportSprite.setScale(sf::Vector2f(0.2, 0.2));
 
-    aeroport2Sprite.setPosition(sf::Vector2f(aeroport2.getPositionX(), aeroport2.getPositionY()));
-    aeroportSprite.setScale(sf::Vector2f(0.2, 0.2));
+
+    aeroport2Sprite.setScale(sf::Vector2f(0.2, 0.2));
 
 
 
@@ -71,8 +71,15 @@ int main() {
         ));
 
         aeroportSprite.setPosition(sf::Vector2f(
-            static_cast<float>(aeroport1.getPositionX() / 10.f),
-            static_cast<float>(aeroport1.getPositionY() / 10.f)
+            static_cast<float>(1000 / 10.f),
+            static_cast<float>(2000 / 10.f)
+
+        ));
+
+        aeroport2Sprite.setPosition(sf::Vector2f(
+            static_cast<float>(aeroport2.getPositionX() / 10.f),
+            static_cast<float>(aeroport2.getPositionY() / 10.f)
+
         ));
 
         app.clear();
