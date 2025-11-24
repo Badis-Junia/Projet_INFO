@@ -4,6 +4,18 @@
 #include <vector>
 #include <math.h>
 
+
+
+
+
+
+#ifdef _MSC_VER
+
+#endif
+
+
+
+
 const std::string path_image("../Pictures/");
 
 int lasimulation() {
@@ -11,7 +23,11 @@ int lasimulation() {
     monde.initialiser();
     monde.demarrerSimulation();
 
+
     const sf::Vector2u WINDOW_SIZE(1300, 805);
+
+
+
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
 

@@ -1,3 +1,0 @@
-/home/kali/COURS/Projet_INFO/build/CMakeFiles/Projet_INFO.dir
-/home/kali/COURS/Projet_INFO/build/CMakeFiles/edit_cache.dir
-/home/kali/COURS/Projet_INFO/build/CMakeFiles/rebuild_cache.dir
