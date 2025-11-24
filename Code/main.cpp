@@ -19,7 +19,7 @@ int main() {
     Monde monde;
     monde.initialiser();
     monde.demarrerSimulation();
-
+//test
     const sf::Vector2u WINDOW_SIZE(1298, 805);
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
