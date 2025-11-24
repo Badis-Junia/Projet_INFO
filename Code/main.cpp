@@ -64,7 +64,7 @@ int lasimulation() {
             avionTest.decollage();
             avionTest.setDestination(aeroport2_x, aeroport2_y);
             volDemarre = true;
-            std::cout << "Début du vol vers l'aéroport 2..." << std::endl;
+            std::cout << "vol vers aéroport 2" << std::endl;
         }
 
 
@@ -78,7 +78,7 @@ int lasimulation() {
         static int counter = 0;
         if (counter++ % 60 == 0) {
             std::cout << "Position avion: (" << avionTest.getPositionX() << ", " 
-                      << avionTest.getPositionY() << ") - Etat: " << avionTest.getEtat() << std::endl;
+                      << avionTest.getPositionY() << ") - état: " << avionTest.getEtat() << std::endl;
         }
 
         app.clear();
