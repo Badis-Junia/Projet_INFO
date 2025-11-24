@@ -68,18 +68,11 @@ int lasimulation() {
             std::cout << "vol vers aéroport 2" << std::endl;
         }
 
-
-        
-        avionSprite.setPosition(sf::Vector2f(
-            static_cast<float>(avionTest.getPositionX()), 
-            static_cast<float>(avionTest.getPositionY())
-        ));
-
+        avionSprite.setPosition(sf::Vector2f(static_cast<float>(avionTest.getPositionX()), static_cast<float>(avionTest.getPositionY())));
         
         static int counter = 0;
         if (counter++ % 60 == 0) {
-            std::cout << "Position avion: (" << avionTest.getPositionX() << ", " 
-                      << avionTest.getPositionY() << ") - état: " << avionTest.getEtat() << std::endl;
+            std::cout << "Position avion: (" << avionTest.getPositionX() << ", " << avionTest.getPositionY() << ") - état: " << avionTest.getEtat() << std::endl;
         }
 
         app.clear();
