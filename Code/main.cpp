@@ -2,6 +2,17 @@
 #include <iostream>
 #include "Sources.hpp"
 
+<<<<<<< HEAD
+=======
+
+
+
+#ifdef _MSC_VER
+
+#endif
+
+
+>>>>>>> 0d0ae82 (main)
 const std::string path_image("../Pictures/");
 
 int main() {
