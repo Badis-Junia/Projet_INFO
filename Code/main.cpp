@@ -23,14 +23,9 @@ int lasimulation() {
     }
 
     sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), tourControleSprite(tourControleTexture), aeroportSprite(aeroportTexture), aeroport2Sprite(aeroportTexture);
-    
-    
-    double aeroport1_x = 100.0, aeroport1_y = 200.0;
-    double aeroport2_x = 400.0, aeroport2_y = 600.0;
-
-    
+        
     Avion avionTest("10", "AirTest");
-    avionTest.setPosition(aeroport1_x, aeroport1_y, 0); 
+    avionTest.setPosition(100, 200, 0); 
     avionTest.setVitesse(100.0); 
 
     
@@ -40,8 +35,8 @@ int lasimulation() {
     aeroport2Sprite.setScale(sf::Vector2f(0.2, 0.2));
 
     
-    aeroportSprite.setPosition(sf::Vector2f(aeroport1_x, aeroport1_y));
-    aeroport2Sprite.setPosition(sf::Vector2f(aeroport2_x, aeroport2_y));
+    aeroportSprite.setPosition(sf::Vector2f(100, 200));
+    aeroport2Sprite.setPosition(sf::Vector2f(400, 600));
     tourControleSprite.setPosition(sf::Vector2f(1000.f, 500.f)); 
 
     bool volDemarre = false;
@@ -62,7 +57,7 @@ int lasimulation() {
         }
         if(go == 1) {
             avionTest.decollage();
-            avionTest.setDestination(aeroport2_x, aeroport2_y);
+            avionTest.setDestination(400, 600);
             volDemarre = true;
             std::cout << "vol vers aéroport 2" << std::endl;
         }
