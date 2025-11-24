@@ -38,9 +38,19 @@ int lasimulation() {
         return -1;
     }
 
-    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), aeroportSprite(aeroportTexture), aeroport2Sprite(aeroportTexture);
+    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), aeroportSprite(aeroportTexture), aeroport2Sprite(aeroportTexture),aeroport3Sprite(aeroportTexture),aeroport4Sprite(aeroportTexture),aeroport5Sprite(aeroportTexture),aeroport6Sprite(aeroportTexture),aeroport7Sprite(aeroportTexture),aeroport8Sprite(aeroportTexture),aeroport9Sprite(aeroportTexture),aeroport10Sprite(aeroportTexture) ;
     Aeroport aeroport("Oregon", 100, 200);
     Aeroport aeroport2("Texas", 400, 600);        
+    Aeroport aeroport3("Ohio", 925, 380);        
+    Aeroport aeroport4("Montana", 390, 180);        
+    Aeroport aeroport5("Colorado", 410, 425);        
+    Aeroport aeroport6("NewYork", 1100, 230);        
+    Aeroport aeroport7("Tennessy", 900, 500);        
+    Aeroport aeroport8("Floride", 1025, 750);        
+    Aeroport aeroport9("Californie", 175, 500);        
+    Aeroport aeroport10("Iowa", 700, 350);        
+
+
 
     Avion avionTest("10", "AirTest");
 
@@ -52,10 +62,26 @@ int lasimulation() {
 
     aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
     aeroport2Sprite.setScale(sf::Vector2f(0.12, 0.12));
+    aeroport3Sprite.setScale(sf::Vector2f(0.12, 0.12));
+    aeroport4Sprite.setScale(sf::Vector2f(0.12, 0.12));
+    aeroport5Sprite.setScale(sf::Vector2f(0.12, 0.12));
+    aeroport6Sprite.setScale(sf::Vector2f(0.12, 0.12));
+    aeroport7Sprite.setScale(sf::Vector2f(0.12, 0.12));
+    aeroport8Sprite.setScale(sf::Vector2f(0.12, 0.12));
+    aeroport9Sprite.setScale(sf::Vector2f(0.12, 0.12));
+    aeroport10Sprite.setScale(sf::Vector2f(0.12, 0.12));
 
     
     aeroportSprite.setPosition(sf::Vector2f(aeroport.getPositionX(), aeroport.getPositionY()));
     aeroport2Sprite.setPosition(sf::Vector2f(aeroport2.getPositionX(), aeroport2.getPositionY() - 20));
+    aeroport3Sprite.setPosition(sf::Vector2f(aeroport3.getPositionX(), aeroport3.getPositionY() - 20));
+    aeroport4Sprite.setPosition(sf::Vector2f(aeroport4.getPositionX(), aeroport4.getPositionY() - 20));
+    aeroport5Sprite.setPosition(sf::Vector2f(aeroport5.getPositionX(), aeroport5.getPositionY() - 20));
+    aeroport6Sprite.setPosition(sf::Vector2f(aeroport6.getPositionX(), aeroport6.getPositionY() - 20));
+    aeroport7Sprite.setPosition(sf::Vector2f(aeroport7.getPositionX(), aeroport7.getPositionY() - 20));
+    aeroport8Sprite.setPosition(sf::Vector2f(aeroport8.getPositionX(), aeroport8.getPositionY() - 20));
+    aeroport9Sprite.setPosition(sf::Vector2f(aeroport9.getPositionX(), aeroport9.getPositionY() - 20));
+    aeroport10Sprite.setPosition(sf::Vector2f(aeroport10.getPositionX(), aeroport10.getPositionY() - 20));
 
     bool volDemarre = false;
     
@@ -94,7 +120,7 @@ int lasimulation() {
 
         app.clear();
 
-        std::vector<sf::Sprite> tableausprite = {backgroundSprite, aeroportSprite, aeroport2Sprite, avionSprite};        
+        std::vector<sf::Sprite> tableausprite = {backgroundSprite, aeroportSprite, aeroport2Sprite, aeroport3Sprite, aeroport4Sprite, aeroport5Sprite, aeroport6Sprite, aeroport7Sprite, aeroport8Sprite, aeroport9Sprite, aeroport10Sprite, avionSprite};        
 
         for(long unsigned int i = 0; i < tableausprite.size(); i++) {
             app.draw(tableausprite[i]);
