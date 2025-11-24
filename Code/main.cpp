@@ -44,7 +44,6 @@ int lasimulation() {
     aeroportSprite.setPosition(sf::Vector2f(100, 200));
     aeroport2Sprite.setPosition(sf::Vector2f(400, 560));
 
-
     bool volDemarre = false;
     
     avionTest.start();
@@ -91,11 +90,6 @@ int lasimulation() {
 
     return 0;
 }
-
-
-
-
-
 
 int main() {
     lasimulation();
