@@ -117,6 +117,8 @@ public:
 class CentreControleRegional : public Controleur {
 private:
     std::vector<ControleurApproche*> approchesLiees;
+    double positionX;
+    double positionY;
 
 public:
     CentreControleRegional(const std::string& id);
@@ -128,6 +130,14 @@ public:
     void ajouterApproche(ControleurApproche* app);
     void transfererVol(const std::string& avionId, ControleurApproche* app);   
     void run() override;
+    double getPositionX();
+    double getPositionY();
+    void setPositionX(double position);    
+    void setPositionY(double position);
+
+
+  
+
 };
 
  

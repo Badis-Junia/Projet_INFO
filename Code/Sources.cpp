@@ -209,6 +209,21 @@ void CentreControleRegional::run() {
     }
 }
 
+double CentreControleRegional::getPositionX() {
+    return this->positionX;
+}
+    
+double CentreControleRegional::getPositionY() {
+    return this->positionY;
+}
+
+void CentreControleRegional::setPositionX(double position) {
+    this->positionX = position;
+}
+    
+void CentreControleRegional::setPositionY(double position) {
+    this->positionY = position;
+}
  
 
 
