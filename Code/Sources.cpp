@@ -80,8 +80,7 @@ void Avion::run() {
         else if (this->etat == "au sol") {
             this->enDeplacement = false; 
         }
-        else {
-            
+        else {            
             majPosition();
         }
         

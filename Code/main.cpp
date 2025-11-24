@@ -15,29 +15,34 @@ int lasimulation() {
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
 
-    sf::Texture backgroundImage, avionTexture, tourControleTexture, aeroportTexture;
+    sf::Texture backgroundImage, avionTexture, aeroportTexture;
 
-    if (!backgroundImage.loadFromFile(path_image + "background.png") || !avionTexture.loadFromFile(path_image + "avion.png") || !tourControleTexture.loadFromFile(path_image + "tourcontrole.png") || !aeroportTexture.loadFromFile(path_image + "aeroport.png")) {
+    if (!backgroundImage.loadFromFile(path_image + "background.png") || !avionTexture.loadFromFile(path_image + "avion.png") || !aeroportTexture.loadFromFile(path_image + "aeroport.png")) {
         std::cerr << "Erreur pendant le chargement des images" << std::endl;
         return -1;
     }
 
-    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), tourControleSprite(tourControleTexture), aeroportSprite(aeroportTexture), aeroport2Sprite(aeroportTexture);
+    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), aeroportSprite(aeroportTexture), aeroport2Sprite(aeroportTexture);
         
     Avion avionTest("10", "AirTest");
+    CentreControleRegional aeroport("10");
+    CentreControleRegional aeroport2("11");
+    aeroport2.setPositionX(400);
+    aeroport2.setPositionY(600);
+
     avionTest.setPosition(100, 200, 0); 
     avionTest.setVitesse(100.0); 
 
     
     avionSprite.setScale(sf::Vector2f(1, 1));
-    tourControleSprite.setScale(sf::Vector2f(0.3f, 0.3f));
+
     aeroportSprite.setScale(sf::Vector2f(0.2, 0.2));
     aeroport2Sprite.setScale(sf::Vector2f(0.2, 0.2));
 
     
     aeroportSprite.setPosition(sf::Vector2f(100, 200));
-    aeroport2Sprite.setPosition(sf::Vector2f(400, 600));
-    tourControleSprite.setPosition(sf::Vector2f(1000.f, 500.f)); 
+    aeroport2Sprite.setPosition(sf::Vector2f(400, 560));
+
 
     bool volDemarre = false;
     
@@ -57,7 +62,7 @@ int lasimulation() {
         }
         if(go == 1) {
             avionTest.decollage();
-            avionTest.setDestination(400, 600);
+            avionTest.setDestination(aeroport2.getPositionX(), aeroport2.getPositionY());
             volDemarre = true;
             std::cout << "vol vers aéroport 2" << std::endl;
         }
@@ -78,7 +83,7 @@ int lasimulation() {
 
         app.clear();
 
-        std::vector<sf::Sprite> tableausprite = {backgroundSprite, tourControleSprite, aeroportSprite, aeroport2Sprite, avionSprite};        
+        std::vector<sf::Sprite> tableausprite = {backgroundSprite, aeroportSprite, aeroport2Sprite, avionSprite};        
 
         for(long unsigned int i = 0; i < tableausprite.size(); i++) {
             app.draw(tableausprite[i]);
