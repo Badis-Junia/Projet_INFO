@@ -9,7 +9,7 @@ int main() {
     monde.initialiser();
     monde.demarrerSimulation();
 
-    const sf::Vector2u WINDOW_SIZE(1298, 805);
+    const sf::Vector2u WINDOW_SIZE(1300, 805);
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
 
@@ -17,7 +17,7 @@ int main() {
     sf::Texture avionTexture;
     sf::Texture tourControleTexture;
 
-    // Chargement des textures
+
     if (!backgroundImage.loadFromFile(path_image + "background.png") ||
         !avionTexture.loadFromFile(path_image + "avion.png") ||
         !tourControleTexture.loadFromFile(path_image + "tourcontrole.png")) {
@@ -29,12 +29,12 @@ int main() {
     sf::Sprite avionSprite(avionTexture);
     sf::Sprite tourControleSprite(tourControleTexture);
     
-    // Configuration de l'avion
+
     avionSprite.setScale(sf::Vector2f(0.2f, 0.2f));
     
-    // Configuration de la tour de contrôle - CORRECTION ICI
+
     tourControleSprite.setScale(sf::Vector2f(0.3f, 0.3f));
-    tourControleSprite.setPosition(sf::Vector2f(1000.f, 500.f)); // Utiliser sf::Vector2f
+    tourControleSprite.setPosition(sf::Vector2f(1000.f, 500.f)); 
 
     Avion avionTest("10", "AirTest");
     avionTest.start();
@@ -51,7 +51,7 @@ int main() {
             }
         }
 
-        // Mise à jour de la position de l'avion
+        
         avionSprite.setPosition(sf::Vector2f(
             static_cast<float>(avionTest.getPositionX() / 10.f), 
             static_cast<float>(avionTest.getPositionY() / 10.f)
@@ -59,7 +59,7 @@ int main() {
 
         app.clear();
         app.draw(backgroundSprite);
-        app.draw(tourControleSprite); // Ajout de la tour de contrôle
+        app.draw(tourControleSprite); 
         app.draw(avionSprite);
         app.display();
     }
