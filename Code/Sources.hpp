@@ -41,11 +41,15 @@ private:
     bool urgence;
     double carburant;
     double consommation;
-
+    bool enDeplacement;  
+    double destinationX, destinationY;  
+                                        
 public:
     Avion(const std::string& id, const std::string& compagnie);
     ~Avion();
-    
+
+    void setPosition(double x, double y, double z);
+    void setVitesse(double nouvelleVitesse);    
       
     Avion(const Avion&) = delete;
     Avion& operator=(const Avion&) = delete;
@@ -62,6 +66,9 @@ public:
     double getPositionY() const;
     double getPositionZ() const { return positionZ; }
     std::string getEtat() const { return etat; }
+
+    void setDestination(double x, double y);  
+    void setEnDeplacement(bool etat);         
 };
 
  

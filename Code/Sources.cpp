@@ -2,7 +2,7 @@
 #include <chrono>
 #include <iostream>
 #include <algorithm>
-
+#include <math.h>
 
 Agent::Agent(const int & id) : id(id), actif(false) {}
 
@@ -36,6 +36,9 @@ Avion::Avion(const std::string& id, const std::string& compagnie) : Agent(std::s
     this->urgence = false;
     this->carburant = 100;
     this->consommation = 0.1;
+    this->enDeplacement = false;  
+    this->destinationX = 0;
+    this->destinationY = 0;
 }
 
 Avion::~Avion() {
@@ -44,7 +47,44 @@ Avion::~Avion() {
 
 void Avion::run() {
     while (this->actif) {
-        majPosition();
+       
+        if (this->enDeplacement && this->etat == "en vol") {
+            
+            double directionX = this->destinationX - this->positionX;
+            double directionY = this->destinationY - this->positionY;
+            
+            
+            double distance = sqrt(directionX * directionX + directionY * directionY);
+            if (distance > 0) {
+                directionX /= distance;
+                directionY /= distance;
+            }
+            
+            
+            double vitesseDeplacement = this->vitesse * 0.1;
+            this->positionX += directionX * vitesseDeplacement;
+            this->positionY += directionY * vitesseDeplacement;
+            
+            
+            double distanceRestante = sqrt((this->destinationX - this->positionX) * (this->destinationX - this->positionX) + 
+                                         (this->destinationY - this->positionY) * (this->destinationY - this->positionY));
+            
+            if (distanceRestante < 10.0) { 
+                this->positionX = this->destinationX;
+                this->positionY = this->destinationY;
+                this->enDeplacement = false;
+                this->atterrissage(); 
+            }
+        }
+        
+        else if (this->etat == "au sol") {
+            this->enDeplacement = false; 
+        }
+        else {
+            
+            majPosition();
+        }
+        
         consommerCarburant();
         
         if (this->carburant < 20 && !this->urgence) {
@@ -64,8 +104,20 @@ void Avion::majPosition() {
         if (this->positionZ <= 0) {
             this->positionZ = 0;
             this->etat = "au sol";
+            this->enDeplacement = false; 
         }
     }
+}
+
+void Avion::setDestination(double x, double y) {
+    this->destinationX = x;
+    this->destinationY = y;
+    this->enDeplacement = true;
+    this->etat = "en vol";
+}
+
+void Avion::setEnDeplacement(bool etat) {
+    this->enDeplacement = etat;
 }
 
 void Avion::consommerCarburant() {
@@ -77,6 +129,8 @@ void Avion::consommerCarburant() {
 
 void Avion::atterrissage() {
     this->etat = "atterissage";
+
+    this->enDeplacement = false;
 }
 
 void Avion::decollage() {
@@ -107,7 +161,16 @@ double Avion::getPositionY() const {
     return this->positionY;
 }
 
- 
+
+void Avion::setPosition(double x, double y, double z) {
+    this->positionX = x;
+    this->positionY = y;
+    this->positionZ = z;
+}
+
+void Avion::setVitesse(double nouvelleVitesse) {
+    this->vitesse = nouvelleVitesse;
+} 
 
 
 
