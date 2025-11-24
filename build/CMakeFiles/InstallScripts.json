@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/raffy/Cours/Projet_INFO/build/cmake_install.cmake"
+		"/home/kali/COURS/Projet_INFO/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
