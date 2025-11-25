@@ -44,6 +44,11 @@ private:
     double altitudeCible;
     double penteApproche;
     bool enApprocheFinale;
+    double distanceAtterissage = 300.0;
+    double vitesseNormal = 400.0;
+    double vitesseApproche = 200.0;
+    double vitesseFinale = 100.0;
+    double vitesseAtterrissage = 50.0;
 
 public:
     Avion(const std::string& id, const std::string& compagnie);
@@ -67,7 +72,7 @@ public:
     double getPositionY() const;
     double getPositionZ() const { return positionZ; }
     std::string getEtat() const { return etat; }
-
+    bool estEnPhaseAtterrissage() const;
     void setDestination(double x, double y);  
     void setEnDeplacement(bool etat);         
 };
