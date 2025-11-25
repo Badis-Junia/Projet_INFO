@@ -64,6 +64,12 @@ private:
     bool estgare;
 
 
+    bool estgaré;
+    double angle;
+    
+
+
+
 public:
     Avion(const std::string& id, const std::string& compagnie);
     ~Avion();
@@ -92,6 +98,7 @@ public:
     std::string getIdaeroport(Aeroport* aeroport) const;
     bool getParkingAttribue() const;
     void setParkingAttribue(bool etat);
+    double inclinaison();
 };
 
 
@@ -139,7 +146,7 @@ public:
 
  
 
-
+                
 
 
 class CentreControleRegional : public Controleur {
