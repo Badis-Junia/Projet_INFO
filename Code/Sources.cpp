@@ -106,6 +106,8 @@ void Avion::run() {
         else if (this->etat == "decollage") {
             // Montée progressive
             this->positionZ += 10;  // Montée plus lente
+            this->positionX += 1;
+            this->positionY += 1;
             if (this->positionZ >= 300) {  // Altitude de croisière réduite
                 this->etat = "en vol";
                 std::cout << "Avion " << this->id << " a terminé son décollage" << std::endl;
