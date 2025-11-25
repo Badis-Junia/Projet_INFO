@@ -85,7 +85,7 @@ void Avion::run() {
             }
             else {
                 
-                this->vitesse = 50.0;
+                this->vitesse = 30.0;
             }
 
             double vitesseDeplacement = this->vitesse * 0.1;
@@ -153,7 +153,7 @@ void Avion::run() {
                 directionY /= distanceRestante;
             }
 
-            double vitesseDeplacement = this->vitesse * 0.05;
+            double vitesseDeplacement = this->vitesse * 0.03;
             this->positionX += directionX * vitesseDeplacement;
             this->positionY += directionY * vitesseDeplacement;
 
@@ -206,9 +206,9 @@ void Avion::run() {
 }
 
 void Avion::majPosition() {
-    this->positionX += this->vitesse * 0.1;
+    this->positionX += this->vitesse * 0.05;
     this->positionY += this->vitesse * 0.05;
-    this->positionZ += this->vitesse * 0.2;
+    this->positionZ += this->vitesse * 0.1;
 
     if(this->etat == "au sol") {
         this->positionZ = 0;
@@ -233,8 +233,8 @@ bool Avion::estEnPhaseAtterrissage() const {
 }
 
 void Avion::setDestination(double x, double y) {
-    this->destinationX = x;
-    this->destinationY = y;
+    this->destinationX = x + 30;
+    this->destinationY = y + 30;
     this->enDeplacement = true;
     this->enApprocheFinale = false; 
 

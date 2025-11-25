@@ -74,7 +74,7 @@ std::vector<Aeroport> aeroports = {
         }
         if(go == 1) {
             avionTest.decollage();
-            avionTest.setDestination(aeroports[3].getPositionX(), aeroports[3].getPositionY());
+            avionTest.setDestination(aeroports[8].getPositionX(), aeroports[8].getPositionY());
             avionSprite.setRotation(avionTest.inclinaison());
             if (volDemarre && avionTest.getEtat() == "en vol" && 
                 sqrt(pow(avionTest.getPositionX() - aeroport2.getPositionX(), 2) + 
