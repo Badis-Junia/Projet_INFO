@@ -67,19 +67,18 @@ void Avion::run() {
                
                 this->vitesse = this->vitesseNormal;
             } 
-            else if (distanceHorizontale > 200.0) {
+            else if (distanceHorizontale > 120.0) {
                 
                 this->vitesse =this->vitesseApproche;
                 if (!this->enApprocheFinale) {
-                    std::cout << "Avion " << this->id << " commence l'approche à " << distanceHorizontale << " unités" << std::endl;
                     this->enApprocheFinale = true;
                 }
             }
-            else if (distanceHorizontale > 100.0) {
+            else if (distanceHorizontale > 80.0) {
                 
                 this->vitesse = this->vitesseFinale;
             }
-            else if (distanceHorizontale > 50.0) {
+            else if (distanceHorizontale > 40.0) {
                 
                 this->vitesse = this->vitesseAtterrissage;
             }
