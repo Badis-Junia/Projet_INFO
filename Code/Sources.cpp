@@ -61,54 +61,54 @@ void Avion::run() {
 
             double vitesseDeplacement = this->vitesse * 0.1;
             
-            // Déplacement horizontal
+            
             this->positionX += directionX * vitesseDeplacement;
             this->positionY += directionY * vitesseDeplacement;
 
             double distanceRestante = sqrt(pow(this->destinationX - this->positionX, 2) +
                                          pow(this->destinationY - this->positionY, 2));
 
-            // ADAPTATION POUR PETITES DISTANCES (échelle réduite)
+            
             if (distanceRestante > 200.0) {
-                // Phase de croisière - altitude moyenne
-                this->positionZ = 300;  // Altitude réduite pour petites distances
+                
+                this->positionZ = 300;  
             }
             else if (distanceRestante > 100.0) {
-                // Début de descente
+                
                 double progression = (200.0 - distanceRestante) / 100.0;
-                this->positionZ = 300 - (progression * 250);  // Descendre de 300 à 50
+                this->positionZ = 300 - (progression * 250);  
                 if (this->positionZ < 50) this->positionZ = 50;
             }
             else if (distanceRestante > 50.0) {
-                // Approche finale
+                
                 double progression = (100.0 - distanceRestante) / 50.0;
-                this->positionZ = 50 - (progression * 40);  // Descendre de 50 à 10
+                this->positionZ = 50 - (progression * 40);  
                 if (this->positionZ < 10) this->positionZ = 10;
             }
             else {
-                // Très proche - descente finale
-                this->positionZ = distanceRestante * 0.2;  // Descendre linéairement
+                
+                this->positionZ = distanceRestante * 0.2;  
                 if (this->positionZ < 5) this->positionZ = 5;
             }
 
-            // Atterrissage quand très proche et à basse altitude
+            
             if (distanceRestante < 5.0 && this->positionZ <= 5) {
                 this->positionX = this->destinationX;
                 this->positionY = this->destinationY;
                 this->positionZ = 0;
                 this->enDeplacement = false;
                 this->etat = "au sol";
-                std::cout << "🛬 Avion " << this->id << " a atterri parfaitement !" << std::endl;
+                std::cout << "Avion " << this->id << " a atterri parfaitement !" << std::endl;
             }
 
             consommerCarburant("en vol");
         }
         else if (this->etat == "decollage") {
-            // Montée progressive
-            this->positionZ += 10;  // Montée plus lente
+            
+            this->positionZ += 10;  
             this->positionX += 1;
             this->positionY += 1;
-            if (this->positionZ >= 300) {  // Altitude de croisière réduite
+            if (this->positionZ >= 300) {  
                 this->etat = "en vol";
                 std::cout << "Avion " << this->id << " a terminé son décollage" << std::endl;
             }
@@ -128,7 +128,7 @@ void Avion::run() {
             this->positionX += directionX * vitesseDeplacement;
             this->positionY += directionY * vitesseDeplacement;
 
-            // Descente contrôlée pour atterrissage d'urgence
+           
             if (this->positionZ > 50) {
                 this->positionZ -= 15;
             } else if (this->positionZ > 10) {
