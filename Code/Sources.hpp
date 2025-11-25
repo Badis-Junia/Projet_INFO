@@ -61,6 +61,8 @@ private:
     double vitesseApproche = 200.0;
     double vitesseFinale = 100.0;
     double vitesseAtterrissage = 50.0;
+    Aeroport * aeroport;
+
 
 public:
     Avion(const std::string& id, const std::string& compagnie);
@@ -88,6 +90,8 @@ public:
     void setDestination(double x, double y);  
     void setEnDeplacement(bool etat);
     std::string getIdaeroport(Aeroport* aeroport) const;
+    bool getParkingAttribue() const;
+    void setParkingAttribue(bool etat);
 };
 
 
@@ -158,8 +162,6 @@ public:
     double getPositionY();
     void setPositionX(double position);    
     void setPositionY(double position);
-
-
   
 
 };
@@ -201,7 +203,7 @@ public:
     bool autoriserAtterrissage(Avion* avion);
     bool autoriserDecollage(Avion* avion);
     void libererPiste();
-    void attribuerParking(Avion* avion);
+    friend void attribuerParking(Avion* avion, TourControle * tourcontrole);
     void run() override;
 };
 

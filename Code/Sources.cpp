@@ -126,9 +126,7 @@ void Avion::run() {
                 std::cout << "Avion " << this->id << " a atterri parfaitement !" << std::endl;
             }
 
-            if (this->etat == "au sol"){
-                attribuerParking();
-            }
+
 
             consommerCarburant("en vol");
         }
@@ -484,10 +482,11 @@ void TourControle::libererPiste() {
     pisteLibre = true;
 }
 
-void attribuerParking(Avion* avion,TourControle* tourcontrole) {
+void attribuerParking(Avion* avion, TourControle* tourcontrole) {
     for (auto& parking : tourcontrole->parkings) {
         if (parking.second) {
             parking.second = false;
+            avion->setParkingAttribue(true);
             std::cout << "Parking " << parking.first << " attribué à avion " << avion->getId() << std::endl;
             return;
         }
@@ -497,6 +496,12 @@ void attribuerParking(Avion* avion,TourControle* tourcontrole) {
 
 void TourControle::run() {
     while (this->actif) {
+        std::lock_guard<std::mutex> lock(mutex);
+        for (auto& avion : this->avionsSousControle) {
+            if (avion->getEtat() == "au sol" && !avion->getParkingAttribue()) {
+                attribuerParking(avion.get(), this);
+            }
+        }
         std::this_thread::sleep_for(std::chrono::milliseconds(200));
     }
 }
