@@ -27,6 +27,18 @@ public:
     std::string getId() const;
 };
 
+class Aeroport {
+private:
+    std::string id;
+    double positionX;
+    double positionY;
+public:
+    Aeroport(const std::string & id, double positionX, double positionY) : id(id), positionX(positionX), positionY(positionY) {};
+    double getPositionX();
+    double getPositionY();
+    std::string getId();
+    void setPosition(double unepositionX, double unepositionY);
+};
 
 
 
@@ -74,25 +86,11 @@ public:
     std::string getEtat() const { return etat; }
     bool estEnPhaseAtterrissage() const;
     void setDestination(double x, double y);  
-    void setEnDeplacement(bool etat);         
+    void setEnDeplacement(bool etat);
+    std::string getIdaeroport(Aeroport* aeroport) const;
 };
 
- 
 
-
-
-class Aeroport {
-private:
-    std::string id;
-    double positionX;
-    double positionY;
-public:
-    Aeroport(const std::string & id, double positionX, double positionY) : id(id), positionX(positionX), positionY(positionY) {};
-    double getPositionX();
-    double getPositionY();
-    std::string getId();
-    void setPosition(double unepositionX, double unepositionY);
-};
 
 
 class Controleur : public Agent {

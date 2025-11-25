@@ -127,6 +127,10 @@ void Avion::run() {
                 std::cout << "Avion " << this->id << " a atterri parfaitement !" << std::endl;
             }
 
+            if (this->etat == "au sol"){
+                attribuerParking();
+            }
+
             consommerCarburant("en vol");
         }
 
@@ -305,11 +309,10 @@ void Avion::setVitesse(double nouvelleVitesse) {
 } 
 
 
-
-
-
-
-
+    std::string Avion::getIdaeroport(Aeroport* aeroport) const{
+        return aeroport->getId();
+    }
+    
 
 
 void Aeroport::setPosition(double positionX, double positionY) {
@@ -433,7 +436,7 @@ double CentreControleRegional::getPositionX() {
 }
     
 double CentreControleRegional::getPositionY() {
-    return this->positionY;
+            return this->positionY;
 }
 
 void CentreControleRegional::setPositionX(double position) {
@@ -482,8 +485,8 @@ void TourControle::libererPiste() {
     pisteLibre = true;
 }
 
-void TourControle::attribuerParking(Avion* avion) {
-    for (auto& parking : parkings) {
+void attribuerParking(Avion* avion,TourControle* tourcontrole) {
+    for (auto& parking : tourcontrole->parkings) {
         if (parking.second) {
             parking.second = false;
             std::cout << "Parking " << parking.first << " attribué à avion " << avion->getId() << std::endl;
