@@ -104,7 +104,7 @@ std::vector<Aeroport> aeroports = {
 
         app.clear();
 
-        std::vector<sf::Sprite> tableausprite = {backgroundSprite, aeroportSprite, aeroport2Sprite, aeroport3Sprite, aeroport4Sprite, aeroport5Sprite, aeroport6Sprite, aeroport7Sprite, aeroport8Sprite, aeroport9Sprite, aeroport10Sprite, avionSprite};        
+        std::vector<sf::Sprite> tableausprite = {backgroundSprite, avionSprite};        
 
         for(long unsigned int i = 0; i < tableausprite.size(); i++) {
             app.draw(tableausprite[i]);
