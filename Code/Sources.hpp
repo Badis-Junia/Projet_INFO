@@ -61,9 +61,7 @@ private:
     double vitesseApproche = 200.0;
     double vitesseFinale = 100.0;
     double vitesseAtterrissage = 50.0;
-    Aeroport * aeroport;
     bool estgaré;
-    
 
 
 public:
