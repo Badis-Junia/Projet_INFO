@@ -3,6 +3,7 @@
 #include <iostream>
 #include <algorithm>
 #include <math.h>
+#include <SFML/Graphics.hpp>
 
 Agent::Agent(const int & id) : id(id), actif(false) {}
 
@@ -240,7 +241,7 @@ void Avion::setDestination(double x, double y) {
     if(this->etat != "decollage") {
         this->etat = "en vol";
     }
-    this->inclinaison();
+
 }
 
 
@@ -257,17 +258,21 @@ void Avion::setEnDeplacement(bool etat) {
     this->enDeplacement = etat;
 }
 
-double Avion::inclinaison(){
+sf::Angle Avion::inclinaison(){
     double dx = this->destinationX - this->positionX;
     double dy = this->destinationY - this->positionY;
     double rad = std::atan2(dy, dx);
     double deg = rad * (180.0 / M_PI);
 
+
+    deg += 90.0;
+
+
     if (deg < 0) {
         deg += 360.0;
     }
 
-    this->angle = deg;
+    this->angle = sf::degrees(deg);
     return this->angle;
 }
 

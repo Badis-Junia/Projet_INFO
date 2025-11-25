@@ -5,7 +5,7 @@
 #include <map>
 #include <fstream>
 #include <memory>
-
+#include <SFML/Graphics.hpp>
 
 class Agent {
 protected:
@@ -65,7 +65,7 @@ private:
 
 
     bool estgaré;
-    double angle;
+    sf::Angle angle;
     
 
 
@@ -98,7 +98,7 @@ public:
     std::string getIdaeroport(Aeroport* aeroport) const;
     bool getParkingAttribue() const;
     void setParkingAttribue(bool etat);
-    double inclinaison();
+    sf::Angle inclinaison();
 };
 
 
