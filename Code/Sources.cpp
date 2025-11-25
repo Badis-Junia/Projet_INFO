@@ -34,7 +34,7 @@ Avion::Avion(const std::string& id, const std::string& compagnie) : Agent(std::s
     this->positionX = 0;
     this->positionY = 0;
     this->positionZ = 0;  
-    this->vitesse = this->vitesseNormal;  
+    this->vitesse = 800;
     this->etat = "au sol";
     this->urgence = false;
     this->carburant = 100;
@@ -42,16 +42,13 @@ Avion::Avion(const std::string& id, const std::string& compagnie) : Agent(std::s
     this->enDeplacement = false;  
     this->destinationX = 0;
     this->destinationY = 0;
-    this->altitudeCible = 0;
-    this->penteApproche = 0;
-    this->enApprocheFinale = false; 
 }
 
 Avion::~Avion() {
     stop();
 }
 void Avion::run() {
-   while (this->actif) {
+    while (this->actif) {
         if (this->etat == "en vol" && this->enDeplacement) {
             double directionX = this->destinationX - this->positionX;
             double directionY = this->destinationY - this->positionY;
@@ -62,33 +59,8 @@ void Avion::run() {
                 directionY /= distanceHorizontale;
             }
 
-            
-            if (distanceHorizontale > this->distanceAtterissage) {
-               
-                this->vitesse = this->vitesseNormal;
-            } 
-            else if (distanceHorizontale > 200.0) {
-                
-                this->vitesse =this->vitesseApproche;
-                if (!this->enApprocheFinale) {
-                    std::cout << "Avion " << this->id << " commence l'approche à " << distanceHorizontale << " unités" << std::endl;
-                    this->enApprocheFinale = true;
-                }
-            }
-            else if (distanceHorizontale > 100.0) {
-                
-                this->vitesse = this->vitesseFinale;
-            }
-            else if (distanceHorizontale > 50.0) {
-                
-                this->vitesse = this->vitesseAtterrissage;
-            }
-            else {
-                
-                this->vitesse = 50.0;
-            }
-
             double vitesseDeplacement = this->vitesse * 0.1;
+            
             
             this->positionX += directionX * vitesseDeplacement;
             this->positionY += directionY * vitesseDeplacement;
@@ -98,19 +70,23 @@ void Avion::run() {
 
             
             if (distanceRestante > 200.0) {
+                
                 this->positionZ = 300;  
             }
             else if (distanceRestante > 100.0) {
+                
                 double progression = (200.0 - distanceRestante) / 100.0;
                 this->positionZ = 300 - (progression * 250);  
                 if (this->positionZ < 50) this->positionZ = 50;
             }
             else if (distanceRestante > 50.0) {
+                
                 double progression = (100.0 - distanceRestante) / 50.0;
                 this->positionZ = 50 - (progression * 40);  
                 if (this->positionZ < 10) this->positionZ = 10;
             }
             else {
+                
                 this->positionZ = distanceRestante * 0.2;  
                 if (this->positionZ < 5) this->positionZ = 5;
             }
@@ -122,14 +98,11 @@ void Avion::run() {
                 this->positionZ = 0;
                 this->enDeplacement = false;
                 this->etat = "au sol";
-                this->vitesse = 0;
-                this->enApprocheFinale = false;
                 std::cout << "Avion " << this->id << " a atterri parfaitement !" << std::endl;
             }
 
             consommerCarburant("en vol");
         }
-
         else if (this->etat == "decollage") {
             
             this->positionZ += 10;  
@@ -221,20 +194,10 @@ void Avion::majPosition() {
     }
 }
 
-
-bool Avion::estEnPhaseAtterrissage() const {
-    if (!this->enDeplacement) return false;
-    
-    double distanceHorizontale = sqrt(pow(this->destinationX - this->positionX, 2) +
-                                     pow(this->destinationY - this->positionY, 2));
-    return distanceHorizontale <= this->distanceAtterissage;
-}
-
 void Avion::setDestination(double x, double y) {
     this->destinationX = x;
     this->destinationY = y;
     this->enDeplacement = true;
-    this->enApprocheFinale = false; 
 
     if(this->etat != "decollage") {
         this->etat = "en vol";
