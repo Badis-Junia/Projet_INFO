@@ -5,17 +5,6 @@
 #include <math.h>
 
 
-
-
-
-
-#ifdef _MSC_VER
-
-#endif
-
-
-
-
 const std::string path_image("../Pictures/");
 
 int lasimulation() {
@@ -85,7 +74,7 @@ std::vector<Aeroport> aeroports = {
         }
         if(go == 1) {
             avionTest.decollage();
-            avionTest.setDestination(aeroports[1].getPositionX(), aeroports[1].getPositionY());
+            avionTest.setDestination(aeroports[9].getPositionX(), aeroports[9].getPositionY());
             if (volDemarre && avionTest.getEtat() == "en vol" && 
                 sqrt(pow(avionTest.getPositionX() - aeroport2.getPositionX(), 2) + 
                      pow(avionTest.getPositionY() - aeroport2.getPositionY(), 2)) < 50) {
@@ -121,6 +110,16 @@ std::vector<Aeroport> aeroports = {
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
 
 int main() {
     lasimulation();
