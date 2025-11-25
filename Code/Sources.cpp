@@ -244,11 +244,11 @@ void Avion::setDestination(double x, double y) {
 
 
 bool Avion::getParkingAttribue() const{
-    return this->estgaré;
+    return this->estgare;
 }
 
 void Avion::setParkingAttribue(bool etat){
-    this->estgaré=etat;
+    this->estgare=etat;
 }
 
 
