@@ -45,7 +45,7 @@ Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aer
     this->penteApproche = 0;
     this->enApprocheFinale = false; 
     this->setVitesse(100.0); 
-    this->setPosition(aeroport.getPositionX(), aeroport.getPositionY(), 0);
+    this->setPosition(aeroport.getPositionX() + 20, aeroport.getPositionY() + 20, 0);
 }
 
 Avion::~Avion() {
@@ -134,7 +134,6 @@ void Avion::run() {
         else if (this->etat == "decollage") {
             
             this->positionZ += 10;  
-            this->positionX += 1;
             this->positionY += 1;
             if (this->positionZ >= 300) {  
                 this->etat = "en vol";
@@ -598,13 +597,13 @@ void Simulation::executer() {
     }
 
     
-    Aeroport aeroportDepart = aeroports[0];
+    Aeroport aeroportDepart = aeroports[3];
     Avion avionTest("10", "AirTest", aeroportDepart);
     avionSprite.setScale(sf::Vector2f(0.5, 0.5));
     
     avionTest.start();
     avionTest.decollage();
-    avionTest.setDestination(aeroports[8].getPositionX(), aeroports[8].getPositionY());
+    avionTest.setDestination(aeroports[5].getPositionX(), aeroports[5].getPositionY());
 
     bool volDemarre = false;
     int counter = 0;
