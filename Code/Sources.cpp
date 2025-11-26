@@ -30,7 +30,7 @@ std::string Agent::getId() const {
 
 
 
-Avion::Avion(const std::string& id, const std::string& compagnie) : Agent(std::stoi(id)) {
+Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aeroport) : Agent(std::stoi(id)) {
     this->compagnie = compagnie;
     this->positionX = 0;
     this->positionY = 0;
@@ -46,6 +46,9 @@ Avion::Avion(const std::string& id, const std::string& compagnie) : Agent(std::s
     this->altitudeCible = 0;
     this->penteApproche = 0;
     this->enApprocheFinale = false; 
+
+    this->setVitesse(100.0); 
+    this->setPosition(aeroport.getPositionX(), aeroport.getPositionY(), 0);
 }
 
 Avion::~Avion() {
@@ -490,8 +493,8 @@ TourControle::TourControle(const std::string& id, int nbParkings) : Controleur(i
 
 bool TourControle::autoriserAtterrissage(Avion* avion) {
     std::lock_guard<std::mutex> lock(mutexPiste);
-    if (pisteLibre) {
-        pisteLibre = false;
+    if (this->pisteLibre) {
+        this->pisteLibre = false;
         std::cout << "Autorisation d'atterrissage pour avion " << avion->getId() << std::endl;
         return true;
     }
@@ -500,8 +503,8 @@ bool TourControle::autoriserAtterrissage(Avion* avion) {
 
 bool TourControle::autoriserDecollage(Avion* avion) {
     std::lock_guard<std::mutex> lock(mutexPiste);
-    if (pisteLibre) {
-        pisteLibre = false;
+    if (this->pisteLibre) {
+        this->pisteLibre= false;
         std::cout << "Autorisation de décollage pour avion " << avion->getId() << std::endl;
         return true;
     }

@@ -43,10 +43,8 @@ std::vector<Aeroport> aeroports = {
 };
     Aeroport aeroport2 = aeroports[0];
 
-    Avion avionTest("10", "AirTest");
+    Avion avionTest("10", "AirTest", aeroport2);
     avionSprite.setScale(sf::Vector2f(0.8, 0.8));
-    avionTest.setVitesse(100.0); 
-    avionTest.setPosition(aeroport2.getPositionX(), aeroport2.getPositionY(), 0);
     std::vector<sf::Sprite> aeroportsprite = {aeroportSprite, aeroport2Sprite, aeroport3Sprite, aeroport4Sprite, aeroport5Sprite, aeroport6Sprite, aeroport7Sprite, aeroport8Sprite, aeroport9Sprite, aeroport10Sprite};
 
     for(long unsigned int i = 0;i<aeroportsprite.size(); i++) {

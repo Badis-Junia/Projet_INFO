@@ -71,7 +71,7 @@ private:
 
 
 public:
-    Avion(const std::string& id, const std::string& compagnie);
+    Avion(const std::string& id, const std::string& compagnie,Aeroport & aeroport);
     ~Avion();
 
     void setPosition(double x, double y, double z);
