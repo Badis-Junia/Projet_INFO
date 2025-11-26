@@ -597,17 +597,19 @@ void Simulation::executer() {
     }
 
     
-    Aeroport aeroportDepart = aeroports[3];
-    Avion avionTest("10", "AirTest", aeroportDepart);
+    Aeroport aeroportDepart = aeroports[0];
+                Avion avionTest("10", "AirTest", aeroportDepart);
     avionSprite.setScale(sf::Vector2f(0.5, 0.5));
     
     avionTest.start();
     avionTest.decollage();
-    avionTest.setDestination(aeroports[5].getPositionX(), aeroports[5].getPositionY());
+    avionTest.setDestination(aeroports[8].getPositionX(), aeroports[8].getPositionY());
 
     bool volDemarre = false;
     int counter = 0;
+    Journal journal("monlog.txt");
 
+    
     
     while (app.isOpen()) {
         
@@ -632,6 +634,7 @@ void Simulation::executer() {
             }
             volDemarre = true;
             std::cout << "vol vers " << aeroportDepart.getId() << std::endl;
+            journal.log("vol vers"+aeroportDepart.getId());
         }
 
         
@@ -640,11 +643,16 @@ void Simulation::executer() {
 
         
         if (counter++ % 60 == 0) {
-            if(avionTest.estBienAuSol() != true) {
+            if(!avionTest.estBienAuSol()) {
             std::cout << "Position avion: (" << avionTest.getPositionX() << ", " 
                       << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
                       << " - carburant: " << avionTest.getCarburant() 
                       << " - état: " << avionTest.getEtat() << std::endl;
+            journal.log("Position avion:" + std::to_string(avionTest.getPositionX()) + "," + 
+                       std::to_string(avionTest.getPositionY()) + "," + 
+                       std::to_string(avionTest.getPositionZ()) + 
+                       " - carburant:" + std::to_string(avionTest.getCarburant()) +
+                       " - état:" + avionTest.getEtat());
 
                 if(avionTest.getEtat() == "au sol") {
                     avionTest.setBienAuSol();
@@ -667,5 +675,6 @@ void Simulation::executer() {
 
     
     avionTest.stop();
+
     monde.arreterSimulation();
 }
