@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Sources.hpp"
-// test
+
 int main() {
     try {
         Simulation simulation;
