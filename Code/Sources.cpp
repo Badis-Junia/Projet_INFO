@@ -116,8 +116,10 @@ void Avion::run() {
                 if (this->positionZ < 5) this->positionZ = 5;
             }
 
-            
-            if (distanceRestante < 5.0 && this->positionZ <= 5) {
+            if (distanceRestante < 50.0 && this->positionZ <= 50) {
+                this->etat = "atterrissage";
+
+            } else if (distanceRestante < 5.0 && this->positionZ <= 5) {
                 this->positionX = this->destinationX;
                 this->positionY = this->destinationY;
                 this->positionZ = 0;
@@ -125,7 +127,6 @@ void Avion::run() {
                 this->etat = "au sol";
                 this->vitesse = 0;
                 this->enApprocheFinale = false;
-
             }
 
             consommerCarburant("en vol");
@@ -172,7 +173,6 @@ void Avion::run() {
                 this->positionZ = 0;
                 this->enDeplacement = false;
                 this->etat = "au sol";
-                std::cout << "Avion " << this->id << " a atterri en urgence !" << std::endl;
             }
 
             consommerCarburant("atterrissage");
@@ -600,7 +600,7 @@ void Simulation::executer() {
     
     Aeroport aeroportDepart = aeroports[0];
     Avion avionTest("10", "AirTest", aeroportDepart);
-    avionSprite.setScale(sf::Vector2f(0.8, 0.8));
+    avionSprite.setScale(sf::Vector2f(0.5, 0.5));
     
     avionTest.start();
     avionTest.decollage();
