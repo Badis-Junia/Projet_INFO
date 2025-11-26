@@ -46,7 +46,6 @@ Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aer
     this->altitudeCible = 0;
     this->penteApproche = 0;
     this->enApprocheFinale = false; 
-
     this->setVitesse(100.0); 
     this->setPosition(aeroport.getPositionX(), aeroport.getPositionY(), 0);
 }
