@@ -4,6 +4,10 @@
 #include <algorithm>
 #include <math.h>
 #include <SFML/Graphics.hpp>
+#include <vector>
+
+
+
 
 Agent::Agent(const int & id) : id(id), actif(false) {}
 
@@ -23,13 +27,6 @@ std::string Agent::getId() const {
     return std::to_string(this->id);
 }
 
- 
-
-
-
-
-
-
 Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aeroport) : Agent(std::stoi(id)) {
     this->compagnie = compagnie;
     this->positionX = 0;
@@ -37,6 +34,7 @@ Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aer
     this->positionZ = 0;  
     this->vitesse = this->vitesseNormal;  
     this->etat = "au sol";
+    this->bienausol = false;
     this->urgence = false;
     this->carburant = 100;
     this->consommation = 0.1;
@@ -53,6 +51,7 @@ Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aer
 Avion::~Avion() {
     stop();
 }
+
 void Avion::run() {
    while (this->actif) {
         if (this->etat == "en vol" && this->enDeplacement) {
@@ -126,14 +125,11 @@ void Avion::run() {
                 this->etat = "au sol";
                 this->vitesse = 0;
                 this->enApprocheFinale = false;
-                std::cout << "Avion " << this->id << " a atterri parfaitement !" << std::endl;
+
             }
-
-
 
             consommerCarburant("en vol");
         }
-
         else if (this->etat == "decollage") {
             
             this->positionZ += 10;  
@@ -141,7 +137,7 @@ void Avion::run() {
             this->positionY += 1;
             if (this->positionZ >= 300) {  
                 this->etat = "en vol";
-                std::cout << "Avion " << this->id << " a terminé son décollage" << std::endl;
+
             }
             consommerCarburant("decollage");
         }
@@ -224,6 +220,13 @@ void Avion::majPosition() {
         }
     }
 }
+bool Avion::estBienAuSol() {
+    return this->bienausol;
+}
+
+void Avion::setBienAuSol() {
+    this->bienausol = true;
+}
 
 
 bool Avion::estEnPhaseAtterrissage() const {
@@ -243,9 +246,7 @@ void Avion::setDestination(double x, double y) {
     if(this->etat != "decollage") {
         this->etat = "en vol";
     }
-
 }
-
 
 bool Avion::getParkingAttribue() const{
     return this->estgare;
@@ -254,7 +255,6 @@ bool Avion::getParkingAttribue() const{
 void Avion::setParkingAttribue(bool etat){
     this->estgare=etat;
 }
-
 
 void Avion::setEnDeplacement(bool etat) {
     this->enDeplacement = etat;
@@ -266,9 +266,7 @@ sf::Angle Avion::inclinaison(){
     double rad = std::atan2(dy, dx);
     double deg = rad * (180.0 / M_PI);
 
-
     deg += 90.0;
-
 
     if (deg < 0) {
         deg += 360.0;
@@ -277,7 +275,6 @@ sf::Angle Avion::inclinaison(){
     this->angle = sf::degrees(deg);
     return this->angle;
 }
-
 
 void Avion::consommerCarburant(std::string etat) {
     if(this->etat == "en vol") {
@@ -327,7 +324,6 @@ double Avion::getPositionY() const {
     return this->positionY;
 }
 
-
 void Avion::setPosition(double x, double y, double z) {
     this->positionX = x;
     this->positionY = y;
@@ -338,12 +334,9 @@ void Avion::setVitesse(double nouvelleVitesse) {
     this->vitesse = nouvelleVitesse;
 } 
 
-
-    std::string Avion::getIdaeroport(Aeroport* aeroport) const{
-        return aeroport->getId();
-    }
-    
-
+std::string Avion::getIdaeroport(Aeroport* aeroport) const{
+    return aeroport->getId();
+}
 
 void Aeroport::setPosition(double positionX, double positionY) {
     this->positionX = positionX;
@@ -362,7 +355,6 @@ std::string Aeroport::getId() {
     return this->id;
 }
 
- 
 Controleur::Controleur(const std::string& id) : Agent(std::stoi(id)) {}
 
 void Controleur::recevoirAvion(std::unique_ptr<Avion> avion) {
@@ -381,12 +373,6 @@ void Controleur::libererAvion(const std::string& avionId) {
     );
 }
 
-
- 
-
-
-
- 
 ControleurApproche::ControleurApproche(const std::string& id, Controleur* tour) 
     : Controleur(id), tour(tour) {}
 
@@ -420,14 +406,6 @@ void ControleurApproche::run() {
     }
 }
 
-
- 
-
-
-
-
-
- 
 CentreControleRegional::CentreControleRegional(const std::string& id) : Controleur(id) {}
 
 void CentreControleRegional::ajouterApproche(ControleurApproche* app) {
@@ -466,7 +444,7 @@ double CentreControleRegional::getPositionX() {
 }
     
 double CentreControleRegional::getPositionY() {
-            return this->positionY;
+    return this->positionY;
 }
 
 void CentreControleRegional::setPositionX(double position) {
@@ -476,14 +454,7 @@ void CentreControleRegional::setPositionX(double position) {
 void CentreControleRegional::setPositionY(double position) {
     this->positionY = position;
 }
- 
 
-
-
-
-
-
- 
 TourControle::TourControle(const std::string& id, int nbParkings) : Controleur(id), pisteLibre(true) {
     for (int i = 1; i <= nbParkings; ++i) {
         parkings["Place " + std::to_string(i)] = true;
@@ -539,27 +510,9 @@ void TourControle::run() {
     }
 }
 
- 
-
-
-
-
- 
-
-
-
 void InterfaceGraphique::afficherAPP(const std::vector<Avion*>& avions) {}
 void InterfaceGraphique::afficherTWR(const std::vector<Avion*>& avions) {}
 void InterfaceGraphique::afficherCCR(const std::vector<Avion*>& avions) {}
-
-
-
-
- 
-
- 
-
-
 
 Monde::Monde() {}
 
@@ -587,14 +540,6 @@ void Monde::ajouterAvion(std::unique_ptr<Avion> avion) {
     avions.push_back(std::move(avion));
 }
 
-
- 
-
-
-
-
-
- 
 Journal::Journal(const std::string& nomFichier) {
     fichier.open(nomFichier);
 }
@@ -610,4 +555,118 @@ Journal::~Journal() {
     if (fichier.is_open()) {
         fichier.close();
     }
+}
+
+
+Simulation::Simulation() : path_image("../Pictures/") {}
+
+void Simulation::executer() {
+    Monde monde;
+    monde.initialiser();
+    monde.demarrerSimulation();
+
+    const sf::Vector2u WINDOW_SIZE(1300, 805);
+    sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
+    app.setFramerateLimit(60);
+
+    
+    sf::Texture backgroundImage, avionTexture, aeroportTexture;
+    if (!backgroundImage.loadFromFile(path_image + "background.png") || 
+        !avionTexture.loadFromFile(path_image + "avion.png") || 
+        !aeroportTexture.loadFromFile(path_image + "aeroport.png")) {
+        throw std::runtime_error("Erreur pendant le chargement des images");
+    }
+
+    
+    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture);
+    std::vector<sf::Sprite> aeroportsSprite;
+
+    
+    std::vector<Aeroport> aeroports = {
+        {"Oregon", 100, 200}, {"Texas", 400, 600}, {"Ohio", 925, 380},
+        {"Montana", 390, 180}, {"Colorado", 410, 425}, {"NewYork", 1100, 230},
+        {"Tennessy", 900, 500}, {"Floride", 1025, 750}, {"Californie", 175, 500},
+        {"Iowa", 700, 350}
+    };
+
+   
+    for (size_t i = 0; i < aeroports.size(); i++) {
+        sf::Sprite aeroportSprite(aeroportTexture);
+        aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
+        aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
+        aeroportsSprite.push_back(aeroportSprite);
+    }
+
+    
+    Aeroport aeroportDepart = aeroports[0];
+    Avion avionTest("10", "AirTest", aeroportDepart);
+    avionSprite.setScale(sf::Vector2f(0.8, 0.8));
+    
+    avionTest.start();
+    avionTest.decollage();
+    avionTest.setDestination(aeroports[8].getPositionX(), aeroports[8].getPositionY());
+
+    bool volDemarre = false;
+    int counter = 0;
+
+    
+    while (app.isOpen()) {
+        
+        while (std::optional event = app.pollEvent()) {
+            if (event->is<sf::Event::Closed>()) {
+                app.close();
+            }
+            if (auto* keyEvent = event->getIf<sf::Event::KeyPressed>()) {
+                if (keyEvent->code == sf::Keyboard::Key::Enter) {
+                    app.close();
+                }
+            }
+        }
+
+        
+        if (!volDemarre) {
+            avionSprite.setRotation(avionTest.inclinaison());
+            if (volDemarre && avionTest.getEtat() == "en vol" && 
+                sqrt(pow(avionTest.getPositionX() - aeroportDepart.getPositionX(), 2) + 
+                     pow(avionTest.getPositionY() - aeroportDepart.getPositionY(), 2)) < 50) {
+                avionTest.atterrissage();
+            }
+            volDemarre = true;
+            std::cout << "vol vers " << aeroportDepart.getId() << std::endl;
+        }
+
+        
+        avionSprite.setPosition(sf::Vector2f(static_cast<float>(avionTest.getPositionX()), 
+                                            static_cast<float>(avionTest.getPositionY())));
+
+        
+        if (counter++ % 60 == 0) {
+            if(avionTest.estBienAuSol() != true) {
+            std::cout << "Position avion: (" << avionTest.getPositionX() << ", " 
+                      << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
+                      << " - carburant: " << avionTest.getCarburant() 
+                      << " - état: " << avionTest.getEtat() << std::endl;
+
+                if(avionTest.getEtat() == "au sol") {
+                    avionTest.setBienAuSol();
+                }
+            }
+
+        }
+
+        
+        app.clear();
+        app.draw(backgroundSprite);
+        app.draw(avionSprite);
+        
+        for (auto& aeroportSprite : aeroportsSprite) {
+            app.draw(aeroportSprite);
+        }
+        
+        app.display();
+    }
+
+    
+    avionTest.stop();
+    monde.arreterSimulation();
 }

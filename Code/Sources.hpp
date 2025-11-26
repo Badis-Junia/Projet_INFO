@@ -62,7 +62,7 @@ private:
     double vitesseFinale = 100.0;
     double vitesseAtterrissage = 50.0;
     bool estgare;
-
+    bool bienausol;
 
     bool estgaré;
     sf::Angle angle;
@@ -99,6 +99,8 @@ public:
     bool getParkingAttribue() const;
     void setParkingAttribue(bool etat);
     sf::Angle inclinaison();
+    bool estBienAuSol();
+    void setBienAuSol();
 };
 
 
@@ -249,4 +251,16 @@ public:
     Journal(const std::string& nomFichier);
     void log(const std::string& message);
     ~Journal();
+};
+
+
+
+
+class Simulation {
+private:
+    std::string path_image;
+    
+public:
+    Simulation();
+    void executer();
 };
