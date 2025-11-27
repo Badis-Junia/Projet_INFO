@@ -582,9 +582,9 @@ void Simulation::executer() {
 
     
     std::vector<Aeroport> aeroports = {
-        {"Oregon", 100, 200}, {"Texas", 400, 600}, {"Ohio", 925, 380},
+        {"Oregon", 100, 200}, {"Texas", 450, 600}, {"Ohio", 925, 380},
         {"Montana", 390, 180}, {"Colorado", 410, 425}, {"NewYork", 1100, 230},
-        {"Tennessy", 900, 500}, {"Floride", 1025, 750}, {"Californie", 175, 500},
+        {"Tennessy", 900, 500}, {"Floride", 1025, 750}, {"Californie", 175, 450},
         {"Iowa", 700, 350}
     };
 
