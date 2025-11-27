@@ -599,7 +599,7 @@ void Simulation::executer() {
     
     Aeroport aeroportDepart = aeroports[0];
                 Avion avionTest("10", "AirTest", aeroportDepart);
-    avionSprite.setScale(sf::Vector2f(0.5, 0.5));
+    avionSprite.setScale(sf::Vector2f(0.6, 0.6));
     
     avionTest.start();
     avionTest.decollage();
