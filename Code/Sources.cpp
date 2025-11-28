@@ -44,7 +44,7 @@ Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aer
     this->altitudeCible = 0;
     this->penteApproche = 0;
     this->enApprocheFinale = false; 
-    this->setVitesse(100.0); 
+    this->setVitesse(1.0); 
     this->setPosition(aeroport.getPositionX() + 20, aeroport.getPositionY() + 20, 0);
 }
 
@@ -69,27 +69,27 @@ void Avion::run() {
                
                 this->vitesse = this->vitesseNormal;
             } 
-            else if (distanceHorizontale > 120.0) {
+            else if (distanceHorizontale > 80.0) {
                 
                 this->vitesse =this->vitesseApproche;
                 if (!this->enApprocheFinale) {
                     this->enApprocheFinale = true;
                 }
             }
-            else if (distanceHorizontale > 80.0) {
+            else if (distanceHorizontale > 40.0) {
                 
                 this->vitesse = this->vitesseFinale;
             }
-            else if (distanceHorizontale > 40.0) {
+            else if (distanceHorizontale > 20.0) {
                 
                 this->vitesse = this->vitesseAtterrissage;
             }
             else {
                 
-                this->vitesse = 30.0;
+                this->vitesse = 1.0;
             }
 
-            double vitesseDeplacement = this->vitesse * 0.1;
+            double vitesseDeplacement = this->vitesse * 0.02;
             
             this->positionX += directionX * vitesseDeplacement;
             this->positionY += directionY * vitesseDeplacement;
@@ -98,15 +98,12 @@ void Avion::run() {
                                          pow(this->destinationY - this->positionY, 2));
 
             
-            if (distanceRestante > 200.0) {
-                this->positionZ = 300;  
-            }
-            else if (distanceRestante > 100.0) {
+            if (distanceRestante > 50.0) {
                 double progression = (200.0 - distanceRestante) / 100.0;
                 this->positionZ = 300 - (progression * 250);  
                 if (this->positionZ < 50) this->positionZ = 50;
             }
-            else if (distanceRestante > 50.0) {
+            else if (distanceRestante > 25.0) {
                 double progression = (100.0 - distanceRestante) / 50.0;
                 this->positionZ = 50 - (progression * 40);  
                 if (this->positionZ < 10) this->positionZ = 10;
@@ -116,7 +113,7 @@ void Avion::run() {
                 if (this->positionZ < 5) this->positionZ = 5;
             }
 
-            if (distanceRestante < 50.0 && this->positionZ <= 50) {
+            if (distanceRestante < 25.0 && this->positionZ <= 50) {
                 this->etat = "atterrissage";
 
             } else if (distanceRestante < 5.0 && this->positionZ <= 5) {
@@ -205,7 +202,7 @@ void Avion::run() {
 void Avion::majPosition() {
     this->positionX += this->vitesse * 0.05;
     this->positionY += this->vitesse * 0.05;
-    this->positionZ += this->vitesse * 0.1;
+    this->positionZ += this->vitesse * 2;
 
     if(this->etat == "au sol") {
         this->positionZ = 0;
@@ -633,8 +630,10 @@ void Simulation::executer() {
                 avionTest.atterrissage();
             }
             volDemarre = true;
-            std::cout << "vol vers " << aeroportDepart.getId() << std::endl;
-            journal.log("vol vers"+aeroportDepart.getId());
+            std::cout << "Position avion: (" << avionTest.getPositionX() << ", " 
+                      << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
+                      << " - carburant: " << avionTest.getCarburant() 
+                      << " - état: " << "vol vers " << aeroportDepart.getId() << std::endl;
         }
 
         
