@@ -8,48 +8,7 @@
 
 Agent::Agent(const int & id) : id(id), actif(false) {}
 
-std::ostream& operator<<(std::ostream& flux, const Temps& h) {
-    flux << h.heure << ":" << h.minute << "H";
-    return flux;
-}
 
-double Temps::getFacteurTemps() {
-    this->mutex.lock();      
-    double value = facteurTemps;
-    this->mutex.unlock();    
-    return value;
-}
-
-int Temps::getMinute() {
-    return this->minute;
-}
-
-int Temps::getHeure() {
-    return this->heure;
-}
-
-void Temps::accelererTemps() {
-    this->mutex.lock();
-    this->facteurTemps = std::min(this->facteurTemps + 0.2, this->facteur_max);
-    this->mutex.unlock();
-}
-
-void Temps::ralentirTemps() {
-    mutex.lock();
-    facteurTemps = std::max(this->facteurTemps - 0.2, this->facteur_min);
-    mutex.unlock();
-}
-
-void Temps::resetTemps() {
-    this->mutex.lock();
-    facteurTemps = 1.0;
-    this->mutex.unlock();
-}
-
-void Agent::start() {
-    this->actif = true;
-    this->monthread = std::thread(&Agent::run, this);
-}
 
 void Agent::stop() {
     this->actif = false;
@@ -61,6 +20,16 @@ void Agent::stop() {
 std::string Agent::getId() const {
     return std::to_string(this->id);
 }
+
+
+
+
+
+
+
+
+
+
 
 Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aeroport, Temps& temps) 
     : Agent(std::stoi(id)), tempsRef(temps) {
@@ -381,6 +350,17 @@ std::string Aeroport::getId() {
     return this->id;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 Controleur::Controleur(const std::string& id, Temps& temps) : Agent(std::stoi(id)), tempsRef(temps) {}
 
 void Controleur::recevoirAvion(std::unique_ptr<Avion> avion) {
@@ -398,6 +378,16 @@ void Controleur::libererAvion(const std::string& avionId) {
         avionsSousControle.end()
     );
 }
+
+
+
+
+
+
+
+
+
+
 
 ControleurApproche::ControleurApproche(const std::string& id, Controleur* tour, Temps& temps) 
     : Controleur(id, temps), tour(tour) {}
@@ -433,6 +423,15 @@ void ControleurApproche::run() {
         std::this_thread::sleep_for(std::chrono::milliseconds(delai));
     }
 }
+
+
+
+
+
+
+
+
+
 
 CentreControleRegional::CentreControleRegional(const std::string& id, Temps& temps) : Controleur(id, temps) {}
 
@@ -484,6 +483,14 @@ void CentreControleRegional::setPositionX(double position) {
 void CentreControleRegional::setPositionY(double position) {
     this->positionY = position;
 }
+
+
+
+
+
+
+
+
 
 TourControle::TourControle(const std::string& id, int nbParkings, Temps& temps) 
     : Controleur(id, temps), pisteLibre(true) {
@@ -543,9 +550,23 @@ void TourControle::run() {
     }
 }
 
+
+
+
+
+
+
 void InterfaceGraphique::afficherAPP(const std::vector<Avion*>& avions) {}
 void InterfaceGraphique::afficherTWR(const std::vector<Avion*>& avions) {}
 void InterfaceGraphique::afficherCCR(const std::vector<Avion*>& avions) {}
+
+
+
+
+
+
+
+
 
 Monde::Monde() {}
 
@@ -573,6 +594,13 @@ void Monde::ajouterAvion(std::unique_ptr<Avion> avion) {
     avions.push_back(std::move(avion));
 }
 
+
+
+
+
+
+
+
 Journal::Journal(const std::string& nomFichier) {
     fichier.open(nomFichier);
 }
@@ -589,6 +617,61 @@ Journal::~Journal() {
         fichier.close();
     }
 }
+
+
+
+
+
+
+
+std::ostream& operator<<(std::ostream& flux, const Temps& h) {
+    flux << h.heure << ":" << h.minute << "H";
+    return flux;
+}
+
+double Temps::getFacteurTemps() {
+    this->mutex.lock();      
+    double value = facteurTemps;
+    this->mutex.unlock();    
+    return value;
+}
+
+int Temps::getMinute() {
+    return this->minute;
+}
+
+int Temps::getHeure() {
+    return this->heure;
+}
+
+void Temps::accelererTemps() {
+    this->mutex.lock();
+    this->facteurTemps = std::min(this->facteurTemps + 0.2, this->facteur_max);
+    this->mutex.unlock();
+}
+
+void Temps::ralentirTemps() {
+    mutex.lock();
+    facteurTemps = std::max(this->facteurTemps - 0.2, this->facteur_min);
+    mutex.unlock();
+}
+
+void Temps::resetTemps() {
+    this->mutex.lock();
+    facteurTemps = 1.0;
+    this->mutex.unlock();
+}
+
+void Agent::start() {
+    this->actif = true;
+    this->monthread = std::thread(&Agent::run, this);
+}
+
+
+
+
+
+
 
 Simulation::Simulation() : path_image("../Pictures/") {}
 

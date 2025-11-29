@@ -52,6 +52,16 @@ public:
     std::string getId() const;
 };
 
+
+
+
+
+
+
+
+
+
+
 class Aeroport {
 private:
     std::string id;
@@ -64,6 +74,16 @@ public:
     std::string getId();
     void setPosition(double unepositionX, double unepositionY);
 };
+
+
+
+
+
+
+
+
+
+
 
 class Avion : public Agent {
 private:
@@ -123,6 +143,17 @@ public:
     void setBienAuSol();
 };
 
+
+
+
+
+
+
+
+
+
+
+
 class Controleur : public Agent {
 protected:
     std::mutex mutex;
@@ -140,6 +171,16 @@ public:
     virtual void run() override = 0;
 };
 
+
+
+
+
+
+
+
+
+
+
 class ControleurApproche : public Controleur {
 private:
     Controleur* tour; 
@@ -156,6 +197,16 @@ public:
     void demanderAutorisationAtterrissage(Avion* avion);
     void run() override;
 };
+
+
+
+
+
+
+
+
+
+
 
 class CentreControleRegional : public Controleur {
 private:
@@ -178,6 +229,16 @@ public:
     void setPositionY(double position);
 };
 
+
+
+
+
+
+
+
+
+
+
 class InterfaceGraphique {
 private:
     std::mutex mutexAffichage;
@@ -187,6 +248,15 @@ public:
     void afficherTWR(const std::vector<Avion*>& avions);
     void afficherCCR(const std::vector<Avion*>& avions);
 };
+
+
+
+
+
+
+
+
+
 
 class TourControle : public Controleur {
 private:
@@ -208,6 +278,13 @@ public:
     void run() override;
 };
 
+
+
+
+
+
+
+
 class Monde {
 private:
     std::vector<std::unique_ptr<Avion>> avions;
@@ -226,6 +303,14 @@ public:
     Temps& getTemps() { return temps; }
 };
 
+
+
+
+
+
+
+
+
 class Journal {
 private:
     std::mutex mutex;
@@ -236,6 +321,13 @@ public:
     void log(const std::string& message);
     ~Journal();
 };
+
+
+
+
+
+
+
 
 class Simulation {
 private:
