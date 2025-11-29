@@ -6,12 +6,6 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 
-
-typedef struct temps {
-    int heure;
-    int minute;
-}temps;
-
 Agent::Agent(const int & id) : id(id), actif(false) {}
 
 void Agent::start() {
@@ -30,7 +24,8 @@ std::string Agent::getId() const {
     return std::to_string(this->id);
 }
 
-Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aeroport) : Agent(std::stoi(id)) {
+Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aeroport, Temps& temps) 
+    : Agent(std::stoi(id)), tempsRef(temps) {
     this->compagnie = compagnie;
     this->positionX = 0;
     this->positionY = 0;
@@ -57,6 +52,7 @@ Avion::~Avion() {
 
 void Avion::run() {
    while (this->actif) {
+        double facteur = tempsRef.getFacteurTemps();        
         if (this->etat == "en vol" && this->enDeplacement) {
             double directionX = this->destinationX - this->positionX;
             double directionY = this->destinationY - this->positionY;
@@ -67,32 +63,26 @@ void Avion::run() {
                 directionY /= distanceHorizontale;
             }
 
-            
             if (distanceHorizontale > this->distanceAtterissage) {
-               
                 this->vitesse = this->vitesseNormal;
             } 
             else if (distanceHorizontale > 80.0) {
-                
-                this->vitesse =this->vitesseApproche;
+                this->vitesse = this->vitesseApproche;
                 if (!this->enApprocheFinale) {
                     this->enApprocheFinale = true;
                 }
             }
             else if (distanceHorizontale > 40.0) {
-                
                 this->vitesse = this->vitesseFinale;
             }
             else if (distanceHorizontale > 20.0) {
-                
                 this->vitesse = this->vitesseAtterrissage;
             }
             else {
-                
                 this->vitesse = 1.0;
             }
 
-            double vitesseDeplacement = this->vitesse * 0.02;
+            double vitesseDeplacement = this->vitesse * 0.02 * facteur;
             
             this->positionX += directionX * vitesseDeplacement;
             this->positionY += directionY * vitesseDeplacement;
@@ -100,7 +90,6 @@ void Avion::run() {
             double distanceRestante = sqrt(pow(this->destinationX - this->positionX, 2) +
                                          pow(this->destinationY - this->positionY, 2));
 
-            
             if (distanceRestante > 50.0) {
                 double progression = (200.0 - distanceRestante) / 100.0;
                 this->positionZ = 300 - (progression * 250);  
@@ -118,7 +107,6 @@ void Avion::run() {
 
             if (distanceRestante < 25.0 && this->positionZ <= 50) {
                 this->etat = "atterrissage";
-
             } else if (distanceRestante < 5.0 && this->positionZ <= 5) {
                 this->positionX = this->destinationX;
                 this->positionY = this->destinationY;
@@ -132,12 +120,10 @@ void Avion::run() {
             consommerCarburant("en vol");
         }
         else if (this->etat == "decollage") {
-            
-            this->positionZ += 10;  
-            this->positionY += 1;
+            this->positionZ += 10 * facteur;  
+            this->positionY += 1 * facteur;
             if (this->positionZ >= 300) {  
                 this->etat = "en vol";
-
             }
             consommerCarburant("decollage");
         }
@@ -151,17 +137,16 @@ void Avion::run() {
                 directionY /= distanceRestante;
             }
 
-            double vitesseDeplacement = this->vitesse * 0.03;
+            double vitesseDeplacement = this->vitesse * 0.03 * facteur;
             this->positionX += directionX * vitesseDeplacement;
             this->positionY += directionY * vitesseDeplacement;
 
-           
             if (this->positionZ > 50) {
-                this->positionZ -= 15;
+                this->positionZ -= 15 * facteur;
             } else if (this->positionZ > 10) {
-                this->positionZ -= 8;
+                this->positionZ -= 8 * facteur;
             } else {
-                this->positionZ -= 3;
+                this->positionZ -= 3 * facteur;
             }
             
             if (this->positionZ < 0) this->positionZ = 0;
@@ -198,14 +183,16 @@ void Avion::run() {
             std::cout << "Avion " << this->id << " a crashé ! Plus de carburant." << std::endl;
         }
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        int delai = static_cast<int>(100 / facteur);
+        std::this_thread::sleep_for(std::chrono::milliseconds(delai));
     }
 }
 
 void Avion::majPosition() {
-    this->positionX += this->vitesse * 0.05;
-    this->positionY += this->vitesse * 0.05;
-    this->positionZ += this->vitesse * 2;
+    double facteur = tempsRef.getFacteurTemps();
+    this->positionX += this->vitesse * 0.05 * facteur;
+    this->positionY += this->vitesse * 0.05 * facteur;
+    this->positionZ += this->vitesse * 2 * facteur;
 
     if(this->etat == "au sol") {
         this->positionZ = 0;
@@ -219,6 +206,7 @@ void Avion::majPosition() {
         }
     }
 }
+
 bool Avion::estBienAuSol() {
     return this->bienausol;
 }
@@ -226,7 +214,6 @@ bool Avion::estBienAuSol() {
 void Avion::setBienAuSol() {
     this->bienausol = true;
 }
-
 
 bool Avion::estEnPhaseAtterrissage() const {
     if (!this->enDeplacement) return false;
@@ -276,10 +263,12 @@ sf::Angle Avion::inclinaison(){
 }
 
 void Avion::consommerCarburant(std::string etat) {
+    double facteur = tempsRef.getFacteurTemps();
+    
     if(this->etat == "en vol") {
-        this->carburant -= this->consommation;
+        this->carburant -= this->consommation * facteur;
     } else if(this->etat == "decollage"){
-        this->carburant -= 1;
+        this->carburant -= 1 * facteur;
     }
 
     if (carburant < 0) {
@@ -354,7 +343,7 @@ std::string Aeroport::getId() {
     return this->id;
 }
 
-Controleur::Controleur(const std::string& id) : Agent(std::stoi(id)) {}
+Controleur::Controleur(const std::string& id, Temps& temps) : Agent(std::stoi(id)), tempsRef(temps) {}
 
 void Controleur::recevoirAvion(std::unique_ptr<Avion> avion) {
     std::lock_guard<std::mutex> lock(mutex);
@@ -372,8 +361,8 @@ void Controleur::libererAvion(const std::string& avionId) {
     );
 }
 
-ControleurApproche::ControleurApproche(const std::string& id, Controleur* tour) 
-    : Controleur(id), tour(tour) {}
+ControleurApproche::ControleurApproche(const std::string& id, Controleur* tour, Temps& temps) 
+    : Controleur(id, temps), tour(tour) {}
 
 void ControleurApproche::assignerTrajectoire(Avion* avion) {
     std::cout << "Trajectoire assignée à l'avion " << avion->getId() << std::endl;
@@ -392,6 +381,7 @@ void ControleurApproche::demanderAutorisationAtterrissage(Avion* avion) {
 
 void ControleurApproche::run() {
     while (this->actif) {
+        double facteur = tempsRef.getFacteurTemps();
         std::lock_guard<std::mutex> lock(mutex);
         for (auto& avion : this->avionsSousControle) {
             if (avion->estEnUrgence()) {
@@ -401,11 +391,12 @@ void ControleurApproche::run() {
                 demanderAutorisationAtterrissage(avion.get());
             }
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        int delai = static_cast<int>(500 / facteur);
+        std::this_thread::sleep_for(std::chrono::milliseconds(delai));
     }
 }
 
-CentreControleRegional::CentreControleRegional(const std::string& id) : Controleur(id) {}
+CentreControleRegional::CentreControleRegional(const std::string& id, Temps& temps) : Controleur(id, temps) {}
 
 void CentreControleRegional::ajouterApproche(ControleurApproche* app) {
     this->approchesLiees.push_back(app);
@@ -434,7 +425,9 @@ void CentreControleRegional::transfererVol(const std::string& avionId, Controleu
 
 void CentreControleRegional::run() {
     while (this->actif) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        double facteur = tempsRef.getFacteurTemps();
+        int delai = static_cast<int>(1000 / facteur);
+        std::this_thread::sleep_for(std::chrono::milliseconds(delai));
     }
 }
 
@@ -454,7 +447,8 @@ void CentreControleRegional::setPositionY(double position) {
     this->positionY = position;
 }
 
-TourControle::TourControle(const std::string& id, int nbParkings) : Controleur(id), pisteLibre(true) {
+TourControle::TourControle(const std::string& id, int nbParkings, Temps& temps) 
+    : Controleur(id, temps), pisteLibre(true) {
     for (int i = 1; i <= nbParkings; ++i) {
         parkings["Place " + std::to_string(i)] = true;
     }
@@ -499,13 +493,15 @@ void attribuerParking(Avion* avion, TourControle* tourcontrole) {
 
 void TourControle::run() {
     while (this->actif) {
+        double facteur = tempsRef.getFacteurTemps();
         std::lock_guard<std::mutex> lock(mutex);
         for (auto& avion : this->avionsSousControle) {
             if (avion->getEtat() == "au sol" && !avion->getParkingAttribue()) {
                 attribuerParking(avion.get(), this);
             }
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        int delai = static_cast<int>(200 / facteur);
+        std::this_thread::sleep_for(std::chrono::milliseconds(delai));
     }
 }
 
@@ -516,9 +512,9 @@ void InterfaceGraphique::afficherCCR(const std::vector<Avion*>& avions) {}
 Monde::Monde() {}
 
 void Monde::initialiser() {
-    ccr = std::make_unique<CentreControleRegional>("1");
-    twr = std::make_unique<TourControle>("2", 5);
-    app = std::make_unique<ControleurApproche>("3", twr.get());
+    ccr = std::make_unique<CentreControleRegional>("1", temps);
+    twr = std::make_unique<TourControle>("2", 5, temps);
+    app = std::make_unique<ControleurApproche>("3", twr.get(), temps);
     
     ccr->ajouterApproche(app.get());
 }
@@ -556,7 +552,6 @@ Journal::~Journal() {
     }
 }
 
-
 Simulation::Simulation() : path_image("../Pictures/") {}
 
 void Simulation::executer() {
@@ -565,22 +560,20 @@ void Simulation::executer() {
     monde.demarrerSimulation();
 
     const sf::Vector2u WINDOW_SIZE(1300, 805);
-    sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
+    sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO - Contrôle temps: I(accélérer) K(ralentir)");
     app.setFramerateLimit(60);
 
-    
     sf::Texture backgroundImage, avionTexture, aeroportTexture;
+    sf::Font font;
     if (!backgroundImage.loadFromFile(path_image + "background.png") || 
         !avionTexture.loadFromFile(path_image + "avion.png") || 
-        !aeroportTexture.loadFromFile(path_image + "aeroport.png")) {
+        !aeroportTexture.loadFromFile(path_image + "aeroport.png") || !font.openFromFile(path_image + "arial.ttf")) {
         throw std::runtime_error("Erreur pendant le chargement des images");
     }
 
-    
     sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture);
     std::vector<sf::Sprite> aeroportsSprite;
 
-    
     std::vector<Aeroport> aeroports = {
         {"Oregon", 100, 200}, {"Texas", 450, 600}, {"Ohio", 925, 380},
         {"Montana", 390, 180}, {"Colorado", 410, 425}, {"NewYork", 1100, 230},
@@ -588,7 +581,6 @@ void Simulation::executer() {
         {"Iowa", 700, 350}
     };
 
-   
     for (size_t i = 0; i < aeroports.size(); i++) {
         sf::Sprite aeroportSprite(aeroportTexture);
         aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
@@ -596,9 +588,8 @@ void Simulation::executer() {
         aeroportsSprite.push_back(aeroportSprite);
     }
 
-    
     Aeroport aeroportDepart = aeroports[0];
-                Avion avionTest("10", "AirTest", aeroportDepart);
+    Avion avionTest("10", "AirTest", aeroportDepart, monde.getTemps());
     avionSprite.setScale(sf::Vector2f(0.6, 0.6));
     
     avionTest.start();
@@ -607,10 +598,16 @@ void Simulation::executer() {
     int counter = 0;
     Journal journal("monlog.txt");
 
+
+
     
+    sf::Text texteFacteurTemps(font);
+    texteFacteurTemps.setFont(font);
+    texteFacteurTemps.setCharacterSize(30);
+    texteFacteurTemps.setFillColor(sf::Color::White);
+    texteFacteurTemps.setPosition(sf::Vector2f(static_cast<float>(10), static_cast<float>(0)));
     
     while (app.isOpen()) {
-        
         while (std::optional event = app.pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
                 app.close();
@@ -619,10 +616,17 @@ void Simulation::executer() {
                 if (keyEvent->code == sf::Keyboard::Key::Enter) {
                     app.close();
                 }
+                else if (keyEvent->code == sf::Keyboard::Key::I) {
+                    monde.getTemps().accelererTemps();
+                }
+                else if (keyEvent->code == sf::Keyboard::Key::K) {
+                    monde.getTemps().ralentirTemps();
+                }
             }
         }
 
-        
+        texteFacteurTemps.setString("Vitesse du temps: " + std::to_string(monde.getTemps().getFacteurTemps()).substr(0, 3) + "x");
+
         if (!avionTest.volDemarre) {
             avionSprite.setRotation(avionTest.inclinaison());
             if (avionTest.volDemarre && avionTest.getEtat() == "en vol" && 
@@ -638,33 +642,29 @@ void Simulation::executer() {
         }
 
         if(avionTest.getEtat() != "au sol") {
-        avionSprite.setPosition(sf::Vector2f(static_cast<float>(avionTest.getPositionX()), 
-                                            static_cast<float>(avionTest.getPositionY())));
+            avionSprite.setPosition(sf::Vector2f(static_cast<float>(avionTest.getPositionX()), 
+                                                static_cast<float>(avionTest.getPositionY())));
         }
 
-
-        
         if (counter++ % 60 == 0) {
             if(!avionTest.estBienAuSol()) {
-            std::cout << "Position avion: (" << avionTest.getPositionX() << ", " 
-                      << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
-                      << " - carburant: " << avionTest.getCarburant() 
-                      << " - état: " << avionTest.getEtat() << std::endl;
-            journal.log("Position avion:" + std::to_string(avionTest.getPositionX()) + "," + 
-                       std::to_string(avionTest.getPositionY()) + "," + 
-                       std::to_string(avionTest.getPositionZ()) + 
-                       " - carburant:" + std::to_string(avionTest.getCarburant()) +
-                       " - état:" + avionTest.getEtat());
+                std::cout << "Position avion: (" << avionTest.getPositionX() << ", " 
+                          << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
+                          << " - carburant: " << avionTest.getCarburant() 
+                          << " - état: " << avionTest.getEtat() << std::endl;
+                journal.log("Position avion:" + std::to_string(avionTest.getPositionX()) + "," + 
+                           std::to_string(avionTest.getPositionY()) + "," + 
+                           std::to_string(avionTest.getPositionZ()) + 
+                           " - carburant:" + std::to_string(avionTest.getCarburant()) +
+                           " - état:" + avionTest.getEtat());
 
                 if(avionTest.getEtat() == "au sol") {
                     avionTest.setBienAuSol();
                     avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
                 }
             }
-
         }
 
-        
         app.clear();
         app.draw(backgroundSprite);
         app.draw(avionSprite);
@@ -673,11 +673,13 @@ void Simulation::executer() {
             app.draw(aeroportSprite);
         }
         
+        if (font.getInfo().family != "") {
+            app.draw(texteFacteurTemps);
+        }
+        
         app.display();
     }
 
-    
     avionTest.stop();
-
     monde.arreterSimulation();
 }
