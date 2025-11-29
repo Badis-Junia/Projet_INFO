@@ -598,8 +598,6 @@ void Simulation::executer() {
     int counter = 0;
     Journal journal("monlog.txt");
 
-
-
     
     sf::Text texteFacteurTemps(font);
     texteFacteurTemps.setFont(font);
