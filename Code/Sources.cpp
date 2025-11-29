@@ -601,8 +601,6 @@ void Simulation::executer() {
     avionTest.start();
     avionTest.decollage();
     avionTest.setDestination(aeroports[8].getPositionX(), aeroports[8].getPositionY());
-
-    bool volDemarre = false;
     int counter = 0;
     Journal journal("monlog.txt");
 
@@ -622,14 +620,14 @@ void Simulation::executer() {
         }
 
         
-        if (!volDemarre) {
+        if (!avionTest.volDemarre) {
             avionSprite.setRotation(avionTest.inclinaison());
-            if (volDemarre && avionTest.getEtat() == "en vol" && 
+            if (avionTest.volDemarre && avionTest.getEtat() == "en vol" && 
                 sqrt(pow(avionTest.getPositionX() - aeroportDepart.getPositionX(), 2) + 
                      pow(avionTest.getPositionY() - aeroportDepart.getPositionY(), 2)) < 50) {
                 avionTest.atterrissage();
             }
-            volDemarre = true;
+            avionTest.volDemarre = true;
             std::cout << "Position avion: (" << avionTest.getPositionX() << ", " 
                       << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
                       << " - carburant: " << avionTest.getCarburant() 

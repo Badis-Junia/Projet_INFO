@@ -73,7 +73,7 @@ private:
 public:
     Avion(const std::string& id, const std::string& compagnie,Aeroport & aeroport);
     ~Avion();
-
+    bool volDemarre = false;
     void setPosition(double x, double y, double z);
     void setVitesse(double nouvelleVitesse);    
       
