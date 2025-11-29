@@ -560,7 +560,7 @@ void Simulation::executer() {
     monde.demarrerSimulation();
 
     const sf::Vector2u WINDOW_SIZE(1300, 805);
-    sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO - Contrôle temps: I(accélérer) K(ralentir)");
+    sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
 
     sf::Texture backgroundImage, avionTexture, aeroportTexture;
