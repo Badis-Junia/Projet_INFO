@@ -7,38 +7,6 @@
 #include <memory>
 #include <SFML/Graphics.hpp>
 
-class Temps {
-private:
-    double facteurTemps;
-    const double FACTEUR_ACCELERATION = 0.2;
-    const double FACTEUR_MAX = 5.0;
-    const double FACTEUR_MIN = 0.1;
-    std::mutex mutex;
-
-public:
-    Temps() : facteurTemps(1.0) {}
-    
-    double getFacteurTemps() {
-        std::lock_guard<std::mutex> lock(mutex);
-        return facteurTemps;
-    }
-    
-    void accelererTemps() {
-        std::lock_guard<std::mutex> lock(mutex);
-        facteurTemps = std::min(facteurTemps + FACTEUR_ACCELERATION, FACTEUR_MAX);
-    }
-    
-    void ralentirTemps() {
-        std::lock_guard<std::mutex> lock(mutex);
-        facteurTemps = std::max(facteurTemps - FACTEUR_ACCELERATION, FACTEUR_MIN);
-    }
-    
-    void resetTemps() {
-        std::lock_guard<std::mutex> lock(mutex);
-        facteurTemps = 1.0;
-    }
-};
-
 class Agent {
 protected:
     int id;
@@ -49,6 +17,7 @@ public:
     Agent(const int & id);
     virtual ~Agent() = default;
     
+      
     Agent(const Agent&) = delete;
     Agent& operator=(const Agent&) = delete;
     
@@ -71,6 +40,8 @@ public:
     void setPosition(double unepositionX, double unepositionY);
 };
 
+
+
 class Avion : public Agent {
 private:
     std::string compagnie;
@@ -92,12 +63,15 @@ private:
     double vitesseAtterrissage = 50.0;
     bool estgare;
     bool bienausol;
+
     bool estgaré;
     sf::Angle angle;
-    Temps& tempsRef;
+    
+
+
 
 public:
-    Avion(const std::string& id, const std::string& compagnie, Aeroport & aeroport, Temps& temps);
+    Avion(const std::string& id, const std::string& compagnie,Aeroport & aeroport);
     ~Avion();
     bool volDemarre = false;
     void setPosition(double x, double y, double z);
@@ -129,15 +103,18 @@ public:
     void setBienAuSol();
 };
 
+
+
+
 class Controleur : public Agent {
 protected:
     std::mutex mutex;
     std::vector<std::unique_ptr<Avion>> avionsSousControle;   
-    Temps& tempsRef;
 
 public:
-    Controleur(const std::string& id, Temps& temps);
+    Controleur(const std::string& id);
     
+      
     Controleur(const Controleur&) = delete;
     Controleur& operator=(const Controleur&) = delete;
     
@@ -146,14 +123,20 @@ public:
     virtual void run() override = 0;
 };
 
+ 
+
+
+
+
 class ControleurApproche : public Controleur {
 private:
     Controleur* tour; 
     std::vector<Avion*> fileAttente;
 
 public:
-    ControleurApproche(const std::string& id, Controleur* tour, Temps& temps);
+    ControleurApproche(const std::string& id, Controleur* tour);
     
+      
     ControleurApproche(const ControleurApproche&) = delete;
     ControleurApproche& operator=(const ControleurApproche&) = delete;
     
@@ -163,6 +146,11 @@ public:
     void run() override;
 };
 
+ 
+
+                
+
+
 class CentreControleRegional : public Controleur {
 private:
     std::vector<ControleurApproche*> approchesLiees;
@@ -170,8 +158,9 @@ private:
     double positionY;
 
 public:
-    CentreControleRegional(const std::string& id, Temps& temps);
+    CentreControleRegional(const std::string& id);
     
+      
     CentreControleRegional(const CentreControleRegional&) = delete;
     CentreControleRegional& operator=(const CentreControleRegional&) = delete;
     
@@ -182,7 +171,14 @@ public:
     double getPositionY();
     void setPositionX(double position);    
     void setPositionY(double position);
+  
+
 };
+
+ 
+
+
+
 
 class InterfaceGraphique {
 private:
@@ -194,6 +190,11 @@ public:
     void afficherCCR(const std::vector<Avion*>& avions);
 };
 
+ 
+
+
+
+
 class TourControle : public Controleur {
 private:
     bool pisteLibre;
@@ -202,8 +203,9 @@ private:
     std::vector<Avion*> fileAttenteDecollage;
 
 public:
-    TourControle(const std::string& id, int nbParkings, Temps& temps);
+    TourControle(const std::string& id, int nbParkings);
     
+      
     TourControle(const TourControle&) = delete;
     TourControle& operator=(const TourControle&) = delete;
     
@@ -214,6 +216,11 @@ public:
     void run() override;
 };
 
+ 
+
+
+
+
 class Monde {
 private:
     std::vector<std::unique_ptr<Avion>> avions;
@@ -221,7 +228,6 @@ private:
     std::unique_ptr<ControleurApproche> app;
     std::unique_ptr<TourControle> twr;
     InterfaceGraphique interface;
-    Temps temps;
 
 public:
     Monde();
@@ -229,8 +235,12 @@ public:
     void demarrerSimulation();
     void arreterSimulation();
     void ajouterAvion(std::unique_ptr<Avion> avion);
-    Temps& getTemps() { return temps; }
 };
+
+ 
+
+
+
 
 class Journal {
 private:
@@ -242,6 +252,9 @@ public:
     void log(const std::string& message);
     ~Journal();
 };
+
+
+
 
 class Simulation {
 private:
