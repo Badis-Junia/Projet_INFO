@@ -8,6 +8,11 @@
 
 Agent::Agent(const int & id) : id(id), actif(false) {}
 
+std::ostream& operator<<(std::ostream& flux, const Horloge& h) {
+    flux << h.heure << ":" << h.minute << "H";
+    return flux;
+}
+
 void Agent::start() {
     this->actif = true;
     this->monthread = std::thread(&Agent::run, this);
@@ -558,7 +563,7 @@ void Simulation::executer() {
     Monde monde;
     monde.initialiser();
     monde.demarrerSimulation();
-
+    Horloge montemps;
     const sf::Vector2u WINDOW_SIZE(1300, 805);
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
@@ -637,6 +642,8 @@ void Simulation::executer() {
                       << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
                       << " - carburant: " << avionTest.getCarburant() 
                       << " - état: " << "vol vers " << aeroportDepart.getId() << std::endl;
+            std::cout << "Il est : " << montemps <<std::endl;
+
         }
 
         if(avionTest.getEtat() != "au sol") {

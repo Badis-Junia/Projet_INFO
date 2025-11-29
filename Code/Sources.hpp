@@ -39,6 +39,15 @@ public:
     }
 };
 
+
+class Horloge {
+    public:
+        int heure = 12;
+        int minute = 00;
+        friend std::ostream& operator<<(std::ostream& flux, Horloge * montemps);
+};
+
+
 class Agent {
 protected:
     int id;
