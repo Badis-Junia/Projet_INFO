@@ -13,39 +13,24 @@ private:
     const double facteur_acceleration = 0.2;
     const double facteur_max = 5.0;
     const double facteur_min = 0.1;
+    int minute;
+    int heure;
     std::mutex mutex;
 
 public:
     Temps() : facteurTemps(1) {}
     
-    double getFacteurTemps() {
-        std::lock_guard<std::mutex> lock(mutex);
-        return facteurTemps;
-    }
-    
-    void accelererTemps() {
-        std::lock_guard<std::mutex> lock(mutex);
-        facteurTemps = std::min(facteurTemps + facteur_acceleration, facteur_max);
-    }
-    
-    void ralentirTemps() {
-        std::lock_guard<std::mutex> lock(mutex);
-        facteurTemps = std::max(facteurTemps - facteur_acceleration, facteur_min);
-    }
-    
-    void resetTemps() {
-        std::lock_guard<std::mutex> lock(mutex);
-        facteurTemps = 1.0;
-    }
+    double getFacteurTemps();
+    int getMinute();
+    int getHeure();
+    void accelererTemps();
+    void ralentirTemps();
+    void resetTemps();
+    friend std::ostream& operator<<(std::ostream& flux, const Temps & temps);
 };
 
 
-class Horloge {
-    public:
-        int heure = 12;
-        int minute = 00;
-        friend std::ostream& operator<<(std::ostream& flux, Horloge * montemps);
-};
+
 
 
 class Agent {

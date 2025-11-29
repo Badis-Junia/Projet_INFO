@@ -8,9 +8,42 @@
 
 Agent::Agent(const int & id) : id(id), actif(false) {}
 
-std::ostream& operator<<(std::ostream& flux, const Horloge& h) {
+std::ostream& operator<<(std::ostream& flux, const Temps& h) {
     flux << h.heure << ":" << h.minute << "H";
     return flux;
+}
+
+double Temps::getFacteurTemps() {
+    this->mutex.lock();      
+    double value = facteurTemps;
+    this->mutex.unlock();    
+    return value;
+}
+
+int Temps::getMinute() {
+    return this->minute;
+}
+
+int Temps::getHeure() {
+    return this->heure;
+}
+
+void Temps::accelererTemps() {
+    this->mutex.lock();
+    this->facteurTemps = std::min(this->facteurTemps + 0.2, this->facteur_max);
+    this->mutex.unlock();
+}
+
+void Temps::ralentirTemps() {
+    mutex.lock();
+    facteurTemps = std::max(this->facteurTemps - 0.2, this->facteur_min);
+    mutex.unlock();
+}
+
+void Temps::resetTemps() {
+    this->mutex.lock();
+    facteurTemps = 1.0;
+    this->mutex.unlock();
 }
 
 void Agent::start() {
@@ -563,7 +596,6 @@ void Simulation::executer() {
     Monde monde;
     monde.initialiser();
     monde.demarrerSimulation();
-    Horloge montemps;
     const sf::Vector2u WINDOW_SIZE(1300, 805);
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
@@ -642,7 +674,6 @@ void Simulation::executer() {
                       << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
                       << " - carburant: " << avionTest.getCarburant() 
                       << " - état: " << "vol vers " << aeroportDepart.getId() << std::endl;
-            std::cout << "Il est : " << montemps <<std::endl;
 
         }
 
