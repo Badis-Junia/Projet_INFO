@@ -21,6 +21,10 @@ std::string Agent::getId() const {
     return std::to_string(this->id);
 }
 
+void Agent::start() {
+    this->actif = true;
+    this->monthread = std::thread(&Agent::run, this);
+}
 
 
 
@@ -662,10 +666,7 @@ void Temps::resetTemps() {
     this->mutex.unlock();
 }
 
-void Agent::start() {
-    this->actif = true;
-    this->monthread = std::thread(&Agent::run, this);
-}
+
 
 
 
