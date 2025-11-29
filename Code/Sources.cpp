@@ -636,9 +636,11 @@ void Simulation::executer() {
                       << " - état: " << "vol vers " << aeroportDepart.getId() << std::endl;
         }
 
-        
+        if(avionTest.getEtat() != "au sol") {
         avionSprite.setPosition(sf::Vector2f(static_cast<float>(avionTest.getPositionX()), 
                                             static_cast<float>(avionTest.getPositionY())));
+        }
+
 
         
         if (counter++ % 60 == 0) {
@@ -655,6 +657,7 @@ void Simulation::executer() {
 
                 if(avionTest.getEtat() == "au sol") {
                     avionTest.setBienAuSol();
+                    avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
                 }
             }
 
