@@ -13,8 +13,8 @@ private:
     const double facteur_acceleration = 0.2;
     const double facteur_max = 5.0;
     const double facteur_min = 0.1;
-    int minute;
-    int heure;
+    int minute = 0;
+    int heure = 12;
     std::mutex mutex;
 
 public:
@@ -23,6 +23,8 @@ public:
     double getFacteurTemps();
     int getMinute();
     int getHeure();
+    void setMinute(int monminute);
+    void setHeure(int monheure);
     void accelererTemps();
     void ralentirTemps();
     void resetTemps();

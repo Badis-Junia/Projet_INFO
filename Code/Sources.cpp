@@ -644,6 +644,15 @@ int Temps::getMinute() {
     return this->minute;
 }
 
+void Temps::setHeure(int monheure) {
+    this->heure = monheure;
+}
+
+void Temps::setMinute(int monminute) {
+    this->minute = monminute;
+}
+
+
 int Temps::getHeure() {
     return this->heure;
 }
@@ -683,7 +692,7 @@ void Simulation::executer() {
     const sf::Vector2u WINDOW_SIZE(1300, 805);
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
-
+    Temps temps;
     sf::Texture backgroundImage, avionTexture, aeroportTexture;
     sf::Font font;
     if (!backgroundImage.loadFromFile(path_image + "background.png") || 
@@ -758,7 +767,6 @@ void Simulation::executer() {
                       << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
                       << " - carburant: " << avionTest.getCarburant() 
                       << " - état: " << "vol vers " << aeroportDepart.getId() << std::endl;
-
         }
 
         if(avionTest.getEtat() != "au sol") {
@@ -768,16 +776,21 @@ void Simulation::executer() {
 
         if (counter++ % 60 == 0) {
             if(!avionTest.estBienAuSol()) {
-                std::cout << "Position avion: (" << avionTest.getPositionX() << ", " 
-                          << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
-                          << " - carburant: " << avionTest.getCarburant() 
-                          << " - état: " << avionTest.getEtat() << std::endl;
-                journal.log("Position avion:" + std::to_string(avionTest.getPositionX()) + "," + 
-                           std::to_string(avionTest.getPositionY()) + "," + 
-                           std::to_string(avionTest.getPositionZ()) + 
-                           " - carburant:" + std::to_string(avionTest.getCarburant()) +
-                           " - état:" + avionTest.getEtat());
+                std::cout << "Il est " << temps.getHeure() << ":" << temps.getMinute() << "H" << " - " << "Position avion: (" 
+                    << avionTest.getPositionX() << ", " << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
+                    << " - carburant: " << avionTest.getCarburant() << " - état: " << avionTest.getEtat() << std::endl;
 
+                journal.log("Position avion:" + std::to_string(avionTest.getPositionX()) + "," + 
+                   std::to_string(avionTest.getPositionY()) + "," + 
+                   std::to_string(avionTest.getPositionZ()) + 
+                   " - carburant:" + std::to_string(avionTest.getCarburant()) +
+                   " - état:" + avionTest.getEtat());
+                if(temps.getMinute() < 60) {
+                    temps.setMinute(temps.getMinute() + 1);
+                } else {
+                    temps.setHeure(temps.getHeure() + 1);
+                    temps.setMinute(0);
+                }
                 if(avionTest.getEtat() == "au sol") {
                     avionTest.setBienAuSol();
                     avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
