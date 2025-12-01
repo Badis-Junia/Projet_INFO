@@ -10,3 +10,4 @@ Position avion:184.476926,424.466977,50.000000 - carburant:65.800000 - état:en 
 Position avion:191.409929,443.226867,10.000000 - carburant:64.800000 - état:en vol
 Position avion:195.223081,453.544806,10.000000 - carburant:63.700000 - état:en vol
 Position avion:199.729532,465.738735,0.000000 - carburant:63.400000 - état:atterrissage
+Position avion:205.000000,480.000000,0.000000 - carburant:63.400000 - état:au sol
