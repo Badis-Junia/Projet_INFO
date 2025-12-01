@@ -365,6 +365,19 @@ void Aeroport::setParking(int indice, std::string etat) {
     this->parking[indice] = etat;
 }
 
+bool Aeroport::parkingvide() {
+    int compteur = 0;
+    for(int i = 0;i<this->parking.size();i++) {
+        if(parking[i] != "Rien") {
+            compteur++;
+        }
+    }
+    if(compteur == this->parking.size()) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 
 
@@ -515,12 +528,12 @@ void Simulation::executer() {
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
     Temps temps;
-    sf::Texture backgroundImage, avionTexture, aeroportTexture;
+    sf::Texture backgroundImage, avionTexture, aeroportTexture, aeroportTexturelibre, aeroportTexturepaslibre;
     sf::Font font;
 
     if (!backgroundImage.loadFromFile(path_image + "background.png") || 
         !avionTexture.loadFromFile(path_image + "avion.png") || 
-        !aeroportTexture.loadFromFile(path_image + "aeroport.png") || !font.openFromFile(path_image + "arial.ttf")) {
+        !aeroportTexture.loadFromFile(path_image + "aeroport.png") || !aeroportTexturelibre.loadFromFile(path_image + "aeroportlibre.png") || !font.openFromFile(path_image + "arial.ttf") || !aeroportTexturepaslibre.loadFromFile(path_image + "aeroportpaslibre.png")) {
         throw std::runtime_error("Erreur pendant le chargement des images");
     }
 
@@ -532,10 +545,19 @@ void Simulation::executer() {
     auto& avions = centre.tous_les_avions;
 
     for (size_t i = 0; i < aeroports.size(); i++) {
-        sf::Sprite aeroportSprite(aeroportTexture);
-        aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
-        aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
-        aeroportsSprite.push_back(aeroportSprite);
+        if(aeroports[i].parkingvide()) {
+            sf::Sprite aeroportSprite(aeroportTexturelibre);
+            aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
+            aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
+            aeroportsSprite.push_back(aeroportSprite);
+        } else {
+            sf::Sprite aeroportSprite(aeroportTexturepaslibre);
+            aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
+            aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
+            aeroportsSprite.push_back(aeroportSprite);
+        }
+
+
     }
 
     Aeroport aeroportDepart = aeroports[0];
