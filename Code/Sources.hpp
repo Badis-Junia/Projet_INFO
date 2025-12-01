@@ -126,8 +126,9 @@ private:
     sf::Angle angle;
     Temps& tempsRef;
 
-public:
 
+public:
+    Aeroport * destination;
     Avion(const std::string& id, const std::string& compagnie, Aeroport & aeroport, Temps& temps);
     ~Avion();
     bool volDemarre = false;
@@ -150,7 +151,7 @@ public:
     double getPositionZ() const { return positionZ; }
     std::string getEtat() const { return etat; }
     bool estEnPhaseAtterrissage() const;
-    void setDestination(double x, double y);  
+    void setDestination(Aeroport & aeroport);  
     void setEnDeplacement(bool etat);
     std::string getIdaeroport(Aeroport* aeroport) const;
     bool getParkingAttribue() const;
@@ -164,13 +165,12 @@ public:
 class TourControle {
     private:
         Aeroport &aeroport;
-        Avion &avion;
         std::string id;
         int rayon;
     public:
-        TourControle(Aeroport & aeroport, Avion & avion)  : aeroport(aeroport), avion(avion), id(aeroport.getId()) {};
+        TourControle(Aeroport & aeroport, Avion & avion)  : aeroport(aeroport), id(aeroport.getId()) {};
 
-        void gererGarer();
+        void gererGarer(Avion * avion);
 };
 
 

@@ -235,12 +235,12 @@ bool Avion::estEnPhaseAtterrissage() const {
     return distanceHorizontale <= this->distanceAtterissage;
 }
 
-void Avion::setDestination(double x, double y) {
-    this->destinationX = x + 30;
-    this->destinationY = y + 30;
+void Avion::setDestination(Aeroport & aeroport) {
+    this->destinationX = aeroport.getPositionX() + 30;
+    this->destinationY = aeroport.getPositionY() + 30;
     this->enDeplacement = true;
     this->enApprocheFinale = false; 
-
+    this->destination = &aeroport;
     if(this->etat != "decollage") {
         this->etat = "en vol";
     }
@@ -385,12 +385,12 @@ bool Aeroport::parkingvide() {
 
 
 
-void TourControle::gererGarer() {
+void TourControle::gererGarer(Avion * avion) {
     std::vector<std::string> le_parking = this->aeroport.getParking();
     for(int i = 0;i<le_parking.size();i++) {
-        if(le_parking[i] == "Rien" || !this->avion.estgare) {
-            this->aeroport.setParking(i, this->avion.getId());
-            this->avion.estgare = true;
+        if(le_parking[i] == "Rien" || !avion->estgare) {
+            this->aeroport.setParking(i, avion->getId());
+            avion->estgare = true;
         }
     }
 }
@@ -594,7 +594,7 @@ void Simulation::executer() {
     
     avions[0]->start();
     avions[0]->decollage();
-    avions[0]->setDestination(aeroports[8].getPositionX(), aeroports[8].getPositionY());
+    avions[0]->setDestination(aeroports[8]);
     int counter = 0;
     Journal journal("monlog.txt");
 
@@ -675,7 +675,7 @@ void Simulation::executer() {
                 if(avions[0]->getEtat() == "au sol") {
                     avions[0]->setBienAuSol();
                     avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
-                    
+
                 }
             }
         }
