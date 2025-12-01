@@ -542,7 +542,9 @@ void Simulation::executer() {
     std::vector<sf::Sprite> aeroportsSprite;
 
     CentreControle centre(&monde);
-    std::vector<Aeroport> aeroports = centre.tous_les_aeroports;
+    std::vector<Aeroport>& aeroports = centre.tous_les_aeroports;  // Notez le '&' pour une référence
+                                                                   //
+    centre.tous_les_aeroports[5].setParking(0, "Pris");
     auto& avions = centre.tous_les_avions;
     
     for (size_t i = 0; i < aeroports.size(); i++) {
