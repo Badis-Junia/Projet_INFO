@@ -596,7 +596,7 @@ void Simulation::executer() {
     horloge.setFont(font);
     horloge.setCharacterSize(50);
     horloge.setFillColor(sf::Color::White);
-    horloge.setPosition(sf::Vector2f(static_cast<float>(1100), static_cast<float>(10)));
+    horloge.setPosition(sf::Vector2f(static_cast<float>(1090), static_cast<float>(0)));
     
     while (app.isOpen()) {
         while (std::optional event = app.pollEvent()) {
@@ -619,7 +619,7 @@ void Simulation::executer() {
         texteFacteurTemps.setString("Vitesse du temps: " + std::to_string(monde.getTemps().getFacteurTemps()).substr(0, 3) + "x");
         std::string heureStr = (monde.getTemps().getHeure() < 10 ? "0" : "") + std::to_string(monde.getTemps().getHeure());
         std::string minuteStr = (monde.getTemps().getMinute() < 10 ? "0" : "") + std::to_string(monde.getTemps().getMinute());
-        horloge.setString(heureStr + ":" + minuteStr + "H");
+        horloge.setString(heureStr + " : " + minuteStr + "H");
 
         if (!avions[0]->volDemarre) {
             avionSprite.setRotation(avions[0]->inclinaison());
