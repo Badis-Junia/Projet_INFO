@@ -639,21 +639,21 @@ void Simulation::executer() {
             avionSprite.setPosition(sf::Vector2f(static_cast<float>(avions[0]->getPositionX()), 
                                                 static_cast<float>(avions[0]->getPositionY())));
         }
-    for (size_t i = 0; i < aeroports.size(); i++) {
-        if(aeroports[i].parkingvide()) {
-            sf::Sprite aeroportSprite(aeroportTexturelibre);
-            aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
-            aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
-            aeroportsSprite.push_back(aeroportSprite);
-        } else {
-            sf::Sprite aeroportSprite(aeroportTexturepaslibre);
-            aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
-            aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
-            aeroportsSprite.push_back(aeroportSprite);
+        for (size_t i = 0; i < aeroports.size(); i++) {
+            if(aeroports[i].parkingvide()) {
+                sf::Sprite aeroportSprite(aeroportTexturelibre);
+                aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
+                aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
+                aeroportsSprite.push_back(aeroportSprite);
+            } else {
+                sf::Sprite aeroportSprite(aeroportTexturepaslibre);
+                aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
+                aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
+                aeroportsSprite.push_back(aeroportSprite);
+            }
+
+
         }
-
-
-    }
 
         if (counter++ % 60 == 0) {
             if(!avions[0]->estBienAuSol()) {
