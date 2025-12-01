@@ -12,7 +12,7 @@
 CMakeConfigureLog.yaml
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-
+Code/monlog.txt
 # Mono auto generated files
 mono_crash.*
 
