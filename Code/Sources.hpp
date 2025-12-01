@@ -170,7 +170,7 @@ class TourControle {
     public:
         TourControle(Aeroport & aeroport, Avion & avion)  : aeroport(aeroport), id(aeroport.getId()) {};
 
-        void gererGarer(Avion * avion);
+        void gererGarer(std::unique_ptr<Avion>& avion);
 };
 
 

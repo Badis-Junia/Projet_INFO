@@ -385,11 +385,11 @@ bool Aeroport::parkingvide() {
 
 
 
-void TourControle::gererGarer(Avion * avion) {
-    std::vector<std::string> le_parking = this->aeroport.getParking();
+void TourControle::gererGarer(std::unique_ptr<Avion>& avion) {
+    std::vector<std::string> le_parking = avion->destination->getParking();
     for(int i = 0;i<le_parking.size();i++) {
         if(le_parking[i] == "Rien" || !avion->estgare) {
-            this->aeroport.setParking(i, avion->getId());
+            avion->destination->setParking(i, avion->getId());
             avion->estgare = true;
         }
     }
@@ -569,25 +569,12 @@ void Simulation::executer() {
 
     CentreControle centre(&monde);
     std::vector<Aeroport>& aeroports = centre.tous_les_aeroports;  // Notez le '&' pour une référence
+    std::vector<TourControle>& tour_de_controles = centre.tous_les_tours_de_controles;                                                                   //
                                                                    //
     centre.tous_les_aeroports[5].setParking(0, "Pris");
     auto& avions = centre.tous_les_avions;
     
-    for (size_t i = 0; i < aeroports.size(); i++) {
-        if(aeroports[i].parkingvide()) {
-            sf::Sprite aeroportSprite(aeroportTexturelibre);
-            aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
-            aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
-            aeroportsSprite.push_back(aeroportSprite);
-        } else {
-            sf::Sprite aeroportSprite(aeroportTexturepaslibre);
-            aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
-            aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
-            aeroportsSprite.push_back(aeroportSprite);
-        }
 
-
-    }
 
     Aeroport aeroportDepart = aeroports[0];
     avionSprite.setScale(sf::Vector2f(0.6, 0.6));
@@ -652,6 +639,21 @@ void Simulation::executer() {
             avionSprite.setPosition(sf::Vector2f(static_cast<float>(avions[0]->getPositionX()), 
                                                 static_cast<float>(avions[0]->getPositionY())));
         }
+    for (size_t i = 0; i < aeroports.size(); i++) {
+        if(aeroports[i].parkingvide()) {
+            sf::Sprite aeroportSprite(aeroportTexturelibre);
+            aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
+            aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
+            aeroportsSprite.push_back(aeroportSprite);
+        } else {
+            sf::Sprite aeroportSprite(aeroportTexturepaslibre);
+            aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
+            aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
+            aeroportsSprite.push_back(aeroportSprite);
+        }
+
+
+    }
 
         if (counter++ % 60 == 0) {
             if(!avions[0]->estBienAuSol()) {
@@ -675,7 +677,7 @@ void Simulation::executer() {
                 if(avions[0]->getEtat() == "au sol") {
                     avions[0]->setBienAuSol();
                     avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
-
+                    tour_de_controles[0].gererGarer(avions[0]);
                 }
             }
         }
