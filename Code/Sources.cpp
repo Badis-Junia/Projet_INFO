@@ -366,194 +366,7 @@ std::string Aeroport::getId() {
 
 
 
-Controleur::Controleur(const std::string& id, Temps& temps) : Agent(std::stoi(id)), tempsRef(temps) {}
 
-void Controleur::recevoirAvion(std::unique_ptr<Avion> avion) {
-    std::lock_guard<std::mutex> lock(mutex);
-    this->avionsSousControle.push_back(std::move(avion));
-}
-
-void Controleur::libererAvion(const std::string& avionId) {
-    std::lock_guard<std::mutex> lock(mutex);
-    avionsSousControle.erase(
-        std::remove_if(avionsSousControle.begin(), avionsSousControle.end(),
-            [&](const std::unique_ptr<Avion>& avion) {
-                return avion->getId() == avionId;
-            }),
-        avionsSousControle.end()
-    );
-}
-
-
-
-
-
-
-
-
-
-
-
-ControleurApproche::ControleurApproche(const std::string& id, Controleur* tour, Temps& temps) 
-    : Controleur(id, temps), tour(tour) {}
-
-void ControleurApproche::assignerTrajectoire(Avion* avion) {
-    std::cout << "Trajectoire assignée à l'avion " << avion->getId() << std::endl;
-}
-
-void ControleurApproche::gererUrgence(Avion* avion) {
-    std::cout << "URGENCE: Gestion de l'avion " << avion->getId() << std::endl;
-    avion->atterrissage();
-}
-
-void ControleurApproche::demanderAutorisationAtterrissage(Avion* avion) {
-    if (avion->getPositionZ() <= 3000 && avion->getCarburant() > 10) {
-        std::cout << "Autorisation d'atterrissage demandée pour avion " << avion->getId() << std::endl;
-    }
-}
-
-void ControleurApproche::run() {
-    while (this->actif) {
-        double facteur = tempsRef.getFacteurTemps();
-        std::lock_guard<std::mutex> lock(mutex);
-        for (auto& avion : this->avionsSousControle) {
-            if (avion->estEnUrgence()) {
-                gererUrgence(avion.get());
-            } else {
-                assignerTrajectoire(avion.get());
-                demanderAutorisationAtterrissage(avion.get());
-            }
-        }
-        int delai = static_cast<int>(500 / facteur);
-        std::this_thread::sleep_for(std::chrono::milliseconds(delai));
-    }
-}
-
-
-
-
-
-
-
-
-
-
-CentreControleRegional::CentreControleRegional(const std::string& id, Temps& temps) : Controleur(id, temps) {}
-
-void CentreControleRegional::ajouterApproche(ControleurApproche* app) {
-    this->approchesLiees.push_back(app);
-}
-
-void CentreControleRegional::transfererVol(const std::string& avionId, ControleurApproche* app) {
-    std::unique_ptr<Avion> avionToTransfer;
-    
-    {
-        std::lock_guard<std::mutex> lock(mutex);
-        auto it = std::find_if(avionsSousControle.begin(), avionsSousControle.end(),
-            [&](const std::unique_ptr<Avion>& avion) {
-                return avion->getId() == avionId;
-            });
-            
-        if (it != avionsSousControle.end()) {
-            avionToTransfer = std::move(*it);
-            avionsSousControle.erase(it);
-        }
-    }
-    
-    if (avionToTransfer) {
-        app->recevoirAvion(std::move(avionToTransfer));
-    }
-}
-
-void CentreControleRegional::run() {
-    while (this->actif) {
-        double facteur = tempsRef.getFacteurTemps();
-        int delai = static_cast<int>(1000 / facteur);
-        std::this_thread::sleep_for(std::chrono::milliseconds(delai));
-    }
-}
-
-double CentreControleRegional::getPositionX() {
-    return this->positionX;
-}
-    
-double CentreControleRegional::getPositionY() {
-    return this->positionY;
-}
-
-void CentreControleRegional::setPositionX(double position) {
-    this->positionX = position;
-}
-    
-void CentreControleRegional::setPositionY(double position) {
-    this->positionY = position;
-}
-
-
-
-
-
-
-
-
-
-TourControle::TourControle(const std::string& id, int nbParkings, Temps& temps) 
-    : Controleur(id, temps), pisteLibre(true) {
-    for (int i = 1; i <= nbParkings; ++i) {
-        parkings["Place " + std::to_string(i)] = true;
-    }
-}
-
-bool TourControle::autoriserAtterrissage(Avion* avion) {
-    std::lock_guard<std::mutex> lock(mutexPiste);
-    if (this->pisteLibre) {
-        this->pisteLibre = false;
-        std::cout << "Autorisation d'atterrissage pour avion " << avion->getId() << std::endl;
-        return true;
-    }
-    return false;
-}
-
-bool TourControle::autoriserDecollage(Avion* avion) {
-    std::lock_guard<std::mutex> lock(mutexPiste);
-    if (this->pisteLibre) {
-        this->pisteLibre= false;
-        std::cout << "Autorisation de décollage pour avion " << avion->getId() << std::endl;
-        return true;
-    }
-    return false;
-}
-
-void TourControle::libererPiste() {
-    std::lock_guard<std::mutex> lock(mutexPiste);
-    pisteLibre = true;
-}
-
-void attribuerParking(Avion* avion, TourControle* tourcontrole) {
-    for (auto& parking : tourcontrole->parkings) {
-        if (parking.second) {
-            parking.second = false;
-            avion->setParkingAttribue(true);
-            std::cout << "Parking " << parking.first << " attribué à avion " << avion->getId() << std::endl;
-            return;
-        }
-    }
-    std::cout << "Aucun parking disponible pour avion " << avion->getId() << std::endl;
-}
-
-void TourControle::run() {
-    while (this->actif) {
-        double facteur = tempsRef.getFacteurTemps();
-        std::lock_guard<std::mutex> lock(mutex);
-        for (auto& avion : this->avionsSousControle) {
-            if (avion->getEtat() == "au sol" && !avion->getParkingAttribue()) {
-                attribuerParking(avion.get(), this);
-            }
-        }
-        int delai = static_cast<int>(200 / facteur);
-        std::this_thread::sleep_for(std::chrono::milliseconds(delai));
-    }
-}
 
 
 
@@ -573,23 +386,14 @@ void TourControle::run() {
 Monde::Monde() {}
 
 void Monde::initialiser() {
-    ccr = std::make_unique<CentreControleRegional>("1", temps);
-    twr = std::make_unique<TourControle>("2", 5, temps);
-    app = std::make_unique<ControleurApproche>("3", twr.get(), temps);
-    
-    ccr->ajouterApproche(app.get());
+
 }
 
 void Monde::demarrerSimulation() {
-    ccr->start();
-    app->start();
-    twr->start();
+
 }
 
 void Monde::arreterSimulation() {
-    twr->stop();
-    app->stop();
-    ccr->stop();
 }
 
 void Monde::ajouterAvion(std::unique_ptr<Avion> avion) {

@@ -2,7 +2,6 @@
 #include <thread>
 #include <mutex>
 #include <vector>
-#include <map>
 #include <fstream>
 #include <memory>
 #include <SFML/Graphics.hpp>
@@ -156,135 +155,13 @@ public:
 
 
 
-class Controleur : public Agent {
-protected:
-    std::mutex mutex;
-    std::vector<std::unique_ptr<Avion>> avionsSousControle;   
-    Temps& tempsRef;
-
-public:
-    Controleur(const std::string& id, Temps& temps);
-    
-    Controleur(const Controleur&) = delete;
-    Controleur& operator=(const Controleur&) = delete;
-    
-    virtual void recevoirAvion(std::unique_ptr<Avion> avion);   
-    virtual void libererAvion(const std::string& avionId);   
-    virtual void run() override = 0;
-};
-
-
-
-
-
-
-
-
-
-
-
-class ControleurApproche : public Controleur {
-private:
-    Controleur* tour; 
-    std::vector<Avion*> fileAttente;
-
-public:
-    ControleurApproche(const std::string& id, Controleur* tour, Temps& temps);
-    
-    ControleurApproche(const ControleurApproche&) = delete;
-    ControleurApproche& operator=(const ControleurApproche&) = delete;
-    
-    void assignerTrajectoire(Avion* avion);
-    void gererUrgence(Avion* avion);
-    void demanderAutorisationAtterrissage(Avion* avion);
-    void run() override;
-};
-
-
-
-
-
-
-
-
-
-
-
-class CentreControleRegional : public Controleur {
-private:
-    std::vector<ControleurApproche*> approchesLiees;
-    double positionX;
-    double positionY;
-
-public:
-    CentreControleRegional(const std::string& id, Temps& temps);
-    
-    CentreControleRegional(const CentreControleRegional&) = delete;
-    CentreControleRegional& operator=(const CentreControleRegional&) = delete;
-    
-    void ajouterApproche(ControleurApproche* app);
-    void transfererVol(const std::string& avionId, ControleurApproche* app);   
-    void run() override;
-    double getPositionX();
-    double getPositionY();
-    void setPositionX(double position);    
-    void setPositionY(double position);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class TourControle : public Controleur {
-private:
-    bool pisteLibre;
-    std::map<std::string, bool> parkings;
-    std::mutex mutexPiste;
-    std::vector<Avion*> fileAttenteDecollage;
-
-public:
-    TourControle(const std::string& id, int nbParkings, Temps& temps);
-    
-    TourControle(const TourControle&) = delete;
-    TourControle& operator=(const TourControle&) = delete;
-    
-    bool autoriserAtterrissage(Avion* avion);
-    bool autoriserDecollage(Avion* avion);
-    void libererPiste();
-    friend void attribuerParking(Avion* avion, TourControle * tourcontrole);
-    void run() override;
-};
-
-
-
-
-
-
-
 
 class Monde {
 private:
     std::vector<std::unique_ptr<Avion>> avions;
-    std::unique_ptr<CentreControleRegional> ccr;
-    std::unique_ptr<ControleurApproche> app;
-    std::unique_ptr<TourControle> twr;
+    // std::unique_ptr<CentreControleRegional> ccr;
+    // std::unique_ptr<ControleurApproche> app;
+    // std::unique_ptr<TourControle> twr;
     Temps temps;
 
 public:
