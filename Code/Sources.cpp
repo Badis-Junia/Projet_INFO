@@ -629,10 +629,15 @@ void Simulation::executer() {
                 avions[0]->atterrissage();
             }
             avions[0]->volDemarre = true;
-            std::cout << "Position avion: (" << avions[0]->getPositionX() << ", " 
-                      << avions[0]->getPositionY() << ", " << avions[0]->getPositionZ() << ")" 
-                      << " - carburant: " << avions[0]->getCarburant() 
-                      << " - état: " << "vol vers " << aeroportDepart.getId() << std::endl;
+                std::cout << "Il est " 
+                          << std::setw(2) << std::setfill('0') << monde.getTemps().getHeure() 
+                          << ":" 
+                          << std::setw(2) << std::setfill('0') << monde.getTemps().getMinute() 
+                          << "H - Position avion: (" 
+                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionX() << ", " 
+                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionY() << ", " 
+                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionZ() << ")" 
+                          << " - état: " << "vol vers " << aeroportDepart.getId() << std::endl;
         }
 
         if(avions[0]->getEtat() != "au sol") {
@@ -662,13 +667,13 @@ void Simulation::executer() {
                           << ":" 
                           << std::setw(2) << std::setfill('0') << monde.getTemps().getMinute() 
                           << "H - Position avion: (" 
-                          << avions[0]->getPositionX() << ", " 
-                          << avions[0]->getPositionY() << ", " 
-                          << avions[0]->getPositionZ() << ")" 
-                          << " - carburant: " << avions[0]->getCarburant() 
+                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionX() << ", " 
+                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionY() << ", " 
+                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionZ() << ")" 
+                          << " - carburant: " << std::setfill(' ')<<std::setw(4.0)<< avions[0]->getCarburant() 
                           << " - état: " << avions[0]->getEtat() << std::endl;
 
-                journal.log("Position avion:" + std::to_string(avions[0]->getPositionX()) + "," + 
+                journal.log("Il est" + std::to_string(monde.getTemps().getHeure()) +":"+ std::to_string(monde.getTemps().getMinute()) +" H- Position avion:" + std::to_string(avions[0]->getPositionX()) + "," + 
                    std::to_string(avions[0]->getPositionY()) + "," + 
                    std::to_string(avions[0]->getPositionZ()) + 
                    " - carburant:" + std::to_string(avions[0]->getCarburant()) +
