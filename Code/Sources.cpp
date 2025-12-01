@@ -417,6 +417,7 @@ void TourControle::gererGarer(std::unique_ptr<Avion>& avion) {
 
 
 
+
 Monde::Monde() {}
 
 void Monde::initialiser() {
@@ -679,7 +680,7 @@ void Simulation::executer() {
                    " - carburant:" + std::to_string(avions[0]->getCarburant()) +
                    " - état:" + avions[0]->getEtat());
 
-                if(avions[0]->getEtat() == "au sol") {
+                if(avions[0]->getEtat() == "au sol" && avions[0]->destination->parkingvide()) {
                     avions[0]->setBienAuSol();
                     avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
                     tour_de_controles[0].gererGarer(avions[0]);
