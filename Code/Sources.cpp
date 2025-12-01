@@ -696,6 +696,7 @@ void Simulation::executer() {
     Temps temps;
     sf::Texture backgroundImage, avionTexture, aeroportTexture;
     sf::Font font;
+
     if (!backgroundImage.loadFromFile(path_image + "background.png") || 
         !avionTexture.loadFromFile(path_image + "avion.png") || 
         !aeroportTexture.loadFromFile(path_image + "aeroport.png") || !font.openFromFile(path_image + "arial.ttf")) {
@@ -731,10 +732,16 @@ void Simulation::executer() {
 
     
     sf::Text texteFacteurTemps(font);
+    sf::Text horloge(font);
     texteFacteurTemps.setFont(font);
     texteFacteurTemps.setCharacterSize(30);
     texteFacteurTemps.setFillColor(sf::Color::White);
     texteFacteurTemps.setPosition(sf::Vector2f(static_cast<float>(10), static_cast<float>(0)));
+
+    horloge.setFont(font);
+    horloge.setCharacterSize(30);
+    horloge.setFillColor(sf::Color::White);
+    horloge.setPosition(sf::Vector2f(static_cast<float>(100), static_cast<float>(0)));
     
     while (app.isOpen()) {
         while (std::optional event = app.pollEvent()) {
@@ -755,6 +762,7 @@ void Simulation::executer() {
         }
 
         texteFacteurTemps.setString("Vitesse du temps: " + std::to_string(monde.getTemps().getFacteurTemps()).substr(0, 3) + "x");
+        horloge.setString(std::to_string(temps.getHeure()) + "H");
 
         if (!avionTest.volDemarre) {
             avionSprite.setRotation(avionTest.inclinaison());
@@ -777,7 +785,9 @@ void Simulation::executer() {
 
         if (counter++ % 60 == 0) {
             if(!avionTest.estBienAuSol()) {
-                std::cout << "Il est " << temps.getHeure() << ":" 
+                std::cout << "Il est " 
+                          << std::setw(2) << std::setfill('0') << temps.getHeure() 
+                          << ":" 
                           << std::setw(2) << std::setfill('0') << temps.getMinute() 
                           << "H - Position avion: (" 
                           << avionTest.getPositionX() << ", " 
