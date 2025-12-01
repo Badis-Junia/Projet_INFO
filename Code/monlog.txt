@@ -1,9 +1,9 @@
-
-Position avion:120.000000,221.000000,10.000000 - carburant:99.000000 - état:decollage
-Position avion:120.000000,231.000000,110.000000 - carburant:89.000000 - état:decollage
-Position avion:120.000000,241.000000,210.000000 - carburant:79.000000 - état:decollage
-Position avion:121.386601,253.751978,403.009992 - carburant:70.800000 - état:en vol
-Position avion:135.252606,291.271758,303.009992 - carburant:69.800000 - état:en vol
-Position avion:162.984617,366.311318,103.009992 - carburant:67.800000 - état:en vol
-Position avion:205.000000,480.000000,0.000000 - carburant:63.480000 - état:au sol
-
+Il est12:0 H- Position avion:120.000000,221.000000,10.000000 - carburant:99.000000 - état:decollage
+Il est12:1 H- Position avion:120.000000,231.000000,110.000000 - carburant:89.000000 - état:decollage
+Il est12:2 H- Position avion:120.000000,241.000000,210.000000 - carburant:79.000000 - état:decollage
+Il est12:3 H- Position avion:121.386601,253.751978,403.009992 - carburant:70.800000 - état:en vol
+Il est12:4 H- Position avion:135.252606,291.271758,303.009992 - carburant:69.800000 - état:en vol
+Il est12:5 H- Position avion:149.118612,328.791538,203.009992 - carburant:68.800000 - état:en vol
+Il est12:6 H- Position avion:178.791864,409.083867,50.000000 - carburant:66.660000 - état:en vol
+Il est12:8 H- Position avion:196.887001,458.047180,5.000000 - carburant:63.420000 - état:atterrissage
+Il est12:10 H- Position avion:205.000000,480.000000,0.000000 - carburant:63.420000 - état:au sol
