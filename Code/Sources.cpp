@@ -388,8 +388,9 @@ bool Aeroport::parkingvide() {
 void TourControle::gererGarer() {
     std::vector<std::string> le_parking = this->aeroport.getParking();
     for(int i = 0;i<le_parking.size();i++) {
-        if(le_parking[i] == "Rien") {
+        if(le_parking[i] == "Rien" || !this->avion.estgare) {
             this->aeroport.setParking(i, this->avion.getId());
+            this->avion.estgare = true;
         }
     }
 }

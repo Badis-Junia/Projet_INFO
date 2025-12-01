@@ -112,13 +112,14 @@ private:
     double vitesseApproche = 200.0;
     double vitesseFinale = 100.0;
     double vitesseAtterrissage = 50.0;
-    bool estgare;
+
     bool bienausol;
     bool estgaré;
     sf::Angle angle;
     Temps& tempsRef;
 
 public:
+
     Avion(const std::string& id, const std::string& compagnie, Aeroport & aeroport, Temps& temps);
     ~Avion();
     bool volDemarre = false;
@@ -149,6 +150,7 @@ public:
     sf::Angle inclinaison();
     bool estBienAuSol();
     void setBienAuSol();
+    bool estgare;
 };
 
 class TourControle {
