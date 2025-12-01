@@ -241,15 +241,7 @@ public:
 
 
 
-class InterfaceGraphique {
-private:
-    std::mutex mutexAffichage;
 
-public:
-    void afficherAPP(const std::vector<Avion*>& avions);
-    void afficherTWR(const std::vector<Avion*>& avions);
-    void afficherCCR(const std::vector<Avion*>& avions);
-};
 
 
 
@@ -293,7 +285,6 @@ private:
     std::unique_ptr<CentreControleRegional> ccr;
     std::unique_ptr<ControleurApproche> app;
     std::unique_ptr<TourControle> twr;
-    InterfaceGraphique interface;
     Temps temps;
 
 public:

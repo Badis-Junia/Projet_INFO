@@ -561,9 +561,6 @@ void TourControle::run() {
 
 
 
-void InterfaceGraphique::afficherAPP(const std::vector<Avion*>& avions) {}
-void InterfaceGraphique::afficherTWR(const std::vector<Avion*>& avions) {}
-void InterfaceGraphique::afficherCCR(const std::vector<Avion*>& avions) {}
 
 
 
