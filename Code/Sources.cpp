@@ -361,6 +361,9 @@ std::vector<std::string> Aeroport::getParking() {
     return this->parking;
 }
 
+void Aeroport::setParking(int indice, std::string etat) {
+    this->parking[indice] = etat;
+}
 
 
 
@@ -368,8 +371,14 @@ std::vector<std::string> Aeroport::getParking() {
 
 
 
-void TourControle::run() {
 
+void TourControle::gererGarer() {
+    std::vector<std::string> le_parking = this->aeroport.getParking();
+    for(int i = 0;i<le_parking.size();i++) {
+        if(le_parking[i] == "Rien") {
+            this->aeroport.setParking(i, "Pris");
+        }
+    }
 }
 
 
