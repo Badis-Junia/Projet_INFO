@@ -376,7 +376,7 @@ void TourControle::gererGarer() {
     std::vector<std::string> le_parking = this->aeroport.getParking();
     for(int i = 0;i<le_parking.size();i++) {
         if(le_parking[i] == "Rien") {
-            this->aeroport.setParking(i, "Pris");
+            this->aeroport.setParking(i, this->avion.getId());
         }
     }
 }
