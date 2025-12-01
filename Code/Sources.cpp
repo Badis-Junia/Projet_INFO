@@ -338,6 +338,8 @@ std::string Avion::getIdaeroport(Aeroport* aeroport) const{
     return aeroport->getId();
 }
 
+
+
 void Aeroport::setPosition(double positionX, double positionY) {
     this->positionX = positionX;
     this->positionY = positionY;
@@ -355,6 +357,11 @@ std::string Aeroport::getId() {
     return this->id;
 }
 
+std::vector<std::string> Aeroport::getParking() {
+    return this->parking;
+}
+
+
 
 
 
@@ -365,9 +372,7 @@ void TourControle::run() {
 
 }
 
-void TourControle::gererGarer() {
 
-}
 
 
 

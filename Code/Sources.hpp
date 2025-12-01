@@ -70,10 +70,11 @@ protected:
     double positionX;
     double positionY;
     bool pistelibre;
-    std::vector<int> parking;
+    std::vector<std::string> parking = {"Rien", "Rien", "Rien", "Rien", "Rien", "Rien", "Rien", "Rien", "Rien", "Rien"};
 
 public:
     Aeroport(const std::string & id, double positionX, double positionY) : id(id), positionX(positionX), positionY(positionY) {};
+    std::vector<std::string> getParking();
     double getPositionX();
     double getPositionY();
     std::string getId();
