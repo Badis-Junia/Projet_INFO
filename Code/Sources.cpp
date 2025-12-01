@@ -543,7 +543,7 @@ void Simulation::executer() {
     CentreControle centre(&monde);
     std::vector<Aeroport> aeroports = centre.tous_les_aeroports;
     auto& avions = centre.tous_les_avions;
-
+    
     for (size_t i = 0; i < aeroports.size(); i++) {
         if(aeroports[i].parkingvide()) {
             sf::Sprite aeroportSprite(aeroportTexturelibre);
@@ -649,6 +649,7 @@ void Simulation::executer() {
                 if(avions[0]->getEtat() == "au sol") {
                     avions[0]->setBienAuSol();
                     avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
+                    
                 }
             }
         }
