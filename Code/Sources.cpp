@@ -528,7 +528,7 @@ void Simulation::executer() {
     const sf::Vector2u WINDOW_SIZE(1300, 805);
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
-    Temps temps;
+
     sf::Texture backgroundImage, avionTexture, aeroportTexture, aeroportTexturelibre, aeroportTexturepaslibre;
     sf::Font font;
 
@@ -581,9 +581,9 @@ void Simulation::executer() {
     texteFacteurTemps.setPosition(sf::Vector2f(static_cast<float>(10), static_cast<float>(0)));
 
     horloge.setFont(font);
-    horloge.setCharacterSize(30);
+    horloge.setCharacterSize(50);
     horloge.setFillColor(sf::Color::White);
-    horloge.setPosition(sf::Vector2f(static_cast<float>(20), static_cast<float>(0)));
+    horloge.setPosition(sf::Vector2f(static_cast<float>(1100), static_cast<float>(10)));
     
     while (app.isOpen()) {
         while (std::optional event = app.pollEvent()) {
@@ -604,7 +604,7 @@ void Simulation::executer() {
         }
 
         texteFacteurTemps.setString("Vitesse du temps: " + std::to_string(monde.getTemps().getFacteurTemps()).substr(0, 3) + "x");
-        horloge.setString(std::to_string(temps.getHeure()) + ":" + std::to_string(temps.getMinute()) + "H");
+        horloge.setString(std::to_string(monde.getTemps().getHeure()) + ":" + std::to_string(monde.getTemps().getMinute()) + "H");
 
         if (!avions[0]->volDemarre) {
             avionSprite.setRotation(avions[0]->inclinaison());
@@ -628,9 +628,9 @@ void Simulation::executer() {
         if (counter++ % 60 == 0) {
             if(!avions[0]->estBienAuSol()) {
                 std::cout << "Il est " 
-                          << std::setw(2) << std::setfill('0') << temps.getHeure() 
+                          << std::setw(2) << std::setfill('0') << monde.getTemps().getHeure() 
                           << ":" 
-                          << std::setw(2) << std::setfill('0') << temps.getMinute() 
+                          << std::setw(2) << std::setfill('0') << monde.getTemps().getMinute() 
                           << "H - Position avion: (" 
                           << avions[0]->getPositionX() << ", " 
                           << avions[0]->getPositionY() << ", " 
@@ -643,11 +643,11 @@ void Simulation::executer() {
                    std::to_string(avions[0]->getPositionZ()) + 
                    " - carburant:" + std::to_string(avions[0]->getCarburant()) +
                    " - état:" + avions[0]->getEtat());
-                if(temps.getMinute() < 60) {
-                    temps.setMinute(temps.getMinute() + 1);
+                if(monde.getTemps().getMinute() < 60) {
+                    monde.getTemps().setMinute(monde.getTemps().getMinute() + 1);
                 } else {
-                    temps.setHeure(temps.getHeure() + 1);
-                    temps.setMinute(0);
+                    monde.getTemps().setHeure(monde.getTemps().getHeure() + 1);
+                    monde.getTemps().setMinute(0);
                 }
                 if(avions[0]->getEtat() == "au sol") {
                     avions[0]->setBienAuSol();
@@ -667,6 +667,7 @@ void Simulation::executer() {
         
         if (font.getInfo().family != "") {
             app.draw(texteFacteurTemps);
+            app.draw(horloge);
         }
         
         app.display();
