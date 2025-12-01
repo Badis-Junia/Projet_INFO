@@ -5,6 +5,7 @@
 #include <math.h>
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <iomanip>
 
 Agent::Agent(const int & id) : id(id), actif(false) {}
 
@@ -776,9 +777,14 @@ void Simulation::executer() {
 
         if (counter++ % 60 == 0) {
             if(!avionTest.estBienAuSol()) {
-                std::cout << "Il est " << temps.getHeure() << ":" << temps.getMinute() << "H" << " - " << "Position avion: (" 
-                    << avionTest.getPositionX() << ", " << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
-                    << " - carburant: " << avionTest.getCarburant() << " - état: " << avionTest.getEtat() << std::endl;
+                std::cout << "Il est " << temps.getHeure() << ":" 
+                          << std::setw(2) << std::setfill('0') << temps.getMinute() 
+                          << "H - Position avion: (" 
+                          << avionTest.getPositionX() << ", " 
+                          << avionTest.getPositionY() << ", " 
+                          << avionTest.getPositionZ() << ")" 
+                          << " - carburant: " << avionTest.getCarburant() 
+                          << " - état: " << avionTest.getEtat() << std::endl;
 
                 journal.log("Position avion:" + std::to_string(avionTest.getPositionX()) + "," + 
                    std::to_string(avionTest.getPositionY()) + "," + 
