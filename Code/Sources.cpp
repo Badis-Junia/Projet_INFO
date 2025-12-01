@@ -527,12 +527,9 @@ void Simulation::executer() {
     sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture);
     std::vector<sf::Sprite> aeroportsSprite;
 
-    std::vector<Aeroport> aeroports = {
-        {"Oregon", 100, 200}, {"Texas", 450, 600}, {"Ohio", 925, 380},
-        {"Montana", 390, 180}, {"Colorado", 410, 425}, {"NewYork", 1100, 230},
-        {"Tennessy", 900, 500}, {"Floride", 1025, 750}, {"Californie", 175, 450},
-        {"Iowa", 700, 350}
-    };
+    CentreControle centre(&monde);
+    std::vector<Aeroport> aeroports = centre.tous_les_aeroports;
+    auto& avions = centre.tous_les_avions;
 
     for (size_t i = 0; i < aeroports.size(); i++) {
         sf::Sprite aeroportSprite(aeroportTexture);
@@ -542,12 +539,11 @@ void Simulation::executer() {
     }
 
     Aeroport aeroportDepart = aeroports[0];
-    Avion avionTest("10", "AirTest", aeroportDepart, monde.getTemps());
     avionSprite.setScale(sf::Vector2f(0.6, 0.6));
     
-    avionTest.start();
-    avionTest.decollage();
-    avionTest.setDestination(aeroports[8].getPositionX(), aeroports[8].getPositionY());
+    avions[0]->start();
+    avions[0]->decollage();
+    avions[0]->setDestination(aeroports[8].getPositionX(), aeroports[8].getPositionY());
     int counter = 0;
     Journal journal("monlog.txt");
 
@@ -585,51 +581,51 @@ void Simulation::executer() {
         texteFacteurTemps.setString("Vitesse du temps: " + std::to_string(monde.getTemps().getFacteurTemps()).substr(0, 3) + "x");
         horloge.setString(std::to_string(temps.getHeure()) + "H");
 
-        if (!avionTest.volDemarre) {
-            avionSprite.setRotation(avionTest.inclinaison());
-            if (avionTest.volDemarre && avionTest.getEtat() == "en vol" && 
-                sqrt(pow(avionTest.getPositionX() - aeroportDepart.getPositionX(), 2) + 
-                     pow(avionTest.getPositionY() - aeroportDepart.getPositionY(), 2)) < 50) {
-                avionTest.atterrissage();
+        if (!avions[0]->volDemarre) {
+            avionSprite.setRotation(avions[0]->inclinaison());
+            if (avions[0]->volDemarre && avions[0]->getEtat() == "en vol" && 
+                sqrt(pow(avions[0]->getPositionX() - aeroportDepart.getPositionX(), 2) + 
+                     pow(avions[0]->getPositionY() - aeroportDepart.getPositionY(), 2)) < 50) {
+                avions[0]->atterrissage();
             }
-            avionTest.volDemarre = true;
-            std::cout << "Position avion: (" << avionTest.getPositionX() << ", " 
-                      << avionTest.getPositionY() << ", " << avionTest.getPositionZ() << ")" 
-                      << " - carburant: " << avionTest.getCarburant() 
+            avions[0]->volDemarre = true;
+            std::cout << "Position avion: (" << avions[0]->getPositionX() << ", " 
+                      << avions[0]->getPositionY() << ", " << avions[0]->getPositionZ() << ")" 
+                      << " - carburant: " << avions[0]->getCarburant() 
                       << " - état: " << "vol vers " << aeroportDepart.getId() << std::endl;
         }
 
-        if(avionTest.getEtat() != "au sol") {
-            avionSprite.setPosition(sf::Vector2f(static_cast<float>(avionTest.getPositionX()), 
-                                                static_cast<float>(avionTest.getPositionY())));
+        if(avions[0]->getEtat() != "au sol") {
+            avionSprite.setPosition(sf::Vector2f(static_cast<float>(avions[0]->getPositionX()), 
+                                                static_cast<float>(avions[0]->getPositionY())));
         }
 
         if (counter++ % 60 == 0) {
-            if(!avionTest.estBienAuSol()) {
+            if(!avions[0]->estBienAuSol()) {
                 std::cout << "Il est " 
                           << std::setw(2) << std::setfill('0') << temps.getHeure() 
                           << ":" 
                           << std::setw(2) << std::setfill('0') << temps.getMinute() 
                           << "H - Position avion: (" 
-                          << avionTest.getPositionX() << ", " 
-                          << avionTest.getPositionY() << ", " 
-                          << avionTest.getPositionZ() << ")" 
-                          << " - carburant: " << avionTest.getCarburant() 
-                          << " - état: " << avionTest.getEtat() << std::endl;
+                          << avions[0]->getPositionX() << ", " 
+                          << avions[0]->getPositionY() << ", " 
+                          << avions[0]->getPositionZ() << ")" 
+                          << " - carburant: " << avions[0]->getCarburant() 
+                          << " - état: " << avions[0]->getEtat() << std::endl;
 
-                journal.log("Position avion:" + std::to_string(avionTest.getPositionX()) + "," + 
-                   std::to_string(avionTest.getPositionY()) + "," + 
-                   std::to_string(avionTest.getPositionZ()) + 
-                   " - carburant:" + std::to_string(avionTest.getCarburant()) +
-                   " - état:" + avionTest.getEtat());
+                journal.log("Position avion:" + std::to_string(avions[0]->getPositionX()) + "," + 
+                   std::to_string(avions[0]->getPositionY()) + "," + 
+                   std::to_string(avions[0]->getPositionZ()) + 
+                   " - carburant:" + std::to_string(avions[0]->getCarburant()) +
+                   " - état:" + avions[0]->getEtat());
                 if(temps.getMinute() < 60) {
                     temps.setMinute(temps.getMinute() + 1);
                 } else {
                     temps.setHeure(temps.getHeure() + 1);
                     temps.setMinute(0);
                 }
-                if(avionTest.getEtat() == "au sol") {
-                    avionTest.setBienAuSol();
+                if(avions[0]->getEtat() == "au sol") {
+                    avions[0]->setBienAuSol();
                     avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
                 }
             }
@@ -650,6 +646,6 @@ void Simulation::executer() {
         app.display();
     }
 
-    avionTest.stop();
+    avions[0]->stop();
     monde.arreterSimulation();
 }
