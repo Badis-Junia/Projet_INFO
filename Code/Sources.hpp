@@ -6,6 +6,7 @@
 #include <memory>
 #include <SFML/Graphics.hpp>
 
+
 class Temps {
 private:
     double facteurTemps;
@@ -64,10 +65,13 @@ public:
 
 
 class Aeroport {
-private:
+protected:
     std::string id;
     double positionX;
     double positionY;
+    bool pistelibre;
+    std::vector<int> parking;
+
 public:
     Aeroport(const std::string & id, double positionX, double positionY) : id(id), positionX(positionX), positionY(positionY) {};
     double getPositionX();
@@ -144,7 +148,17 @@ public:
     void setBienAuSol();
 };
 
-
+class TourControle {
+    private:
+        Aeroport &aeroport;
+        Avion &avion;
+        std::string id;
+        int rayon;
+    public:
+        TourControle(Aeroport & aeroport, Avion & avion)  : aeroport(aeroport), avion(avion), id(aeroport.getId()) {};
+        void run();
+        void gererGarer();
+};
 
 
 
@@ -159,9 +173,6 @@ public:
 class Monde {
 private:
     std::vector<std::unique_ptr<Avion>> avions;
-    // std::unique_ptr<CentreControleRegional> ccr;
-    // std::unique_ptr<ControleurApproche> app;
-    // std::unique_ptr<TourControle> twr;
     Temps temps;
 
 public:

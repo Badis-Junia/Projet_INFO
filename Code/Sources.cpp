@@ -361,7 +361,13 @@ std::string Aeroport::getId() {
 
 
 
+void TourControle::run() {
 
+}
+
+void TourControle::gererGarer() {
+
+}
 
 
 
