@@ -75,6 +75,7 @@ protected:
 public:
     Aeroport(const std::string & id, double positionX, double positionY) : id(id), positionX(positionX), positionY(positionY) {};
     std::vector<std::string> getParking();
+    bool parkingvide();
     double getPositionX();
     double getPositionY();
     std::string getId();
