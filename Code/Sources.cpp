@@ -253,7 +253,7 @@ bool Avion::getParkingAttribue() const{
 void Avion::setParkingAttribue(bool etat){
     this->estgare=etat;
 }
-
+// test 
 void Avion::setEnDeplacement(bool etat) {
     this->enDeplacement = etat;
 }
