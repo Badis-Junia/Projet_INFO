@@ -671,12 +671,7 @@ void Simulation::executer() {
                    std::to_string(avions[0]->getPositionZ()) + 
                    " - carburant:" + std::to_string(avions[0]->getCarburant()) +
                    " - état:" + avions[0]->getEtat());
-                if(monde.getTemps().getMinute() < 60) {
-                    monde.getTemps().setMinute(monde.getTemps().getMinute() + 1);
-                } else {
-                    monde.getTemps().setHeure(monde.getTemps().getHeure() + 1);
-                    monde.getTemps().setMinute(0);
-                }
+
                 if(avions[0]->getEtat() == "au sol") {
                     avions[0]->setBienAuSol();
                     avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
