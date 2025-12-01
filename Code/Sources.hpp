@@ -16,9 +16,15 @@ private:
     int minute = 0;
     int heure = 12;
     std::mutex mutex;
+    
 
+    std::chrono::steady_clock::time_point dernierUpdate;
+    float tempsAccumule = 0.0f; // en secondes
+    
 public:
-    Temps() : facteurTemps(1) {}
+    Temps() : facteurTemps(1) {
+        dernierUpdate = std::chrono::steady_clock::now();
+    }
     
     double getFacteurTemps();
     int getMinute();
@@ -28,6 +34,9 @@ public:
     void accelererTemps();
     void ralentirTemps();
     void resetTemps();
+    
+    void update();
+    
     friend std::ostream& operator<<(std::ostream& flux, const Temps & temps);
 };
 

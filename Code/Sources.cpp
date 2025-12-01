@@ -511,7 +511,33 @@ void Temps::resetTemps() {
     this->mutex.unlock();
 }
 
+void Temps::update() {
+    std::lock_guard<std::mutex> lock(mutex);
+    
+    auto maintenant = std::chrono::steady_clock::now();
+    auto delta = std::chrono::duration<float>(maintenant - dernierUpdate).count();
+    dernierUpdate = maintenant;
+    
 
+    this->tempsAccumule += delta * this->facteurTemps;
+    
+
+    const float temps_simule = 1.0f; 
+    
+    while (tempsAccumule >= temps_simule) {
+        tempsAccumule -= temps_simule;
+        this->minute++;
+        
+        if (this->minute >= 60) {
+            this->minute = 0;
+            this->heure++;
+            
+            if (this->heure >= 24) {
+                this->heure = 0;
+            }
+        }
+    }
+}
 
 
 
@@ -602,9 +628,11 @@ void Simulation::executer() {
                 }
             }
         }
-
+        monde.getTemps().update();
         texteFacteurTemps.setString("Vitesse du temps: " + std::to_string(monde.getTemps().getFacteurTemps()).substr(0, 3) + "x");
-        horloge.setString(std::to_string(monde.getTemps().getHeure()) + ":" + std::to_string(monde.getTemps().getMinute()) + "H");
+        std::string heureStr = (monde.getTemps().getHeure() < 10 ? "0" : "") + std::to_string(monde.getTemps().getHeure());
+        std::string minuteStr = (monde.getTemps().getMinute() < 10 ? "0" : "") + std::to_string(monde.getTemps().getMinute());
+        horloge.setString(heureStr + ":" + minuteStr + "H");
 
         if (!avions[0]->volDemarre) {
             avionSprite.setRotation(avions[0]->inclinaison());
