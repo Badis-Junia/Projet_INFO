@@ -232,12 +232,17 @@ public:
         {"Montana", 390, 180}, {"Colorado", 410, 425}, {"NewYork", 1100, 230},
         {"Tennessy", 900, 500}, {"Floride", 1025, 750}, {"Californie", 175, 450},
         {"Iowa", 700, 350}};
-    
+    std::vector<TourControle> tous_les_tours_de_controles;    
     std::vector<std::unique_ptr<Avion>> tous_les_avions;
     CentreControle(Monde* monde) {
         tous_les_avions.push_back(
             std::make_unique<Avion>("10", "AirTest", tous_les_aeroports[0], monde->getTemps())
         );
+        tous_les_tours_de_controles.emplace_back(
+            tous_les_aeroports[0], 
+            *(tous_les_avions[0]) 
+        );
     }
+
 
 };
