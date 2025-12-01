@@ -9,8 +9,6 @@
 
 Agent::Agent(const int & id) : id(id), actif(false) {}
 
-
-
 void Agent::stop() {
     this->actif = false;
     if (this->monthread.joinable()) {
@@ -26,15 +24,6 @@ void Agent::start() {
     this->actif = true;
     this->monthread = std::thread(&Agent::run, this);
 }
-
-
-
-
-
-
-
-
-
 
 Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aeroport, Temps& temps) 
     : Agent(std::stoi(id)), tempsRef(temps) {
@@ -56,16 +45,114 @@ Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aer
     this->enApprocheFinale = false; 
     this->setVitesse(1.0); 
     this->setPosition(aeroport.getPositionX() + 20, aeroport.getPositionY() + 20, 0);
+    this->enDeviation = false;
+    this->destinationOriginaleX = 0;
+    this->destinationOriginaleY = 0;
+    this->pointDeviationX = 0;
+    this->pointDeviationY = 0;
+    this->aAtteintPointDeviation = false;
 }
 
 Avion::~Avion() {
     stop();
 }
 
+bool Avion::verifierRisqueCollision(const Avion* autreAvion) const {
+    if (this->id == autreAvion->id) return false;
+    if (this->etat == "au sol" || autreAvion->etat == "au sol") return false;
+    
+    double distanceHorizontale = sqrt(pow(this->positionX - autreAvion->positionX, 2) +
+                                     pow(this->positionY - autreAvion->positionY, 2));
+    double distanceVerticale = abs(this->positionZ - autreAvion->positionZ);
+    
+    return (distanceHorizontale < 100.0 && distanceVerticale < 50.0);
+}
+
+void Avion::calculerDeviation(const Avion* avionConflictuel) {
+    std::lock_guard<std::mutex> lock(mutexDeviation);
+    
+    if (enDeviation) return;
+    
+    destinationOriginaleX = destinationX;
+    destinationOriginaleY = destinationY;
+    
+    double dx = destinationX - positionX;
+    double dy = destinationY - positionY;
+    
+    double longueur = sqrt(dx * dx + dy * dy);
+    if (longueur > 0) {
+        dx /= longueur;
+        dy /= longueur;
+    }
+    
+    double perpX = -dy;
+    double perpY = dx;
+    
+    pointDeviationX = positionX + perpX * 50.0;
+    pointDeviationY = positionY + perpY * 50.0;
+    
+    enDeviation = true;
+    aAtteintPointDeviation = false;
+}
+
+void Avion::appliquerDeviation() {
+    if (!enDeviation) return;
+    
+    std::lock_guard<std::mutex> lock(mutexDeviation);
+    
+    if (!aAtteintPointDeviation) {
+        double dx = pointDeviationX - positionX;
+        double dy = pointDeviationY - positionY;
+        double distance = sqrt(dx * dx + dy * dy);
+        
+        if (distance > 5.0) {
+            if (distance > 0) {
+                dx /= distance;
+                dy /= distance;
+            }
+            
+            double facteur = tempsRef.getFacteurTemps();
+            double vitesseDeplacement = this->vitesse * 0.02 * facteur;
+            
+            positionX += dx * vitesseDeplacement;
+            positionY += dy * vitesseDeplacement;
+        } else {
+            aAtteintPointDeviation = true;
+        }
+    } else {
+        double dx = destinationOriginaleX - positionX;
+        double dy = destinationOriginaleY - positionY;
+        double distance = sqrt(dx * dx + dy * dy);
+        
+        if (distance > 0) {
+            dx /= distance;
+            dy /= distance;
+        }
+        
+        double facteur = tempsRef.getFacteurTemps();
+        double vitesseDeplacement = this->vitesse * 0.02 * facteur;
+        
+        positionX += dx * vitesseDeplacement;
+        positionY += dy * vitesseDeplacement;
+        
+        if (distance < 10.0) {
+            enDeviation = false;
+            aAtteintPointDeviation = false;
+            destinationX = destinationOriginaleX;
+            destinationY = destinationOriginaleY;
+        }
+    }
+}
+
 void Avion::run() {
    while (this->actif) {
         double facteur = tempsRef.getFacteurTemps();        
-        if (this->etat == "en vol" && this->enDeplacement) {
+        
+        if (enDeviation) {
+            appliquerDeviation();
+            consommerCarburant("en vol");
+        }
+        else if (this->etat == "en vol" && this->enDeplacement) {
             double directionX = this->destinationX - this->positionX;
             double directionY = this->destinationY - this->positionY;
             double distanceHorizontale = sqrt(directionX * directionX + directionY * directionY);
@@ -127,6 +214,9 @@ void Avion::run() {
                 this->etat = "au sol";
                 this->vitesse = 0;
                 this->enApprocheFinale = false;
+                std::lock_guard<std::mutex> lock(mutexDeviation);
+                this->enDeviation = false;
+                this->aAtteintPointDeviation = false;
             }
 
             consommerCarburant("en vol");
@@ -180,19 +270,16 @@ void Avion::run() {
 
         if (this->carburant < 20 && !this->urgence && this->etat != "au sol") {
             declarerUrgence(true);
-            std::cout << "Avion " << this->id << " déclare une urgence carburant !" << std::endl;
         }
 
         if (this->urgence && this->etat != "atterrissage" && this->etat != "au sol") {
             this->etat = "atterrissage";
             this->enDeplacement = true;
-            std::cout << "Avion " << this->id << " entame un atterrissage d'urgence !" << std::endl;
         }
 
         if (this->carburant <= 0 && this->etat != "au sol") {
             this->etat = "crash";
             this->enDeplacement = false;
-            std::cout << "Avion " << this->id << " a crashé ! Plus de carburant." << std::endl;
         }
 
         int delai = static_cast<int>(100 / facteur);
@@ -244,6 +331,9 @@ void Avion::setDestination(Aeroport & aeroport) {
     if(this->etat != "decollage") {
         this->etat = "en vol";
     }
+    std::lock_guard<std::mutex> lock(mutexDeviation);
+    this->enDeviation = false;
+    this->aAtteintPointDeviation = false;
 }
 
 bool Avion::getParkingAttribue() const{
@@ -253,7 +343,7 @@ bool Avion::getParkingAttribue() const{
 void Avion::setParkingAttribue(bool etat){
     this->estgare=etat;
 }
-// test 
+
 void Avion::setEnDeplacement(bool etat) {
     this->enDeplacement = etat;
 }
@@ -292,7 +382,9 @@ void Avion::atterrissage() {
     if (this->etat != "atterrissage" && this->etat != "au sol") {
         this->etat = "atterrissage";
         this->enDeplacement = false;
-        std::cout << "Avion " << this->id << " commence l'atterrissage" << std::endl;
+        std::lock_guard<std::mutex> lock(mutexDeviation);
+        this->enDeviation = false;
+        this->aAtteintPointDeviation = false;
     }
 }
 
@@ -338,8 +430,6 @@ std::string Avion::getIdaeroport(Aeroport* aeroport) const{
     return aeroport->getId();
 }
 
-
-
 void Aeroport::setPosition(double positionX, double positionY) {
     this->positionX = positionX;
     this->positionY = positionY;
@@ -379,12 +469,6 @@ bool Aeroport::parkingvide() {
     }
 }
 
-
-
-
-
-
-
 void TourControle::gererGarer(std::unique_ptr<Avion>& avion) {
     std::vector<std::string> le_parking = avion->destination->getParking();
     for(int i = 0;i<le_parking.size();i++) {
@@ -395,37 +479,12 @@ void TourControle::gererGarer(std::unique_ptr<Avion>& avion) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Monde::Monde() {}
 
 void Monde::initialiser() {
-
 }
 
 void Monde::demarrerSimulation() {
-
 }
 
 void Monde::arreterSimulation() {
@@ -434,13 +493,6 @@ void Monde::arreterSimulation() {
 void Monde::ajouterAvion(std::unique_ptr<Avion> avion) {
     avions.push_back(std::move(avion));
 }
-
-
-
-
-
-
-
 
 Journal::Journal(const std::string& nomFichier) {
     fichier.open("../Code/" + nomFichier);
@@ -458,12 +510,6 @@ Journal::~Journal() {
         fichier.close();
     }
 }
-
-
-
-
-
-
 
 std::ostream& operator<<(std::ostream& flux, const Temps& h) {
     flux << h.heure << ":" << h.minute << "H";
@@ -488,7 +534,6 @@ void Temps::setHeure(int monheure) {
 void Temps::setMinute(int monminute) {
     this->minute = monminute;
 }
-
 
 int Temps::getHeure() {
     return this->heure;
@@ -519,10 +564,8 @@ void Temps::update() {
     auto delta = std::chrono::duration<float>(maintenant - dernierUpdate).count();
     dernierUpdate = maintenant;
     
-
     this->tempsAccumule += delta * this->facteurTemps;
     
-
     const float temps_simule = 1.0f; 
     
     while (tempsAccumule >= temps_simule) {
@@ -539,12 +582,6 @@ void Temps::update() {
         }
     }
 }
-
-
-
-
-
-
 
 Simulation::Simulation() : path_image("../Pictures/") {}
 
@@ -565,28 +602,33 @@ void Simulation::executer() {
         throw std::runtime_error("Erreur pendant le chargement des images");
     }
 
-    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture);
+    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), avionSprite2(avionTexture);
     std::vector<sf::Sprite> aeroportsSprite;
 
     CentreControle centre(&monde);
-    std::vector<Aeroport>& aeroports = centre.tous_les_aeroports;  // Notez le '&' pour une référence
-    std::vector<TourControle>& tour_de_controles = centre.tous_les_tours_de_controles;                                                                   //
-                                                                   //
+    std::vector<Aeroport>& aeroports = centre.tous_les_aeroports;
+    std::vector<TourControle>& tour_de_controles = centre.tous_les_tours_de_controles;
+
     centre.tous_les_aeroports[5].setParking(0, "Pris");
     auto& avions = centre.tous_les_avions;
-    
-
 
     Aeroport aeroportDepart = aeroports[0];
+    Aeroport aeroportArrivee = aeroports[8];
+    
     avionSprite.setScale(sf::Vector2f(0.6, 0.6));
+    avionSprite2.setScale(sf::Vector2f(0.6, 0.6));
     
     avions[0]->start();
     avions[0]->decollage();
     avions[0]->setDestination(aeroports[8]);
+    
+    avions[1]->start();
+    avions[1]->decollage();
+    avions[1]->setDestination(aeroports[0]);
+    
     int counter = 0;
     Journal journal("monlog.txt");
 
-    
     sf::Text texteFacteurTemps(font);
     sf::Text horloge(font);
     texteFacteurTemps.setFont(font);
@@ -622,29 +664,47 @@ void Simulation::executer() {
         std::string minuteStr = (monde.getTemps().getMinute() < 10 ? "0" : "") + std::to_string(monde.getTemps().getMinute());
         horloge.setString(heureStr + " : " + minuteStr + "H");
 
-        if (!avions[0]->volDemarre) {
-            avionSprite.setRotation(avions[0]->inclinaison());
-            if (avions[0]->volDemarre && avions[0]->getEtat() == "en vol" && 
-                sqrt(pow(avions[0]->getPositionX() - aeroportDepart.getPositionX(), 2) + 
-                     pow(avions[0]->getPositionY() - aeroportDepart.getPositionY(), 2)) < 50) {
-                avions[0]->atterrissage();
+        for (size_t i = 0; i < avions.size(); i++) {
+            if (!avions[i]->volDemarre) {
+                if (i == 0) {
+                    avionSprite.setRotation(avions[i]->inclinaison());
+                } else {
+                    avionSprite2.setRotation(avions[i]->inclinaison());
+                }
+                
+                avions[i]->volDemarre = true;
+                
+                if (i == 0) {
+                    std::cout << "Avion " << avions[i]->getId() << " décollage de " << aeroportDepart.getId() 
+                              << " vers " << aeroportArrivee.getId() << std::endl;
+                } else {
+                    std::cout << "Avion " << avions[i]->getId() << " décollage de " << aeroportArrivee.getId() 
+                              << " vers " << aeroportDepart.getId() << std::endl;
+                }
             }
-            avions[0]->volDemarre = true;
-                std::cout << "Il est " 
-                          << std::setw(2) << std::setfill('0') << monde.getTemps().getHeure() 
-                          << ":" 
-                          << std::setw(2) << std::setfill('0') << monde.getTemps().getMinute() 
-                          << "H - Position avion: (" 
-                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionX() << ", " 
-                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionY() << ", " 
-                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionZ() << ")" 
-                          << " - état: " << "vol vers " << aeroportDepart.getId() << std::endl;
+            
+            for (size_t j = i + 1; j < avions.size(); j++) {
+                if (avions[i]->verifierRisqueCollision(avions[j].get())) {
+                    avions[i]->calculerDeviation(avions[j].get());
+                    avions[j]->calculerDeviation(avions[i].get());
+                    std::cout << "Risque collision détecté entre avion " << avions[i]->getId() 
+                              << " et avion " << avions[j]->getId() << std::endl;
+                }
+            }
         }
 
         if(avions[0]->getEtat() != "au sol") {
             avionSprite.setPosition(sf::Vector2f(static_cast<float>(avions[0]->getPositionX()), 
                                                 static_cast<float>(avions[0]->getPositionY())));
+            avionSprite.setRotation(avions[0]->inclinaison());
         }
+        
+        if(avions[1]->getEtat() != "au sol") {
+            avionSprite2.setPosition(sf::Vector2f(static_cast<float>(avions[1]->getPositionX()), 
+                                                 static_cast<float>(avions[1]->getPositionY())));
+            avionSprite2.setRotation(avions[1]->inclinaison());
+        }
+        
         for (size_t i = 0; i < aeroports.size(); i++) {
             if(aeroports[i].parkingvide()) {
                 sf::Sprite aeroportSprite(aeroportTexturelibre);
@@ -657,33 +717,34 @@ void Simulation::executer() {
                 aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
                 aeroportsSprite.push_back(aeroportSprite);
             }
-
-
         }
 
         if (counter++ % 60 == 0) {
-            if(!avions[0]->estBienAuSol()) {
-                std::cout << "Il est " 
-                          << std::setw(2) << std::setfill('0') << monde.getTemps().getHeure() 
-                          << ":" 
-                          << std::setw(2) << std::setfill('0') << monde.getTemps().getMinute() 
-                          << "H - Position avion: (" 
-                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionX() << ", " 
-                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionY() << ", " 
-                          << std::setfill(' ')<< std::setw(7.0)<< avions[0]->getPositionZ() << ")" 
-                          << " - carburant: " << std::setfill(' ')<<std::setw(4.0)<< avions[0]->getCarburant() 
-                          << " - état: " << avions[0]->getEtat() << std::endl;
+            for (size_t i = 0; i < avions.size(); i++) {
+                if(!avions[i]->estBienAuSol()) {
+                    std::cout << "Avion " << avions[i]->getId() << " - Position: (" 
+                              << std::setfill(' ')<< std::setw(7.0)<< avions[i]->getPositionX() << ", " 
+                              << std::setfill(' ')<< std::setw(7.0)<< avions[i]->getPositionY() << ", " 
+                              << std::setfill(' ')<< std::setw(7.0)<< avions[i]->getPositionZ() << ")" 
+                              << " - carburant: " << std::setfill(' ')<<std::setw(4.0)<< avions[i]->getCarburant() 
+                              << " - état: " << avions[i]->getEtat() << std::endl;
 
-                journal.log("Il est" + std::to_string(monde.getTemps().getHeure()) +":"+ std::to_string(monde.getTemps().getMinute()) +" H- Position avion:" + std::to_string(avions[0]->getPositionX()) + "," + 
-                   std::to_string(avions[0]->getPositionY()) + "," + 
-                   std::to_string(avions[0]->getPositionZ()) + 
-                   " - carburant:" + std::to_string(avions[0]->getCarburant()) +
-                   " - état:" + avions[0]->getEtat());
+                    journal.log("Avion " + avions[i]->getId() + " - Position:" + 
+                               std::to_string(avions[i]->getPositionX()) + "," + 
+                               std::to_string(avions[i]->getPositionY()) + "," + 
+                               std::to_string(avions[i]->getPositionZ()) + 
+                               " - carburant:" + std::to_string(avions[i]->getCarburant()) +
+                               " - état:" + avions[i]->getEtat());
 
-                if(avions[0]->getEtat() == "au sol" && avions[0]->destination->parkingvide()) {
-                    avions[0]->setBienAuSol();
-                    avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
-                    tour_de_controles[0].gererGarer(avions[0]);
+                    if(avions[i]->getEtat() == "au sol" && avions[i]->destination->parkingvide()) {
+                        avions[i]->setBienAuSol();
+                        if (i == 0) {
+                            avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
+                        } else {
+                            avionSprite2.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
+                        }
+                        tour_de_controles[i].gererGarer(avions[i]);
+                    }
                 }
             }
         }
@@ -691,6 +752,7 @@ void Simulation::executer() {
         app.clear();
         app.draw(backgroundSprite);
         app.draw(avionSprite);
+        app.draw(avionSprite2);
         
         for (auto& aeroportSprite : aeroportsSprite) {
             app.draw(aeroportSprite);
@@ -702,8 +764,11 @@ void Simulation::executer() {
         }
         
         app.display();
+        aeroportsSprite.clear();
     }
 
-    avions[0]->stop();
+    for (auto& avion : avions) {
+        avion->stop();
+    }
     monde.arreterSimulation();
 }

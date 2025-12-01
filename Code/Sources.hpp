@@ -6,7 +6,6 @@
 #include <memory>
 #include <SFML/Graphics.hpp>
 
-
 class Temps {
 private:
     double facteurTemps;
@@ -17,9 +16,8 @@ private:
     int heure = 12;
     std::mutex mutex;
     
-
     std::chrono::steady_clock::time_point dernierUpdate;
-    float tempsAccumule = 0.0f; // en secondes
+    float tempsAccumule = 0.0f;
     
 public:
     Temps() : facteurTemps(1) {
@@ -40,10 +38,6 @@ public:
     friend std::ostream& operator<<(std::ostream& flux, const Temps & temps);
 };
 
-
-
-
-
 class Agent {
 protected:
     int id;
@@ -63,23 +57,13 @@ public:
     std::string getId() const;
 };
 
-
-
-
-
-
-
-
-
-
-
 class Aeroport {
 protected:
     std::string id;
     double positionX;
     double positionY;
     bool pistelibre;
-    std::vector<std::string> parking = {"Rien"}; // , "Rien", "Rien", "Rien", "Rien", "Rien", "Rien", "Rien", "Rien", "Rien"};
+    std::vector<std::string> parking = {"Rien"};
 
 public:
     Aeroport(const std::string & id, double positionX, double positionY) : id(id), positionX(positionX), positionY(positionY) {};
@@ -91,16 +75,6 @@ public:
     void setPosition(double unepositionX, double unepositionY);
     void setParking(int indice, std::string etat);
 };
-
-
-
-
-
-
-
-
-
-
 
 class Avion : public Agent {
 private:
@@ -125,7 +99,11 @@ private:
     bool estgaré = true;
     sf::Angle angle;
     Temps& tempsRef;
-
+    bool enDeviation;
+    double destinationOriginaleX, destinationOriginaleY;
+    double pointDeviationX, pointDeviationY;
+    bool aAtteintPointDeviation;
+    std::mutex mutexDeviation;
 
 public:
     Aeroport * destination;
@@ -160,29 +138,22 @@ public:
     bool estBienAuSol();
     void setBienAuSol();
     bool estgare;
+    bool verifierRisqueCollision(const Avion* autreAvion) const;
+    void calculerDeviation(const Avion* avionConflictuel);
+    void appliquerDeviation();
+    bool estEnDeviation() const { return enDeviation; }
 };
 
 class TourControle {
-    private:
-        Aeroport &aeroport;
-        std::string id;
-        int rayon;
-    public:
-        TourControle(Aeroport & aeroport, Avion & avion)  : aeroport(aeroport), id(aeroport.getId()) {};
+private:
+    Aeroport &aeroport;
+    std::string id;
+    int rayon;
+public:
+    TourControle(Aeroport & aeroport, Avion & avion)  : aeroport(aeroport), id(aeroport.getId()) {};
 
-        void gererGarer(std::unique_ptr<Avion>& avion);
+    void gererGarer(std::unique_ptr<Avion>& avion);
 };
-
-
-
-
-
-
-
-
-
-
-
 
 class Monde {
 private:
@@ -198,14 +169,6 @@ public:
     Temps& getTemps() { return temps; }
 };
 
-
-
-
-
-
-
-
-
 class Journal {
 private:
     std::mutex mutex;
@@ -217,13 +180,6 @@ public:
     ~Journal();
 };
 
-
-
-
-
-
-
-
 class Simulation {
 private:
     std::string path_image;
@@ -233,9 +189,7 @@ public:
     void executer();
 };
 
-
 class CentreControle {
-
 public:
     std::vector<Aeroport> tous_les_aeroports = {
         {"Oregon", 100, 200}, {"Texas", 450, 600}, {"Ohio", 925, 380},
@@ -244,15 +198,21 @@ public:
         {"Iowa", 700, 350}};
     std::vector<TourControle> tous_les_tours_de_controles;    
     std::vector<std::unique_ptr<Avion>> tous_les_avions;
+    
     CentreControle(Monde* monde) {
         tous_les_avions.push_back(
             std::make_unique<Avion>("10", "AirTest", tous_les_aeroports[0], monde->getTemps())
+        );
+        tous_les_avions.push_back(
+            std::make_unique<Avion>("20", "AirTest2", tous_les_aeroports[8], monde->getTemps())
         );
         tous_les_tours_de_controles.emplace_back(
             tous_les_aeroports[0], 
             *(tous_les_avions[0]) 
         );
+        tous_les_tours_de_controles.emplace_back(
+            tous_les_aeroports[8], 
+            *(tous_les_avions[1]) 
+        );
     }
-
-
 };
