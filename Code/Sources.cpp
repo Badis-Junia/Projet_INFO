@@ -607,7 +607,7 @@ void Monde::ajouterAvion(std::unique_ptr<Avion> avion) {
 
 
 Journal::Journal(const std::string& nomFichier) {
-    fichier.open("../Code" + nomFichier);
+    fichier.open("../Code/" + nomFichier);
 }
 
 void Journal::log(const std::string& message) {
