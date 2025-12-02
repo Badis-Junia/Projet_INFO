@@ -65,7 +65,7 @@ bool Avion::verifierRisqueCollision(const Avion* autreAvion) const {
                                      pow(this->positionY - autreAvion->positionY, 2));
     double distanceVerticale = abs(this->positionZ - autreAvion->positionZ);
     
-    return (distanceHorizontale < 60 && distanceVerticale < 80.0);
+    return (distanceHorizontale < 15 && distanceVerticale < 81.5);
 }
 
 void Avion::calculerDeviation(const Avion* avionConflictuel) {
@@ -348,21 +348,7 @@ void Avion::setEnDeplacement(bool etat) {
     this->enDeplacement = etat;
 }
 
-sf::Angle Avion::inclinaison(){
-    double dx = this->destinationX - this->positionX;
-    double dy = this->destinationY - this->positionY;
-    double rad = std::atan2(dy, dx);
-    double deg = rad * (180.0 / M_PI);
 
-    deg += 90.0;
-
-    if (deg < 0) {
-        deg += 360.0;
-    }
-
-    this->angle = sf::degrees(deg);
-    return this->angle;
-}
 
 void Avion::consommerCarburant(std::string etat) {
     double facteur = tempsRef.getFacteurTemps();
@@ -429,6 +415,106 @@ void Avion::setVitesse(double nouvelleVitesse) {
 std::string Avion::getIdaeroport(Aeroport* aeroport) const{
     return aeroport->getId();
 }
+
+
+sf::Angle Avion::inclinaison() {
+    double dx, dy;
+    double angleCible;
+    
+    // Déterminer la direction cible
+    if (enDeviation) {
+        if (!aAtteintPointDeviation) {
+            // Phase 1 : regarder vers le point de déviation
+            dx = pointDeviationX - positionX;
+            dy = pointDeviationY - positionY;
+        } else {
+            // Phase 2 : regarder vers la destination originale
+            dx = destinationOriginaleX - positionX;
+            dy = destinationOriginaleY - positionY;
+        }
+    } else {
+        // Normal : regarder vers la destination
+        dx = destinationX - positionX;
+        dy = destinationY - positionY;
+    }
+    
+    // Calculer la distance
+    double distance = sqrt(dx * dx + dy * dy);
+    
+    // Si très proche, garder l'angle actuel
+    if (distance < 1.0) {
+        return this->angle;
+    }
+    
+    // Calculer l'angle cible en degrés
+    double rad = std::atan2(dy, dx);
+    angleCible = rad * (180.0 / M_PI);
+    
+    // Ajuster pour que 0° pointe vers le haut (orientation SFML)
+    angleCible += 90.0;
+    
+    // Normaliser entre 0 et 360°
+    if (angleCible < 0) {
+        angleCible += 360.0;
+    } else if (angleCible >= 360.0) {
+        angleCible -= 360.0;
+    }
+    
+    // Récupérer l'angle actuel
+    double angleActuel = this->angle.asDegrees();
+    
+    // Normaliser l'angle actuel entre 0 et 360°
+    if (angleActuel < 0) {
+        angleActuel += 360.0;
+    } else if (angleActuel >= 360.0) {
+        angleActuel -= 360.0;
+    }
+    
+    // Calculer la différence d'angle la plus courte
+    double diff = angleCible - angleActuel;
+    
+    // Correction pour prendre le chemin le plus court
+    if (diff > 180.0) {
+        diff -= 360.0;
+    } else if (diff < -180.0) {
+        diff += 360.0;
+    }
+    
+    // Facteur d'interpolation (0.0 à 1.0)
+    // Plus élevé = rotation plus rapide
+    double facteurInterpolation = 0.1; // 10% de l'angle par frame
+    
+    // Ajuster le facteur selon la situation
+    if (enDeviation) {
+        facteurInterpolation = 0.2; // 20% pendant les déviations
+    } else if (etat == "atterrissage") {
+        facteurInterpolation = 0.05; // 5% pendant l'atterrissage (plus lent)
+    } else if (etat == "decollage") {
+        facteurInterpolation = 0.08; // 8% pendant le décollage
+    }
+    
+    // Ajuster par le facteur temps
+    facteurInterpolation *= tempsRef.getFacteurTemps();
+    
+    // Limiter le facteur d'interpolation
+    if (facteurInterpolation > 0.5) {
+        facteurInterpolation = 0.5;
+    }
+    
+    // Interpolation linéaire (LERP)
+    double nouvelAngle = angleActuel + (diff * facteurInterpolation);
+    
+    // Normaliser à nouveau
+    if (nouvelAngle < 0) {
+        nouvelAngle += 360.0;
+    } else if (nouvelAngle >= 360.0) {
+        nouvelAngle -= 360.0;
+    }
+    
+    this->angle = sf::degrees(nouvelAngle);
+    return this->angle;
+}
+
 
 void Aeroport::setPosition(double positionX, double positionY) {
     this->positionX = positionX;
