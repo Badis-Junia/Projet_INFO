@@ -65,7 +65,7 @@ bool Avion::verifierRisqueCollision(const Avion* autreAvion) const {
                                      pow(this->positionY - autreAvion->positionY, 2));
     double distanceVerticale = abs(this->positionZ - autreAvion->positionZ);
     
-    return (distanceHorizontale < 100.0 && distanceVerticale < 50.0);
+    return (distanceHorizontale < 60 && distanceVerticale < 80.0);
 }
 
 void Avion::calculerDeviation(const Avion* avionConflictuel) {
