@@ -77,12 +77,11 @@ void Avion::tourner() {
     double vitesseTour = 0.02 * facteur;
     
     if (destination != nullptr) {
-        double centreX = destination->getPositionX() + 15;
-        double centreY = destination->getPositionY() + 15;
+        double centreX = destination->getPositionX() + 20;
+        double centreY = destination->getPositionY() + 20;
         double rayon = 40.0;
         
-
-        angleTour += vitesseTour;
+        angleTour -= vitesseTour;
         if (angleTour > 2 * M_PI) angleTour -= 2 * M_PI;
         
 
@@ -91,16 +90,15 @@ void Avion::tourner() {
         
         this->setPosition(x, y, 20);
 
+
         double angleVersCentre = std::atan2(centreY - y, centreX - x) * (180.0 / M_PI);
+        double angleVersExterieur = angleVersCentre - 180.0;
         
 
-        double angleOrientation = angleVersCentre + 90.0;
+        while (angleVersExterieur <= 360.0) angleVersExterieur += 360.0;
+        while (angleVersExterieur > 0) angleVersExterieur -= 360.0;
         
-
-        if (angleOrientation < 0) angleOrientation += 360.0;
-        if (angleOrientation >= 360.0) angleOrientation -= 360.0;
-        
-        this->angle = sf::degrees(angleOrientation);
+        this->angle = sf::degrees(angleVersExterieur);
     }
 }
 
