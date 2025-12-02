@@ -865,7 +865,9 @@ void Simulation::executer() {
             }
         }
 
-
+    if(counter > 800) {
+        centre.tous_les_aeroports[0].setParking(0, "Rien");
+    }
 
 
         for(int i = 0;i<avions.size();i++) {
