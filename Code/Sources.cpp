@@ -587,7 +587,7 @@ Journal::Journal(const std::string& nomFichier) {
 void Journal::log(const std::string& message) {
     std::lock_guard<std::mutex> lock(mutex);
     if (fichier.is_open()) {
-        fichier << message << std::endl;
+        fichier <<std::setw(3) << message ;
     }
 }
 
@@ -806,7 +806,7 @@ void Simulation::executer() {
         }
 
         if (counter++ % 60 == 0) {
-            for (size_t i = 0; i < avions.size(); i++) {
+                    for (size_t i = 0; i < avions.size(); i++) {
                 if(!avions[i]->estBienAuSol()) {
                     std::cout << "Avion " << avions[i]->getId() << " - Position: (" 
                               << std::setfill(' ')<< std::setw(7.0)<< avions[i]->getPositionX() << ", " 
@@ -815,12 +815,18 @@ void Simulation::executer() {
                               << " - carburant: " << std::setfill(' ')<<std::setw(4.0)<< avions[i]->getCarburant() 
                               << " - état: " << avions[i]->getEtat() << std::endl;
 
-                    journal.log("Avion " + avions[i]->getId() + " - Position:" + 
-                               std::to_string((int)avions[i]->getPositionX()) + "," + 
-                               std::to_string((int)avions[i]->getPositionY()) + "," + 
-                               std::to_string((int)avions[i]->getPositionZ()) + 
-                               " - carburant:" + std::to_string((int)avions[i]->getCarburant()) +
-                               " - état:" + avions[i]->getEtat());
+                    journal.log("Avion");
+                    journal.log(avions[i]->getId());
+                    journal.log(" - Position: ");
+                    journal.log(std::to_string((int)avions[i]->getPositionX())+",");
+                    journal.log(std::to_string((int)avions[i]->getPositionY())+",");
+                    journal.log(std::to_string((int)avions[i]->getPositionZ()));
+                    journal.log(" - carburant");
+                    journal.log(std::to_string((int)avions[i]->getCarburant()));
+                    journal.log(" - etat: ");
+                    journal.log(avions[i]->getEtat());
+                    journal.log("\n");
+
 
                     if(avions[i]->getEtat() == "au sol" && avions[i]->destination->parkingvide()) {
                         avions[i]->setBienAuSol();
