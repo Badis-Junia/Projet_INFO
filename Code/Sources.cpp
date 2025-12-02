@@ -816,10 +816,10 @@ void Simulation::executer() {
                               << " - état: " << avions[i]->getEtat() << std::endl;
 
                     journal.log("Avion " + avions[i]->getId() + " - Position:" + 
-                               std::to_string(avions[i]->getPositionX()) + "," + 
-                               std::to_string(avions[i]->getPositionY()) + "," + 
-                               std::to_string(avions[i]->getPositionZ()) + 
-                               " - carburant:" + std::to_string(avions[i]->getCarburant()) +
+                               std::to_string((int)avions[i]->getPositionX()) + "," + 
+                               std::to_string((int)avions[i]->getPositionY()) + "," + 
+                               std::to_string((int)avions[i]->getPositionZ()) + 
+                               " - carburant:" + std::to_string((int)avions[i]->getCarburant()) +
                                " - état:" + avions[i]->getEtat());
 
                     if(avions[i]->getEtat() == "au sol" && avions[i]->destination->parkingvide()) {
