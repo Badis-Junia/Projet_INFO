@@ -707,7 +707,7 @@ void Simulation::executer() {
 
     if (!backgroundImage.loadFromFile(path_image + "background.png") || 
         !avionTexture.loadFromFile(path_image + "avion.png") || 
-        !aeroportTexture.loadFromFile(path_image + "aeroport.png") || !aeroportTexturelibre.loadFromFile(path_image + "aeroportlibre.png") || !font.openFromFile(path_image + "arial.ttf") || !aeroportTexturepaslibre.loadFromFile(path_image + "aeroportpaslibre.png") || !avionTexturemarche.loadFromFile(path_image + "avionmarche.png")) {
+        !aeroportTexture.loadFromFile(path_image + "aeroport.png") || !aeroportTexturelibre.loadFromFile(path_image + "aeroportlibre.png") || !font.openFromFile(path_image + "arial.ttf") || !aeroportTexturepaslibre.loadFromFile(path_image + "aeroportpaslibre.png")) {
         throw std::runtime_error("Erreur pendant le chargement des images");
     }
 
@@ -861,7 +861,6 @@ void Simulation::executer() {
                 } else {
                     if(avions[i]->getEtat() != "en attente") {
                         avions[i]->setEtat("en attente");
-                        std::cout << "Avion " << avions[i]->getId() << " en attente de parking - tourne autour de l'aéroport" << std::endl;
                     }
                 }
             }

@@ -1,1 +1,14 @@
-
+Avion 10 - Position:120,221,10 - carburant:99 - état:decollage
+Avion 20 - Position:195,471,10 - carburant:99 - état:decollage
+Avion 10 - Position:146,322,219 - carburant:69 - état:en vol
+Avion 20 - Position:177,429,311 - carburant:69 - état:en vol
+Avion 10 - Position:283,504,20 - carburant:37 - état:en attente
+Avion 20 - Position:206,254,20 - carburant:37 - état:en attente
+Avion 10 - Position:221,491,0 - carburant:0 - état:crash
+Avion 20 - Position:144,243,0 - carburant:0 - état:crash
+Avion 10 - Position:221,491,0 - carburant:0 - état:crash
+Avion 20 - Position:144,243,0 - carburant:0 - état:crash
+Avion 10 - Position:221,491,0 - carburant:0 - état:crash
+Avion 20 - Position:144,243,0 - carburant:0 - état:crash
+Avion 10 - Position:221,491,0 - carburant:0 - état:crash
+Avion 20 - Position:144,243,0 - carburant:0 - état:crash
