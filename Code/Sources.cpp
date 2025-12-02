@@ -210,8 +210,7 @@ void Avion::run() {
             this->positionX += directionX * vitesseDeplacement;
             this->positionY += directionY * vitesseDeplacement;
 
-            double distanceRestante = sqrt(pow(this->destinationX - this->positionX, 2) +
-                                         pow(this->destinationY - this->positionY, 2));
+            double distanceRestante = sqrt(pow(this->destinationX - this->positionX, 2) + pow(this->destinationY - this->positionY, 2));
 
             if (distanceRestante > 50.0) {
                 double progression = (200.0 - distanceRestante) / 100.0;
