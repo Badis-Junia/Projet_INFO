@@ -482,11 +482,11 @@ sf::Angle Avion::inclinaison() {
     
     // Facteur d'interpolation (0.0 à 1.0)
     // Plus élevé = rotation plus rapide
-    double facteurInterpolation = 0.1; // 10% de l'angle par frame
+    double facteurInterpolation = 0.01; // 10% de l'angle par frame
     
     // Ajuster le facteur selon la situation
     if (enDeviation) {
-        facteurInterpolation = 0.2; // 20% pendant les déviations
+        facteurInterpolation = 0.05; // 20% pendant les déviations
     } else if (etat == "atterrissage") {
         facteurInterpolation = 0.05; // 5% pendant l'atterrissage (plus lent)
     } else if (etat == "decollage") {
