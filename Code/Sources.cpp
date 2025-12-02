@@ -640,7 +640,7 @@ void Temps::ralentirTemps() {
 void Temps::resetTemps() {
     this->mutex.lock();
     facteurTemps = 1.0;
-    this->mutex.unlock();
+            this->mutex.unlock();
 }
 
 void Temps::update() {
