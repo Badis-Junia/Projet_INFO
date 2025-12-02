@@ -839,15 +839,24 @@ void Simulation::executer() {
                               << " - carburant: " << std::setfill(' ')<<std::setw(4.0)<< avions[i]->getCarburant() 
                               << " - état: " << avions[i]->getEtat() << std::endl;
 
-                    journal.log("Avion " + avions[i]->getId() + " - Position:" + 
-                               std::to_string((int)avions[i]->getPositionX()) + "," + 
-                               std::to_string((int)avions[i]->getPositionY()) + "," + 
-                               std::to_string((int)avions[i]->getPositionZ()) + 
-                               " - carburant:" + std::to_string((int)avions[i]->getCarburant()) +
-                               " - état:" + avions[i]->getEtat());
+
+                    journal.log("Avion");
+                    journal.log(avions[i]->getId());
+                    journal.log(" - Position: ");
+                    journal.log(std::to_string((int)avions[i]->getPositionX())+",");
+                    journal.log(std::to_string((int)avions[i]->getPositionY())+",");
+                    journal.log(std::to_string((int)avions[i]->getPositionZ()));
+                    journal.log(" - carburant: ");
+                    journal.log(std::to_string((int)avions[i]->getCarburant()));
+                    journal.log(" - etat: ");
+                    journal.log(avions[i]->getEtat());
+                    journal.log("\n");
                 }
             }
         }
+
+
+
 
         for(int i = 0;i<avions.size();i++) {
             if(avions[i]->getEtat() == "au sol" && !avions[i]->estgare) {
