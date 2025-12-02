@@ -112,10 +112,12 @@ public:
     bool volDemarre = false;
     void setPosition(double x, double y, double z);
     void setVitesse(double nouvelleVitesse);    
-      
+
+    void setEtat(const std::string& nouvelEtat);
+    bool estEnAttente() const { return etat == "en attente"; }     
     Avion(const Avion&) = delete;
     Avion& operator=(const Avion&) = delete;
-    
+    void tourner();
     void run() override;
     void majPosition();
     void atterrissage();
@@ -138,6 +140,9 @@ public:
     bool estBienAuSol();
     void setBienAuSol();
     bool estgare;
+
+    bool tourne = false;
+
     bool verifierRisqueCollision(const Avion* autreAvion) const;
     void calculerDeviation(const Avion* avionConflictuel);
     void appliquerDeviation();
@@ -152,7 +157,7 @@ private:
 public:
     TourControle(Aeroport & aeroport, Avion & avion)  : aeroport(aeroport), id(aeroport.getId()) {};
 
-    void gererGarer(std::unique_ptr<Avion>& avion);
+    bool gererGarer(std::unique_ptr<Avion>& avion);
 };
 
 class Monde {

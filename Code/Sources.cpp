@@ -51,6 +51,9 @@ Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aer
     this->pointDeviationX = 0;
     this->pointDeviationY = 0;
     this->aAtteintPointDeviation = false;
+    this->estgare = false;
+    this->tourne = false;
+    this->destination = nullptr;
 }
 
 Avion::~Avion() {
@@ -66,6 +69,27 @@ bool Avion::verifierRisqueCollision(const Avion* autreAvion) const {
     double distanceVerticale = abs(this->positionZ - autreAvion->positionZ);
     
     return (distanceHorizontale < 15 && distanceVerticale < 81.5);
+}
+
+void Avion::tourner() {
+    static double angleTour = 0.0; 
+    double facteur = tempsRef.getFacteurTemps();
+    double vitesseTour = 0.02 * facteur;
+    
+    if (destination != nullptr) {
+        double centreX = destination->getPositionX() + 30;
+        double centreY = destination->getPositionY() + 30;
+        double rayon = 80.0;
+        
+        angleTour += vitesseTour;
+        if (angleTour > 2 * M_PI) angleTour -= 2 * M_PI;
+        
+        double x = centreX + rayon * std::cos(angleTour);
+        double y = centreY + rayon * std::sin(angleTour);
+        
+        this->setPosition(x, y, 20);
+        this->angle = sf::degrees(angleTour * 180.0 / M_PI);
+    }
 }
 
 void Avion::calculerDeviation(const Avion* avionConflictuel) {
@@ -88,8 +112,8 @@ void Avion::calculerDeviation(const Avion* avionConflictuel) {
     double perpX = -dy;
     double perpY = dx;
     
-    pointDeviationX = positionX + perpX * 50.0;
-    pointDeviationY = positionY + perpY * 50.0;
+    pointDeviationX = positionX + perpX * 13.0;
+    pointDeviationY = positionY + perpY * 13.0;
     
     enDeviation = true;
     aAtteintPointDeviation = false;
@@ -145,7 +169,7 @@ void Avion::appliquerDeviation() {
 }
 
 void Avion::run() {
-   while (this->actif) {
+    while (this->actif) {
         double facteur = tempsRef.getFacteurTemps();        
         
         if (enDeviation) {
@@ -263,6 +287,10 @@ void Avion::run() {
 
             consommerCarburant("atterrissage");
         }
+        else if (this->etat == "en attente") {
+            tourner();
+            consommerCarburant("en vol");
+        }
         else if (this->etat == "au sol") {
             this->positionZ = 0;
             this->enDeplacement = false;
@@ -314,6 +342,10 @@ void Avion::setBienAuSol() {
     this->bienausol = true;
 }
 
+void Avion::setEtat(const std::string& nouvelEtat) {
+    this->etat = nouvelEtat;
+}
+
 bool Avion::estEnPhaseAtterrissage() const {
     if (!this->enDeplacement) return false;
     
@@ -348,15 +380,15 @@ void Avion::setEnDeplacement(bool etat) {
     this->enDeplacement = etat;
 }
 
-
-
 void Avion::consommerCarburant(std::string etat) {
     double facteur = tempsRef.getFacteurTemps();
     
-    if(this->etat == "en vol") {
+    if(this->etat == "en vol" || this->etat == "en attente") {
         this->carburant -= this->consommation * facteur;
     } else if(this->etat == "decollage"){
         this->carburant -= 1 * facteur;
+    } else if(this->etat == "atterrissage") {
+        this->carburant -= 0.5 * facteur;
     }
 
     if (carburant < 0) {
@@ -416,95 +448,76 @@ std::string Avion::getIdaeroport(Aeroport* aeroport) const{
     return aeroport->getId();
 }
 
-
 sf::Angle Avion::inclinaison() {
     double dx, dy;
     double angleCible;
     
-    // Déterminer la direction cible
     if (enDeviation) {
         if (!aAtteintPointDeviation) {
-            // Phase 1 : regarder vers le point de déviation
             dx = pointDeviationX - positionX;
             dy = pointDeviationY - positionY;
         } else {
-            // Phase 2 : regarder vers la destination originale
             dx = destinationOriginaleX - positionX;
             dy = destinationOriginaleY - positionY;
         }
     } else {
-        // Normal : regarder vers la destination
         dx = destinationX - positionX;
         dy = destinationY - positionY;
     }
     
-    // Calculer la distance
     double distance = sqrt(dx * dx + dy * dy);
     
-    // Si très proche, garder l'angle actuel
     if (distance < 1.0) {
         return this->angle;
     }
     
-    // Calculer l'angle cible en degrés
     double rad = std::atan2(dy, dx);
     angleCible = rad * (180.0 / M_PI);
     
-    // Ajuster pour que 0° pointe vers le haut (orientation SFML)
     angleCible += 90.0;
     
-    // Normaliser entre 0 et 360°
     if (angleCible < 0) {
         angleCible += 360.0;
     } else if (angleCible >= 360.0) {
         angleCible -= 360.0;
     }
     
-    // Récupérer l'angle actuel
     double angleActuel = this->angle.asDegrees();
     
-    // Normaliser l'angle actuel entre 0 et 360°
     if (angleActuel < 0) {
         angleActuel += 360.0;
     } else if (angleActuel >= 360.0) {
         angleActuel -= 360.0;
     }
     
-    // Calculer la différence d'angle la plus courte
     double diff = angleCible - angleActuel;
     
-    // Correction pour prendre le chemin le plus court
     if (diff > 180.0) {
         diff -= 360.0;
     } else if (diff < -180.0) {
         diff += 360.0;
     }
     
-    // Facteur d'interpolation (0.0 à 1.0)
-    // Plus élevé = rotation plus rapide
-    double facteurInterpolation = 0.01; // 10% de l'angle par frame
+    double facteurInterpolation = 0.01; 
     
-    // Ajuster le facteur selon la situation
     if (enDeviation) {
-        facteurInterpolation = 0.05; // 20% pendant les déviations
+        facteurInterpolation = 0.05; 
     } else if (etat == "atterrissage") {
-        facteurInterpolation = 0.05; // 5% pendant l'atterrissage (plus lent)
+        facteurInterpolation = 0.05; 
     } else if (etat == "decollage") {
-        facteurInterpolation = 0.08; // 8% pendant le décollage
+        facteurInterpolation = 0.08; 
+    } else if (etat == "en attente") {
+        facteurInterpolation = 0.03;
     }
     
-    // Ajuster par le facteur temps
     facteurInterpolation *= tempsRef.getFacteurTemps();
     
-    // Limiter le facteur d'interpolation
     if (facteurInterpolation > 0.5) {
         facteurInterpolation = 0.5;
     }
     
-    // Interpolation linéaire (LERP)
     double nouvelAngle = angleActuel + (diff * facteurInterpolation);
     
-    // Normaliser à nouveau
     if (nouvelAngle < 0) {
         nouvelAngle += 360.0;
     } else if (nouvelAngle >= 360.0) {
@@ -514,7 +527,6 @@ sf::Angle Avion::inclinaison() {
     this->angle = sf::degrees(nouvelAngle);
     return this->angle;
 }
-
 
 void Aeroport::setPosition(double positionX, double positionY) {
     this->positionX = positionX;
@@ -538,12 +550,14 @@ std::vector<std::string> Aeroport::getParking() {
 }
 
 void Aeroport::setParking(int indice, std::string etat) {
-    this->parking[indice] = etat;
+    if (indice >= 0 && indice < parking.size()) {
+        this->parking[indice] = etat;
+    }
 }
 
 bool Aeroport::parkingvide() {
     int compteur = 0;
-    for(int i = 0;i<this->parking.size();i++) {
+    for(int i = 0; i < this->parking.size(); i++) {
         if(parking[i] != "Rien") {
             compteur++;
         }
@@ -555,14 +569,22 @@ bool Aeroport::parkingvide() {
     }
 }
 
-void TourControle::gererGarer(std::unique_ptr<Avion>& avion) {
+bool TourControle::gererGarer(std::unique_ptr<Avion>& avion) {
+    if (avion->estgare) {
+        return false;
+    }
+    
     std::vector<std::string> le_parking = avion->destination->getParking();
-    for(int i = 0;i<le_parking.size();i++) {
-        if(le_parking[i] == "Rien" || !avion->estgare) {
+    
+    for(int i = 0; i < le_parking.size(); i++) {
+        if(le_parking[i] == "Rien") {
             avion->destination->setParking(i, avion->getId());
             avion->estgare = true;
+            return true; 
         }
     }
+    
+    return false;
 }
 
 Monde::Monde() {}
@@ -587,7 +609,7 @@ Journal::Journal(const std::string& nomFichier) {
 void Journal::log(const std::string& message) {
     std::lock_guard<std::mutex> lock(mutex);
     if (fichier.is_open()) {
-        fichier <<std::setw(3) << message ;
+        fichier << message << std::endl;
     }
 }
 
@@ -640,7 +662,7 @@ void Temps::ralentirTemps() {
 void Temps::resetTemps() {
     this->mutex.lock();
     facteurTemps = 1.0;
-            this->mutex.unlock();
+    this->mutex.unlock();
 }
 
 void Temps::update() {
@@ -673,23 +695,27 @@ Simulation::Simulation() : path_image("../Pictures/") {}
 
 void Simulation::executer() {
     Monde monde;
+    bool pouravion;
     monde.initialiser();
     monde.demarrerSimulation();
     const sf::Vector2u WINDOW_SIZE(1300, 805);
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
 
-    sf::Texture backgroundImage, avionTexture, aeroportTexture, aeroportTexturelibre, aeroportTexturepaslibre;
+    sf::Texture backgroundImage, avionTexture, aeroportTexture, aeroportTexturelibre, aeroportTexturepaslibre, avionTexturemarche;
     sf::Font font;
 
     if (!backgroundImage.loadFromFile(path_image + "background.png") || 
         !avionTexture.loadFromFile(path_image + "avion.png") || 
-        !aeroportTexture.loadFromFile(path_image + "aeroport.png") || !aeroportTexturelibre.loadFromFile(path_image + "aeroportlibre.png") || !font.openFromFile(path_image + "arial.ttf") || !aeroportTexturepaslibre.loadFromFile(path_image + "aeroportpaslibre.png")) {
+        !aeroportTexture.loadFromFile(path_image + "aeroport.png") || !aeroportTexturelibre.loadFromFile(path_image + "aeroportlibre.png") || !font.openFromFile(path_image + "arial.ttf") || !aeroportTexturepaslibre.loadFromFile(path_image + "aeroportpaslibre.png") || !avionTexturemarche.loadFromFile(path_image + "avionmarche.png")) {
         throw std::runtime_error("Erreur pendant le chargement des images");
     }
 
     sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), avionSprite2(avionTexture);
     std::vector<sf::Sprite> aeroportsSprite;
+    std::vector<sf::Sprite> avionsSprite;
+    avionsSprite.push_back(avionSprite);
+    avionsSprite.push_back(avionSprite2);
 
     CentreControle centre(&monde);
     std::vector<Aeroport>& aeroports = centre.tous_les_aeroports;
@@ -700,9 +726,9 @@ void Simulation::executer() {
 
     Aeroport aeroportDepart = aeroports[0];
     Aeroport aeroportArrivee = aeroports[8];
-    
-    avionSprite.setScale(sf::Vector2f(0.6, 0.6));
-    avionSprite2.setScale(sf::Vector2f(0.6, 0.6));
+    for(int i = 0;i<avionsSprite.size();i++) {
+        avionsSprite[i].setScale(sf::Vector2f(0.4, 0.4));
+    }    
     
     avions[0]->start();
     avions[0]->decollage();
@@ -718,10 +744,9 @@ void Simulation::executer() {
     sf::Text texteFacteurTemps(font);
     sf::Text horloge(font);
     texteFacteurTemps.setFont(font);
-    texteFacteurTemps.setCharacterSize(30);
+    texteFacteurTemps.setCharacterSize(20);
     texteFacteurTemps.setFillColor(sf::Color::White);
-    texteFacteurTemps.setPosition(sf::Vector2f(static_cast<float>(10), static_cast<float>(0)));
-
+    texteFacteurTemps.setPosition(sf::Vector2f(static_cast<float>(1080), static_cast<float>(60)));
     horloge.setFont(font);
     horloge.setCharacterSize(50);
     horloge.setFillColor(sf::Color::White);
@@ -753,9 +778,9 @@ void Simulation::executer() {
         for (size_t i = 0; i < avions.size(); i++) {
             if (!avions[i]->volDemarre) {
                 if (i == 0) {
-                    avionSprite.setRotation(avions[i]->inclinaison());
+                    avionsSprite[0].setRotation(avions[i]->inclinaison());
                 } else {
-                    avionSprite2.setRotation(avions[i]->inclinaison());
+                    avionsSprite[1].setRotation(avions[i]->inclinaison());
                 }
                 
                 avions[i]->volDemarre = true;
@@ -773,22 +798,22 @@ void Simulation::executer() {
                 if (avions[i]->verifierRisqueCollision(avions[j].get())) {
                     avions[i]->calculerDeviation(avions[j].get());
                     avions[j]->calculerDeviation(avions[i].get());
-                    std::cout << "Risque collision détecté entre avion " << avions[i]->getId() 
-                              << " et avion " << avions[j]->getId() << std::endl;
                 }
             }
         }
 
-        if(avions[0]->getEtat() != "au sol") {
-            avionSprite.setPosition(sf::Vector2f(static_cast<float>(avions[0]->getPositionX()), 
-                                                static_cast<float>(avions[0]->getPositionY())));
-            avionSprite.setRotation(avions[0]->inclinaison());
-        }
-        
-        if(avions[1]->getEtat() != "au sol") {
-            avionSprite2.setPosition(sf::Vector2f(static_cast<float>(avions[1]->getPositionX()), 
-                                                 static_cast<float>(avions[1]->getPositionY())));
-            avionSprite2.setRotation(avions[1]->inclinaison());
+        for (int i = 0; i < 2; ++i) {
+            Avion* a = avions[i].get();
+
+            if (a->getEtat() == "au sol")
+                continue;
+
+            avionsSprite[i].setPosition({ 
+                static_cast<float>(a->getPositionX()),
+                static_cast<float>(a->getPositionY())
+            });
+
+            avionsSprite[i].setRotation(a->inclinaison());
         }
         
         for (size_t i = 0; i < aeroports.size(); i++) {
@@ -806,7 +831,7 @@ void Simulation::executer() {
         }
 
         if (counter++ % 60 == 0) {
-                    for (size_t i = 0; i < avions.size(); i++) {
+            for (size_t i = 0; i < avions.size(); i++) {
                 if(!avions[i]->estBienAuSol()) {
                     std::cout << "Avion " << avions[i]->getId() << " - Position: (" 
                               << std::setfill(' ')<< std::setw(7.0)<< avions[i]->getPositionX() << ", " 
@@ -815,27 +840,28 @@ void Simulation::executer() {
                               << " - carburant: " << std::setfill(' ')<<std::setw(4.0)<< avions[i]->getCarburant() 
                               << " - état: " << avions[i]->getEtat() << std::endl;
 
-                    journal.log("Avion");
-                    journal.log(avions[i]->getId());
-                    journal.log(" - Position: ");
-                    journal.log(std::to_string((int)avions[i]->getPositionX())+",");
-                    journal.log(std::to_string((int)avions[i]->getPositionY())+",");
-                    journal.log(std::to_string((int)avions[i]->getPositionZ()));
-                    journal.log(" - carburant");
-                    journal.log(std::to_string((int)avions[i]->getCarburant()));
-                    journal.log(" - etat: ");
-                    journal.log(avions[i]->getEtat());
-                    journal.log("\n");
+                    journal.log("Avion " + avions[i]->getId() + " - Position:" + 
+                               std::to_string((int)avions[i]->getPositionX()) + "," + 
+                               std::to_string((int)avions[i]->getPositionY()) + "," + 
+                               std::to_string((int)avions[i]->getPositionZ()) + 
+                               " - carburant:" + std::to_string((int)avions[i]->getCarburant()) +
+                               " - état:" + avions[i]->getEtat());
+                }
+            }
+        }
 
-
-                    if(avions[i]->getEtat() == "au sol" && avions[i]->destination->parkingvide()) {
-                        avions[i]->setBienAuSol();
-                        if (i == 0) {
-                            avionSprite.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
-                        } else {
-                            avionSprite2.setPosition(sf::Vector2f(static_cast<float>(10000), static_cast<float>(10000)));
-                        }
-                        tour_de_controles[i].gererGarer(avions[i]);
+        for(int i = 0;i<avions.size();i++) {
+            if(avions[i]->getEtat() == "au sol" && !avions[i]->estgare) {
+                bool resultat = tour_de_controles[i].gererGarer(avions[i]);
+                if(resultat) {
+                    std::cout << "good" << std::endl;
+                    avions[i]->setBienAuSol();
+                    avions[i]->estgare = true;
+                    avionsSprite[i].setPosition(sf::Vector2f(10000.0, 10000.0));
+                } else {
+                    if(avions[i]->getEtat() != "en attente") {
+                        avions[i]->setEtat("en attente");
+                        std::cout << "Avion " << avions[i]->getId() << " en attente de parking - tourne autour de l'aéroport" << std::endl;
                     }
                 }
             }
@@ -843,8 +869,8 @@ void Simulation::executer() {
 
         app.clear();
         app.draw(backgroundSprite);
-        app.draw(avionSprite);
-        app.draw(avionSprite2);
+        app.draw(avionsSprite[0]);
+        app.draw(avionsSprite[1]);
         
         for (auto& aeroportSprite : aeroportsSprite) {
             app.draw(aeroportSprite);
