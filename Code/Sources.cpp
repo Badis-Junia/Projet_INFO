@@ -608,7 +608,7 @@ Journal::Journal(const std::string& nomFichier) {
 void Journal::log(const std::string& message) {
     std::lock_guard<std::mutex> lock(mutex);
     if (fichier.is_open()) {
-        fichier << message << std::endl;
+        fichier << std::setw(3) << message;
     }
 }
 
