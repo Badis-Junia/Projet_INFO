@@ -98,7 +98,6 @@ void Avion::tourner() {
         while (angleVersExterieur <= 360.0) angleVersExterieur += 360.0;
         while (angleVersExterieur > 0) angleVersExterieur -= 360.0;
         
-        this->angle = sf::degrees(angleVersExterieur);
     }
 }
 
@@ -569,10 +568,7 @@ sf::Angle Avion::inclinaison() {
         facteurInterpolation = 0.05; 
     } else if (etat == "decollage") {
         facteurInterpolation = 0.08; 
-    } else if (etat == "en attente") {
-        facteurInterpolation = 0.03;
-    }
-    
+    }     
     facteurInterpolation *= tempsRef.getFacteurTemps();
     
     if (facteurInterpolation > 0.5) {
@@ -588,6 +584,10 @@ sf::Angle Avion::inclinaison() {
     }
     
     this->angle = sf::degrees(nouvelAngle);
+    if(etat=="en attente"){
+        this->angle = sf::degrees(nouvelAngle+360);
+        return this->angle;
+    }
     return this->angle;
 }
 
