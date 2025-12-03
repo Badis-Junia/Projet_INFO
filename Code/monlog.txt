@@ -1,35 +1,14 @@
-Avion 10 - Position: 120,221, 10 - carburant: 99999 - etat: decollage  
-Avion 20 - Position: 195,471, 10 - carburant: 99999 - etat: decollage  
-Avion 10 - Position: 120,239,198 - carburant: 99980 - etat: decollage  
-Avion 20 - Position: 195,489,198 - carburant: 99980 - etat: decollage  
-Avion 10 - Position: 190,509, 20 - carburant: 99942 - etat: en attente  
-Avion 20 - Position: 119,259, 20 - carburant: 99942 - etat: en attente  
-Avion 10 - Position: 227,446, 20 - carburant: 99917 - etat: en attente  
-Avion 20 - Position: 152,196, 20 - carburant: 99917 - etat: en attente  
-Avion 10 - Position: 173,503, 20 - carburant: 99892 - etat: en attente  
-Avion 20 - Position: 102,255, 20 - carburant: 99892 - etat: en attente  
-Avion 10 - Position: 194,430, 20 - carburant: 99867 - etat: en attente  
-Avion 20 - Position: 115,180, 20 - carburant: 99867 - etat: en attente  
-Avion 10 - Position: 223,498, 20 - carburant: 99841 - etat: en attente  
-Avion 20 - Position: 145,250, 20 - carburant: 99842 - etat: en attente  
-Avion 10 - Position: 155,461, 20 - carburant: 99816 - etat: en attente  
-Avion 20 - Position: 81,207, 20 - carburant: 99817 - etat: en attente  
-Avion 10 - Position: 234,463, 20 - carburant: 99792 - etat: en attente  
-Avion 20 - Position: 158,209, 20 - carburant: 99792 - etat: en attente  
-Avion 10 - Position: 162,493, 20 - carburant: 99767 - etat: en attente  
-Avion 20 - Position: 87,243, 20 - carburant: 99767 - etat: en attente  
-Avion 10 - Position: 204,431, 20 - carburant: 99741 - etat: en attente  
-Avion 20 - Position: 126,180, 20 - carburant: 99741 - etat: en attente  
-Avion 10 - Position: 207,507, 20 - carburant: 99716 - etat: en attente  
-Avion 20 - Position: 136,256, 20 - carburant: 99716 - etat: en attente  
-Avion 10 - Position: 220,439, 20 - carburant: 99691 - etat: en attente  
-Avion 10 - Position: 231,486, 20 - carburant: 99666 - etat: en attente  
-Avion 10 - Position: 189,509, 20 - carburant: 99641 - etat: en attente  
-Avion 10 - Position: 155,476, 20 - carburant: 99616 - etat: en attente  
-Avion 10 - Position: 177,433, 20 - carburant: 99591 - etat: en attente  
-Avion 10 - Position: 224,443, 20 - carburant: 99566 - etat: en attente  
-Avion 10 - Position: 229,490, 20 - carburant: 99541 - etat: en attente  
-Avion 10 - Position: 184,508, 20 - carburant: 99516 - etat: en attente  
-Avion 10 - Position: 155,470, 20 - carburant: 99491 - etat: en attente  
-Avion 10 - Position: 225,495, 20 - carburant: 99479 - etat: en attente  
-Avion 10 - Position: 234,476, 20 - carburant: 99477 - etat: en attente  
+Avion 10 - Position: 120,221, 10 - carburant:  99 - etat: decollage  
+Avion 20 - Position: 195,471, 10 - carburant:  99 - etat: decollage  
+Avion 10 - Position: 146,323,218 - carburant:  69 - etat: en vol  
+Avion 20 - Position: 177,429,312 - carburant:  69 - etat: en vol  
+Avion 10 - Position: 232,481, 20 - carburant:  36 - etat: en attente  
+Avion 20 - Position: 158,231, 20 - carburant:  36 - etat: en attente  
+Avion 10 - Position: 206,479,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 131,229,  0 - carburant:   0 - etat: crash  
+Avion 10 - Position: 206,479,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 131,229,  0 - carburant:   0 - etat: crash  
+Avion 10 - Position: 206,479,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 131,229,  0 - carburant:   0 - etat: crash  
+Avion 10 - Position: 206,479,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 131,229,  0 - carburant:   0 - etat: crash  

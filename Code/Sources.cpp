@@ -214,7 +214,7 @@ void Avion::run() {
                 this->vitesse = this->vitesseAtterrissage;
             }
             else {
-                this->vitesse = 1.0;
+                this->vitesse = 70.0;
             }
 
             double vitesseDeplacement = this->vitesse * 0.02 * facteur;
@@ -875,7 +875,6 @@ void Simulation::executer() {
                 static_cast<float>(a->getPositionX()),
                 static_cast<float>(a->getPositionY())
             });
-
             avionsSprite[i].setRotation(a->inclinaison());
         }
         
