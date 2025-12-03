@@ -182,7 +182,7 @@ void Avion::run() {
     while (this->actif) {
         double facteur = tempsRef.getFacteurTemps();        
         
-        // Vérifier si l'attente est trop longue
+
 
         if (enDeviation) {
             appliquerDeviation();
@@ -299,9 +299,9 @@ void Avion::run() {
             consommerCarburant("atterrissage");
         }
         else if (this->etat == "en attente") {
-            // Vérifier d'abord si on peut sortir de l'attente
+            
             if (this->destination != nullptr && !this->estgare) {
-                // Vérifier si le parking est disponible
+                
                 std::vector<std::string> parking = this->destination->getParking();
                 bool parkingDisponible = false;
                 for (const auto& place : parking) {
@@ -311,23 +311,23 @@ void Avion::run() {
                     }
                 }
                 
-                // Si parking disponible, reprendre l'atterrissage
+                
                 if (parkingDisponible) {
                     this->etat = "atterrissage";
                     this->enDeplacement = true;
                     
-                    // Recalculer la destination exacte
+                   
                     this->destinationX = this->destination->getPositionX() + 30;
                     this->destinationY = this->destination->getPositionY() + 30;
                     
                     std::cout << "Avion " << this->id << " quitte l'attente - début de l'atterrissage" << std::endl;
                     
-                    // Passer à l'atterrissage immédiatement sans consommer de carburant pour le tour
+                    
                     continue;
                 }
             }
             
-            // Sinon continuer à tourner
+            
             tourner();
             consommerCarburant("en vol");
         }
@@ -335,12 +335,12 @@ void Avion::run() {
             this->positionZ = 0;
             this->enDeplacement = false;
             
-            // Si au sol mais pas encore garé, essayer de se garer
+            
             if (!this->estgare && this->destination != nullptr) {
                 std::vector<std::string> parking = this->destination->getParking();
                 for (int i = 0; i < parking.size(); i++) {
                     if (parking[i] == "Rien") {
-                        // Se garer automatiquement
+                        
                         this->destination->setParking(i, this->getId());
                         this->estgare = true;
                         this->bienausol = true;
@@ -356,14 +356,14 @@ void Avion::run() {
         }
 
         if (this->urgence && this->etat != "atterrissage" && this->etat != "au sol") {
-            // Forcer l'atterrissage en urgence
+            
             this->etat = "atterrissage";
             this->enDeplacement = true;
             
-            // Si on n'a pas de destination, en trouver une
+            
             if (this->destination == nullptr) {
-                // Chercher l'aéroport le plus proche
-                // (vous devrez implémenter cette logique)
+                
+                
             }
         }
 
