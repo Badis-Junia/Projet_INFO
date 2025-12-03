@@ -63,7 +63,7 @@ protected:
     double positionX;
     double positionY;
     bool pistelibre;
-    std::vector<std::string> parking = {"Pris"};
+    std::vector<std::string> parking = {"Rien"};
 
 public:
     Aeroport(const std::string & id, double positionX, double positionY) : id(id), positionX(positionX), positionY(positionY) {};
@@ -205,19 +205,37 @@ public:
     std::vector<std::unique_ptr<Avion>> tous_les_avions;
     
     CentreControle(Monde* monde) {
+    std::vector<std::pair<std::string, size_t>> configurations = {
+        {"10", 0}, 
+        {"20", 8}, 
+        {"30", 7}, 
+        {"40", 5}, 
+        {"50", 4}, 
+        {"60", 3}, 
+        {"70", 2}, 
+        {"80", 1}, 
+        {"90", 9}, 
+        {"100", 6} 
+    };
+    
+
+    for (const auto& config : configurations) {
         tous_les_avions.push_back(
-            std::make_unique<Avion>("10", "AirTest", tous_les_aeroports[0], monde->getTemps())
+            std::make_unique<Avion>(
+                config.first, 
+                "AirTest" + config.first, 
+                tous_les_aeroports[config.second], 
+                monde->getTemps()
+            )
         );
-        tous_les_avions.push_back(
-            std::make_unique<Avion>("20", "AirTest2", tous_les_aeroports[8], monde->getTemps())
-        );
+    }
+
+    for (size_t i = 0; i < tous_les_aeroports.size(); i++) {
+
         tous_les_tours_de_controles.emplace_back(
-            tous_les_aeroports[0], 
+            tous_les_aeroports[i], 
             *(tous_les_avions[0]) 
         );
-        tous_les_tours_de_controles.emplace_back(
-            tous_les_aeroports[8], 
-            *(tous_les_avions[1]) 
-        );
+    }
     }
 };

@@ -299,9 +299,9 @@ void Avion::run() {
             consommerCarburant("atterrissage");
         }
         else if (this->etat == "en attente") {
-            
+            // Vérifier d'abord si on peut sortir de l'attente
             if (this->destination != nullptr && !this->estgare) {
-                
+                // Vérifier si le parking est disponible
                 std::vector<std::string> parking = this->destination->getParking();
                 bool parkingDisponible = false;
                 for (const auto& place : parking) {
@@ -311,23 +311,23 @@ void Avion::run() {
                     }
                 }
                 
-                
+                // Si parking disponible, reprendre l'atterrissage
                 if (parkingDisponible) {
                     this->etat = "atterrissage";
                     this->enDeplacement = true;
                     
-                   
+                    // Recalculer la destination exacte
                     this->destinationX = this->destination->getPositionX() + 30;
                     this->destinationY = this->destination->getPositionY() + 30;
                     
                     std::cout << "Avion " << this->id << " quitte l'attente - début de l'atterrissage" << std::endl;
                     
-                    
+                    // Passer à l'atterrissage immédiatement sans consommer de carburant pour le tour
                     continue;
                 }
             }
             
-            
+            // Sinon continuer à tourner
             tourner();
             consommerCarburant("en vol");
         }
@@ -335,12 +335,12 @@ void Avion::run() {
             this->positionZ = 0;
             this->enDeplacement = false;
             
-            
+            // Si au sol mais pas encore garé, essayer de se garer
             if (!this->estgare && this->destination != nullptr) {
                 std::vector<std::string> parking = this->destination->getParking();
                 for (int i = 0; i < parking.size(); i++) {
                     if (parking[i] == "Rien") {
-                        
+                        // Se garer automatiquement
                         this->destination->setParking(i, this->getId());
                         this->estgare = true;
                         this->bienausol = true;
@@ -356,14 +356,14 @@ void Avion::run() {
         }
 
         if (this->urgence && this->etat != "atterrissage" && this->etat != "au sol") {
-            
+            // Forcer l'atterrissage en urgence
             this->etat = "atterrissage";
             this->enDeplacement = true;
             
-            
+            // Si on n'a pas de destination, en trouver une
             if (this->destination == nullptr) {
-                
-                
+                // Chercher l'aéroport le plus proche
+                // (vous devrez implémenter cette logique)
             }
         }
 
@@ -774,11 +774,19 @@ void Simulation::executer() {
         throw std::runtime_error("Erreur pendant le chargement des images");
     }
 
-    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), avionSprite2(avionTexture);
+    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), avionSprite2(avionTexture), avionSprite3(avionTexture), avionSprite4(avionTexture), avionSprite5(avionTexture), avionSprite6(avionTexture), avionSprite7(avionTexture), avionSprite8(avionTexture), avionSprite9(avionTexture), avionSprite10(avionTexture);
     std::vector<sf::Sprite> aeroportsSprite;
     std::vector<sf::Sprite> avionsSprite;
     avionsSprite.push_back(avionSprite);
     avionsSprite.push_back(avionSprite2);
+    avionsSprite.push_back(avionSprite3);
+    avionsSprite.push_back(avionSprite4);
+    avionsSprite.push_back(avionSprite5);
+    avionsSprite.push_back(avionSprite6);
+    avionsSprite.push_back(avionSprite7);
+    avionsSprite.push_back(avionSprite8);
+    avionsSprite.push_back(avionSprite9);
+    avionsSprite.push_back(avionSprite10);
 
     CentreControle centre(&monde);
     std::vector<Aeroport>& aeroports = centre.tous_les_aeroports;
@@ -793,14 +801,48 @@ void Simulation::executer() {
         avionsSprite[i].setScale(sf::Vector2f(0.4, 0.4));
     }    
     
+
     avions[0]->start();
     avions[0]->decollage();
-    avions[0]->setDestination(aeroports[8]);
-    
+    avions[0]->setDestination(aeroports[8]);  // 0 -> 8
+
     avions[1]->start();
     avions[1]->decollage();
-    avions[1]->setDestination(aeroports[0]);
-    
+    avions[1]->setDestination(aeroports[0]);  // 1 -> 0
+
+    avions[2]->start();
+    avions[2]->decollage();
+    avions[2]->setDestination(aeroports[4]);  // 2 -> 4
+
+    avions[3]->start();
+    avions[3]->decollage();
+    avions[3]->setDestination(aeroports[5]);  // 3 -> 5
+
+    avions[4]->start();
+    avions[4]->decollage();
+    avions[4]->setDestination(aeroports[2]);  // 4 -> 2
+
+    avions[5]->start();
+    avions[5]->decollage();
+    avions[5]->setDestination(aeroports[1]);  // 5 -> 1
+
+    avions[6]->start();
+    avions[6]->decollage();
+    avions[6]->setDestination(aeroports[3]);  // 6 -> 3
+
+    avions[7]->start();
+    avions[7]->decollage();
+    avions[7]->setDestination(aeroports[6]);  // 7 -> 6
+
+    avions[8]->start();
+    avions[8]->decollage();
+    avions[8]->setDestination(aeroports[9]);  // 8 -> 9
+
+    avions[9]->start();
+    avions[9]->decollage();
+    avions[9]->setDestination(aeroports[7]);  // 9 -> 7
+
+
     int counter = 0;
     Journal journal("monlog.txt");
 
@@ -840,20 +882,18 @@ void Simulation::executer() {
 
         for (size_t i = 0; i < avions.size(); i++) {
             if (!avions[i]->volDemarre) {
-                if (i == 0) {
-                    avionsSprite[0].setRotation(avions[i]->inclinaison());
-                } else {
-                    avionsSprite[1].setRotation(avions[i]->inclinaison());
-                }
-                
+                avionsSprite[i].setRotation(avions[i]->inclinaison());
                 avions[i]->volDemarre = true;
                 
-                if (i == 0) {
-                    std::cout << "Avion " << avions[i]->getId() << " décollage de " << aeroportDepart.getId() 
-                              << " vers " << aeroportArrivee.getId() << std::endl;
+                // Afficher le bon aéroport de départ
+                // Note: Vous devriez stocker l'aéroport de départ dans Avion
+                // Pour l'instant, affichons juste l'ID et la destination
+                if (avions[i]->destination != nullptr) {
+                    std::cout << "Avion " << avions[i]->getId() 
+                              << " décollage vers " << avions[i]->destination->getId() << std::endl;
                 } else {
-                    std::cout << "Avion " << avions[i]->getId() << " décollage de " << aeroportArrivee.getId() 
-                              << " vers " << aeroportDepart.getId() << std::endl;
+                    std::cout << "Avion " << avions[i]->getId() 
+                              << " décollage (destination non définie)" << std::endl;
                 }
             }
             
@@ -865,7 +905,7 @@ void Simulation::executer() {
             }
         }
 
-        for (int i = 0; i < 2; ++i) {
+        for (int i = 0; i < avions.size(); ++i) {
             Avion* a = avions[i].get();
 
             if (a->getEtat() == "au sol")
@@ -875,12 +915,9 @@ void Simulation::executer() {
                 static_cast<float>(a->getPositionX()),
                 static_cast<float>(a->getPositionY())
             });
-            avionsSprite[i].setRotation(a->inclinaison());
-            if(avions[i]->getEtat() == "crash") {
-                        
-            }
-        }
 
+            avionsSprite[i].setRotation(a->inclinaison());
+        }
         
         for (size_t i = 0; i < aeroports.size(); i++) {
             if(aeroports[i].parkingvide()) {
@@ -931,7 +968,6 @@ void Simulation::executer() {
             if(avions[i]->getEtat() == "au sol" && !avions[i]->estgare) {
                 bool resultat = tour_de_controles[i].gererGarer(avions[i]);
                 if(resultat) {
-                    std::cout << "good" << std::endl;
                     avions[i]->setBienAuSol();
                     avions[i]->estgare = true;
                     avionsSprite[i].setPosition(sf::Vector2f(10000.0, 10000.0));
@@ -945,8 +981,12 @@ void Simulation::executer() {
 
         app.clear();
         app.draw(backgroundSprite);
-        app.draw(avionsSprite[0]);
-        app.draw(avionsSprite[1]);
+        for(int i = 0;i<avionsSprite.size();i++) {
+            app.draw(avionsSprite[i]);
+    
+        }
+
+
         
         for (auto& aeroportSprite : aeroportsSprite) {
             app.draw(aeroportSprite);
