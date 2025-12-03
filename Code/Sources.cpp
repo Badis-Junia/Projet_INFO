@@ -802,45 +802,7 @@ void Simulation::executer() {
     }    
     
 
-    avions[0]->start();
-    avions[0]->decollage();
-    avions[0]->setDestination(aeroports[8]);  
-
-    avions[1]->start();
-    avions[1]->decollage();
-    avions[1]->setDestination(aeroports[0]);  
-
-    avions[2]->start();
-    avions[2]->decollage();
-    avions[2]->setDestination(aeroports[4]);  
-
-    avions[3]->start();
-    avions[3]->decollage();
-    avions[3]->setDestination(aeroports[5]);  
-
-    avions[4]->start();
-    avions[4]->decollage();
-    avions[4]->setDestination(aeroports[2]);  
-
-    avions[5]->start();
-    avions[5]->decollage();
-    avions[5]->setDestination(aeroports[1]);  
-
-    avions[6]->start();
-    avions[6]->decollage();
-    avions[6]->setDestination(aeroports[3]);  
-
-    avions[7]->start();
-    avions[7]->decollage();
-    avions[7]->setDestination(aeroports[6]);  
-
-    avions[8]->start();
-    avions[8]->decollage();
-    avions[8]->setDestination(aeroports[9]);  
-
-    avions[9]->start();
-    avions[9]->decollage();
-    avions[9]->setDestination(aeroports[7]); 
+    centre.demarrerTousLesAvions();
 
 
     int counter = 0;
@@ -958,11 +920,6 @@ void Simulation::executer() {
                 }
             }
         }
-
-    if(counter > 700) {
-        centre.tous_les_aeroports[0].setParking(0, "Rien");
-    }
-
 
         for(int i = 0;i<avions.size();i++) {
             if(avions[i]->getEtat() == "au sol" && !avions[i]->estgare) {
