@@ -876,7 +876,11 @@ void Simulation::executer() {
                 static_cast<float>(a->getPositionY())
             });
             avionsSprite[i].setRotation(a->inclinaison());
+            if(avions[i]->getEtat() == "crash") {
+                        
+            }
         }
+
         
         for (size_t i = 0; i < aeroports.size(); i++) {
             if(aeroports[i].parkingvide()) {

@@ -1,14 +1,170 @@
 Avion 10 - Position: 120,221, 10 - carburant:  99 - etat: decollage  
 Avion 20 - Position: 195,471, 10 - carburant:  99 - etat: decollage  
-Avion 10 - Position: 146,323,218 - carburant:  69 - etat: en vol  
-Avion 20 - Position: 177,429,312 - carburant:  69 - etat: en vol  
-Avion 10 - Position: 232,481, 20 - carburant:  36 - etat: en attente  
-Avion 20 - Position: 158,231, 20 - carburant:  36 - etat: en attente  
-Avion 10 - Position: 206,479,  0 - carburant:   0 - etat: crash  
-Avion 20 - Position: 131,229,  0 - carburant:   0 - etat: crash  
-Avion 10 - Position: 206,479,  0 - carburant:   0 - etat: crash  
-Avion 20 - Position: 131,229,  0 - carburant:   0 - etat: crash  
-Avion 10 - Position: 206,479,  0 - carburant:   0 - etat: crash  
-Avion 20 - Position: 131,229,  0 - carburant:   0 - etat: crash  
-Avion 10 - Position: 206,479,  0 - carburant:   0 - etat: crash  
-Avion 20 - Position: 131,229,  0 - carburant:   0 - etat: crash  
+Avion 10 - Position: 120,231,110 - carburant:  89 - etat: decollage  
+Avion 20 - Position: 195,481,110 - carburant:  89 - etat: decollage  
+Avion 10 - Position: 120,246,268 - carburant:  73 - etat: decollage  
+Avion 20 - Position: 195,496,268 - carburant:  73 - etat: decollage  
+Avion 10 - Position: 151,334,189 - carburant:  69 - etat: en vol  
+Avion 20 - Position: 174,412,270 - carburant:  69 - etat: en vol  
+Avion 10 - Position: 175,420, 93 - carburant:  66 - etat: en vol  
+Avion 20 - Position: 161,323,174 - carburant:  66 - etat: en vol  
+Avion 10 - Position: 234,464, 20 - carburant:  63 - etat: en attente  
+Avion 20 - Position: 130,230,  5 - carburant:  63 - etat: atterrissage  
+Avion 10 - Position: 213,434, 20 - carburant:  60 - etat: en attente  
+Avion 20 - Position: 137,183, 20 - carburant:  60 - etat: en attente  
+Avion 10 - Position: 174,435, 20 - carburant:  58 - etat: en attente  
+Avion 20 - Position: 98,186, 20 - carburant:  58 - etat: en attente  
+Avion 10 - Position: 155,469, 20 - carburant:  55 - etat: en attente  
+Avion 20 - Position: 80,221, 20 - carburant:  55 - etat: en attente  
+Avion 10 - Position: 176,505, 20 - carburant:  53 - etat: en attente  
+Avion 20 - Position: 102,255, 20 - carburant:  53 - etat: en attente  
+Avion 10 - Position: 215,504, 20 - carburant:  50 - etat: en attente  
+Avion 20 - Position: 141,253, 20 - carburant:  50 - etat: en attente  
+Avion 10 - Position: 234,470, 20 - carburant:  47 - etat: en attente  
+Avion 20 - Position: 159,219, 20 - carburant:  47 - etat: en attente  
+Avion 10 - Position: 220,439, 20 - carburant:  45 - etat: en attente  
+Avion 20 - Position: 141,208,  0 - carburant:  42 - etat: atterrissage  
+Avion 10 - Position: 200,430, 20 - carburant:  42 - etat: en attente  
+Avion 10 - Position: 180,432, 20 - carburant:  40 - etat: en attente  
+Avion 10 - Position: 164,444, 20 - carburant:  37 - etat: en attente  
+Avion 10 - Position: 155,462, 20 - carburant:  34 - etat: en attente  
+Avion 10 - Position: 157,484, 20 - carburant:  32 - etat: en attente  
+Avion 10 - Position: 169,500, 20 - carburant:  29 - etat: en attente  
+Avion 10 - Position: 187,509, 20 - carburant:  27 - etat: en attente  
+Avion 10 - Position: 208,507, 20 - carburant:  24 - etat: en attente  
+Avion 10 - Position: 225,495, 20 - carburant:  21 - etat: en attente  
+Avion 10 - Position: 219,481,  0 - carburant:  16 - etat: atterrissage  
+Avion 10 - Position: 227,479,  2 - carburant:   6 - etat: atterrissage  
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+Avion 10 - Position: 224,479,  0 - carburant:   0 - etat: crash  
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+Avion 10 - Position: 224,479,  0 - carburant:   0 - etat: crash  
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
+!!! Avion 10 a crashé !!!
