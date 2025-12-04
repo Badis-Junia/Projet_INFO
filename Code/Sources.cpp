@@ -319,10 +319,6 @@ void Avion::run() {
                     this->destinationX = this->destination->getPositionX() + 30;
                     this->destinationY = this->destination->getPositionY() + 30;
                     
-                    std::cout << "Avion " << this->id << " quitte l'attente - début de l'atterrissage" << std::endl;
-                    
-                    
-                    continue;
                 }
             }
             
@@ -339,13 +335,22 @@ void Avion::run() {
                 std::vector<std::string> parking = this->destination->getParking();
                 for (int i = 0; i < parking.size(); i++) {
                     if (parking[i] == "Rien") {
-                        
                         this->destination->setParking(i, this->getId());
                         this->estgare = true;
                         this->bienausol = true;
-                        std::cout << "Avion " << this->id << " s'est garé automatiquement" << std::endl;
-                        break;
                     }
+                }
+            }
+            
+          
+            if (this->estgare && this->bienausol) {
+                static std::chrono::steady_clock::time_point tempsStationnement = std::chrono::steady_clock::now();
+                auto maintenant = std::chrono::steady_clock::now();
+                auto dureeStationnement = std::chrono::duration_cast<std::chrono::seconds>(maintenant - tempsStationnement).count();
+                
+                
+                if (dureeStationnement >= 3) {
+                    preparerRedecollage();
                 }
             }
         }
@@ -374,6 +379,27 @@ void Avion::run() {
 
         int delai = static_cast<int>(100 / facteur);
         std::this_thread::sleep_for(std::chrono::milliseconds(delai));
+    }
+}
+void Avion::preparerRedecollage() {
+
+    if (this->estgare && this->bienausol && this->destination != nullptr && this->etat == "au sol") {
+
+        std::vector<std::string> parking = this->destination->getParking();
+        for (int i = 0; i < parking.size(); i++) {
+            if (parking[i] == this->getId()) {
+                this->destination->setParking(i, "Rien");
+                break;
+            }
+        }        
+
+        this->estgare = false;
+        this->bienausol = false;
+        this->enDeplacement = false;
+        
+
+        this->carburant = 100;
+        this->urgence = false;
     }
 }
 

@@ -5,6 +5,9 @@
 #include <fstream>
 #include <memory>
 #include <SFML/Graphics.hpp>
+#include <chrono>
+#include <cstdlib>
+#include <ctime>
 
 class Temps {
 private:
@@ -104,6 +107,9 @@ private:
     double pointDeviationX, pointDeviationY;
     bool aAtteintPointDeviation;
     std::mutex mutexDeviation;
+    
+    void preparerRedecollage();
+    void choisirNouvelleDestination();
 
 public:
     Aeroport * destination;
@@ -140,9 +146,8 @@ public:
     bool estBienAuSol();
     void setBienAuSol();
     bool estgare;
-
+    bool redemarrageProgramme = false;
     bool tourne = false;
-
     bool verifierRisqueCollision(const Avion* autreAvion) const;
     void calculerDeviation(const Avion* avionConflictuel);
     void appliquerDeviation();
@@ -208,13 +213,11 @@ public:
         
         std::srand(static_cast<unsigned int>(std::time(nullptr)));
         
-      
         std::vector<std::pair<std::string, size_t>> configurations = {
             {"10", 0}, {"20", 8}, {"30", 7}, {"40", 5}, 
             {"50", 4}, {"60", 3}, {"70", 2}, {"80", 1}, 
             {"90", 9}, {"100", 6}, 
         };
-        
         
         for (const auto& config : configurations) {
             tous_les_avions.push_back(
@@ -227,7 +230,6 @@ public:
             );
         }
         
-        
         for (size_t i = 0; i < tous_les_aeroports.size(); i++) {
             tous_les_tours_de_controles.emplace_back(
                 tous_les_aeroports[i], 
@@ -235,7 +237,6 @@ public:
             );
         }
     }
-    
     
     size_t genererDestinationAleatoire(size_t aeroportDepart) {
         size_t destination;
@@ -246,12 +247,9 @@ public:
         return destination;
     }
     
-    
     void demarrerTousLesAvions() {
-        
         std::vector<size_t> aeroportsDepart;
         for (const auto& avion : tous_les_avions) {
-            
             for (size_t i = 0; i < tous_les_aeroports.size(); i++) {
                 if (avion->getPositionX() == tous_les_aeroports[i].getPositionX() + 20 &&
                     avion->getPositionY() == tous_les_aeroports[i].getPositionY() + 20) {
@@ -261,12 +259,38 @@ public:
             }
         }
         
-        
         for (size_t i = 0; i < tous_les_avions.size(); i++) {
             size_t destinationIndex = genererDestinationAleatoire(aeroportsDepart[i]);
             tous_les_avions[i]->start();
             tous_les_avions[i]->decollage();
             tous_les_avions[i]->setDestination(tous_les_aeroports[destinationIndex]);
+        }
+    }
+    
+    Aeroport* trouverAeroportAleatoire(Aeroport* exclu) {
+        if (tous_les_aeroports.empty()) return nullptr;
+        
+        int index;
+        do {
+            index = std::rand() % tous_les_aeroports.size();
+        } while (&tous_les_aeroports[index] == exclu);
+        
+        return &tous_les_aeroports[index];
+    }
+    
+    void gererRedecollages() {
+        for (auto& avion : tous_les_avions) {
+            if (avion->redemarrageProgramme && avion->getEtat() == "au sol") {
+
+                
+                Aeroport* nouvelleDestination = trouverAeroportAleatoire(avion->destination);
+                if (nouvelleDestination) {
+                    avion->setDestination(*nouvelleDestination);
+                    avion->decollage();
+                    avion->redemarrageProgramme = false;
+                    avion->setEnDeplacement(true);
+                }
+            }
         }
     }
 };
