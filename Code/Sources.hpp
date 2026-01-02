@@ -92,6 +92,7 @@ private:
     double destinationX, destinationY;  
     double altitudeCible;
     double penteApproche;
+    std::chrono::steady_clock::time_point tempsStationnement;
     bool enApprocheFinale;
     double distanceAtterissage = 300.0;
     double vitesseNormal = 400.0;

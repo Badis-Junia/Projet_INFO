@@ -54,6 +54,7 @@ Avion::Avion(const std::string& id, const std::string& compagnie, Aeroport & aer
     this->estgare = false;
     this->tourne = false;
     this->destination = nullptr;
+    tempsStationnement = std::chrono::steady_clock::now();
 }
 
 Avion::~Avion() {
@@ -338,22 +339,34 @@ void Avion::run() {
                         this->destination->setParking(i, this->getId());
                         this->estgare = true;
                         this->bienausol = true;
+                        this->tempsStationnement = std::chrono::steady_clock::now();  
+                        break;
                     }
                 }
             }
             
-          
-            if (this->estgare && this->bienausol) {
-                static std::chrono::steady_clock::time_point tempsStationnement = std::chrono::steady_clock::now();
-                auto maintenant = std::chrono::steady_clock::now();
-                auto dureeStationnement = std::chrono::duration_cast<std::chrono::seconds>(maintenant - tempsStationnement).count();
-                
-                
-                if (dureeStationnement >= 3) {
-                    preparerRedecollage();
-                }
+            
+        if (this->estgare && this->bienausol && this->etat == "au sol") {
+            auto maintenant = std::chrono::steady_clock::now();
+            auto dureeStationnement = std::chrono::duration_cast<std::chrono::seconds>(maintenant - this->tempsStationnement).count();
+            
+            
+            static int dernierAffichage = 0;
+            if (dureeStationnement != dernierAffichage) {
+                std::cout << "Avion " << this->id << " stationné depuis " 
+                          << dureeStationnement << "/5 secondes" << std::endl;
+                dernierAffichage = dureeStationnement;
+            }
+            
+            
+            if (dureeStationnement >= 5) {
+                double delaiReelSecondes = 5.0 / facteur;
+                int delaiMs = static_cast<int>(delaiReelSecondes * 1000);
+                std::this_thread::sleep_for(std::chrono::milliseconds(delaiMs));
+                preparerRedecollage();
             }
         }
+    }
 
         if (this->carburant < 20 && !this->urgence && this->etat != "au sol") {
             declarerUrgence(true);
@@ -382,9 +395,8 @@ void Avion::run() {
     }
 }
 void Avion::preparerRedecollage() {
-
     if (this->estgare && this->bienausol && this->destination != nullptr && this->etat == "au sol") {
-
+        
         std::vector<std::string> parking = this->destination->getParking();
         for (int i = 0; i < parking.size(); i++) {
             if (parking[i] == this->getId()) {
@@ -393,13 +405,17 @@ void Avion::preparerRedecollage() {
             }
         }        
 
+        
         this->estgare = false;
         this->bienausol = false;
         this->enDeplacement = false;
+        this->redemarrageProgramme = true;  
         
-
+        
         this->carburant = 100;
         this->urgence = false;
+        
+        std::cout << "Avion " << this->id << " prêt à redécoller" << std::endl;
     }
 }
 
@@ -770,7 +786,7 @@ void CentreControle::demarrerTousLesAvions() {
 }
 
 Aeroport* CentreControle::trouverAeroportAleatoire(Aeroport* exclu) {
-    if (tous_les_aeroports.empty()) return nullptr;
+    if (this->tous_les_aeroports.empty()) return nullptr;
     
     int index;
     do {
@@ -783,14 +799,31 @@ Aeroport* CentreControle::trouverAeroportAleatoire(Aeroport* exclu) {
 void CentreControle::gererRedecollages() {
     for (auto& avion : tous_les_avions) {
         if (avion->redemarrageProgramme && avion->getEtat() == "au sol") {
-
             
-            Aeroport* nouvelleDestination = trouverAeroportAleatoire(avion->destination);
+            Aeroport* aeroportActuel = avion->destination;
+            Aeroport* nouvelleDestination = nullptr;
+            
+            
+            for (int tentative = 0; tentative < 10; tentative++) {
+                nouvelleDestination = trouverAeroportAleatoire(aeroportActuel);
+                if (nouvelleDestination && nouvelleDestination != aeroportActuel) {
+                    break;
+                }
+            }
+            
             if (nouvelleDestination) {
+                
                 avion->setDestination(*nouvelleDestination);
                 avion->decollage();
                 avion->redemarrageProgramme = false;
                 avion->setEnDeplacement(true);
+                avion->setEtat("decollage");
+                
+                std::cout << "Avion " << avion->getId() 
+                          << " redécolle vers " << nouvelleDestination->getId() << std::endl;
+            } else {
+                
+                avion->redemarrageProgramme = false;
             }
         }
     }
@@ -891,7 +924,7 @@ void Simulation::executer() {
         !aeroportTexture.loadFromFile(path_image + "aeroport.png") || !aeroportTexturelibre.loadFromFile(path_image + "aeroportlibre.png") || !font.openFromFile(path_image + "arial.ttf") || !aeroportTexturepaslibre.loadFromFile(path_image + "aeroportpaslibre.png")) {
         throw std::runtime_error("Erreur pendant le chargement des images");
     }
-
+    
     sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), avionSprite2(avionTexture), avionSprite3(avionTexture), avionSprite4(avionTexture), avionSprite5(avionTexture), avionSprite6(avionTexture), avionSprite7(avionTexture), avionSprite8(avionTexture), avionSprite9(avionTexture), avionSprite10(avionTexture);
     std::vector<sf::Sprite> aeroportsSprite;
     std::vector<sf::Sprite> avionsSprite;
@@ -910,7 +943,6 @@ void Simulation::executer() {
     std::vector<Aeroport>& aeroports = centre.tous_les_aeroports;
     std::vector<TourControle>& tour_de_controles = centre.tous_les_tours_de_controles;
 
-    centre.tous_les_aeroports[5].setParking(0, "Pris");
     auto& avions = centre.tous_les_avions;
 
     Aeroport aeroportDepart = aeroports[0];
@@ -954,6 +986,7 @@ void Simulation::executer() {
                 }
             }
         }
+        centre.gererRedecollages();
         monde.getTemps().update();
         texteFacteurTemps.setString("Vitesse du temps: " + std::to_string(monde.getTemps().getFacteurTemps()).substr(0, 3) + "x");
         std::string heureStr = (monde.getTemps().getHeure() < 10 ? "0" : "") + std::to_string(monde.getTemps().getHeure());

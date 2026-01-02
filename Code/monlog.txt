@@ -13,8 +13,213 @@ Avion 20 - Position: 195,481,110 - carburant:  89 - etat: decollage
 Avion 30 - Position: 1045,781,110 - carburant:  89 - etat: decollage  
 Avion 40 - Position: 1120,261,110 - carburant:  89 - etat: decollage  
 Avion 50 - Position: 430,456,110 - carburant:  89 - etat: decollage  
-Avion 60 - Position: 410,210,100 - carburant:  90 - etat: decollage  
+Avion 60 - Position: 410,211,110 - carburant:  89 - etat: decollage  
 Avion 70 - Position: 945,411,110 - carburant:  89 - etat: decollage  
 Avion 80 - Position: 470,631,110 - carburant:  89 - etat: decollage  
 Avion 90 - Position: 720,381,110 - carburant:  89 - etat: decollage  
 Avion100 - Position: 920,531,110 - carburant:  89 - etat: decollage  
+Avion 10 - Position: 120,243,238 - carburant:  76 - etat: decollage  
+Avion 20 - Position: 195,493,238 - carburant:  76 - etat: decollage  
+Avion 30 - Position: 1045,793,238 - carburant:  76 - etat: decollage  
+Avion 40 - Position: 1120,273,238 - carburant:  76 - etat: decollage  
+Avion 50 - Position: 430,468,238 - carburant:  76 - etat: decollage  
+Avion 60 - Position: 410,223,238 - carburant:  76 - etat: decollage  
+Avion 70 - Position: 945,423,238 - carburant:  76 - etat: decollage  
+Avion 80 - Position: 470,643,238 - carburant:  76 - etat: decollage  
+Avion 90 - Position: 720,393,238 - carburant:  76 - etat: decollage  
+Avion100 - Position: 920,543,238 - carburant:  76 - etat: decollage  
+Avion 10 - Position: 390,403,1709 - carburant:  66 - etat: en vol  
+Avion 20 - Position: 490,596,1284 - carburant:  66 - etat: en vol  
+Avion 30 - Position: 775,646,766 - carburant:  66 - etat: en vol  
+Avion 40 - Position: 1019,396,201 - carburant:  66 - etat: en vol  
+Avion 50 - Position: 271,346,257 - carburant:  66 - etat: en vol  
+Avion 60 - Position: 579,309,214 - carburant:  66 - etat: en vol  
+Avion 70 - Position: 676,317,495 - carburant:  66 - etat: en vol  
+Avion 80 - Position: 293,431,448 - carburant:  66 - etat: en vol  
+Avion 90 - Position: 421,314,559 - carburant:  66 - etat: en vol  
+Avion100 - Position: 1031,412,252 - carburant:  66 - etat: en vol  
+Avion 10 - Position: 807,640,509 - carburant:  60 - etat: en vol  
+Avion 20 - Position: 864,718,300 - carburant:  60 - etat: en vol  
+Avion 30 - Position: 525,503, 50 - carburant:  60 - etat: en vol  
+Avion 50 - Position: 149,245,  5 - carburant:  59 - etat: atterrissage  
+Avion 60 - Position: 714,372,  0 - carburant:  58 - etat: atterrissage  
+Avion 70 - Position: 473,232, 50 - carburant:  60 - etat: en vol  
+Avion 80 - Position: 160,267, 10 - carburant:  60 - etat: en vol  
+Avion 90 - Position: 191,247, 50 - carburant:  60 - etat: en vol  
+Avion 10 - Position: 1000,748, 50 - carburant:  55 - etat: en vol  
+Avion 20 - Position: 1026,770, 10 - carburant:  55 - etat: en vol  
+Avion 80 - Position: 139,222,  0 - carburant:  38 - etat: atterrissage  
+Avion 90 - Position: 138,229,  5 - carburant:  42 - etat: atterrissage  
+Avion 10 - Position: 1082,756, 20 - carburant:  42 - etat: en attente  
+Avion 80 - Position: 123,232,  0 - carburant:  10 - etat: atterrissage  
+Avion 90 - Position: 122,236,  5 - carburant:  12 - etat: atterrissage  
+Avion 10 - Position: 1048,730, 20 - carburant:  36 - etat: en attente  
+Avion 80 - Position: 137,220,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 138,224,  5 - carburant:   0 - etat: crash  
+Avion 10 - Position: 1055,780,  0 - carburant:  16 - etat: au sol  
+Avion 20 - Position: 1021,779,1870 - carburant:  70 - etat: en vol  
+Avion 30 - Position: 431,367,194 - carburant:  67 - etat: en vol  
+Avion 40 - Position: 693,534,1027 - carburant:  67 - etat: en vol  
+Avion 50 - Position: 179,234,  0 - carburant:  38 - etat: decollage  
+Avion 60 - Position: 612,429,235 - carburant:  67 - etat: en vol  
+Avion 70 - Position: 601,395,1285 - carburant:  67 - etat: en vol  
+Avion 80 - Position: 126,236,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 125,239,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 893,264,990 - carburant:  67 - etat: en vol  
+Avion 20 - Position: 377,229, 20 - carburant:  44 - etat: en attente  
+Avion 50 - Position: 370,215,  0 - carburant:   0 - etat: crash  
+Avion 70 - Position: 1024,804, 20 - carburant:  41 - etat: en attente  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 380,232, 20 - carburant:  41 - etat: en attente  
+Avion 10 - Position: 743,630,675 - carburant:  70 - etat: en vol  
+Avion 20 - Position: 416,219, 20 - carburant:  17 - etat: atterrissage  
+Avion 30 - Position: 488,283,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 398,457,1695 - carburant:  72 - etat: en vol  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 217,480,  0 - carburant:  62 - etat: atterrissage  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 418,219, 20 - carburant:   2 - etat: atterrissage  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 676,448,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 70 - Position: 1016,798,1206 - carburant:  74 - etat: en vol  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 730,380,  0 - carburant:  56 - etat: au sol  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 864,612,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 981,391, 10 - carburant:  69 - etat: en vol  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 730,380,  0 - carburant: 100 - etat: decollage  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1052,777,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 850,551,1423 - carburant:  73 - etat: en vol  
+Avion 70 - Position: 440,455,  0 - carburant:  58 - etat: au sol  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 155,467, 20 - carburant:  45 - etat: en attente  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1052,777,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 410,208,  0 - carburant:  26 - etat: atterrissage  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1052,777,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 419,459,  5 - carburant:  65 - etat: atterrissage  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 168,374,174 - carburant:  71 - etat: en vol  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1052,777,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 70 - Position: 974,327,1173 - carburant:  72 - etat: en vol  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1052,777,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1052,777,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 414,461, 10 - carburant:  68 - etat: en vol  
+Avion 70 - Position: 707,387,  5 - carburant:  64 - etat: atterrissage  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1052,777,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1063,775,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 1059,780,  0 - carburant:  27 - etat: atterrissage  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 70 - Position: 758,514,230 - carburant:  69 - etat: en vol  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 70 - Position: 782,470,831 - carburant:  73 - etat: en vol  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 70 - Position: 1048,787,  0 - carburant:   0 - etat: crash  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 10 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 20 - Position: 420,210, 20 - carburant:   0 - etat: crash  
+Avion 30 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 40 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 50 - Position: 420,210,  0 - carburant:   0 - etat: crash  
+Avion 60 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 70 - Position: 1055,780,  0 - carburant:   0 - etat: crash  
+Avion 80 - Position: 130,230,  0 - carburant:   0 - etat: crash  
+Avion 90 - Position: 130,230,  5 - carburant:   0 - etat: crash  
+Avion100 - Position: 420,210, 20 - carburant:   0 - etat: crash  
