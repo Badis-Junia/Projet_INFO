@@ -916,16 +916,36 @@ void Simulation::executer() {
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
 
-    sf::Texture backgroundImage, avionTexture, aeroportTexture, aeroportTexturelibre, aeroportTexturepaslibre, avionTexturemarche;
+    // Fenêtre pour afficher les détails de l'aéroport
+    sf::RenderWindow fenetreDetail(sf::VideoMode({800, 600}, 32), "Détails Aéroport");
+    fenetreDetail.setVisible(false);
+    bool fenetreAeroportOuverte = false;
+    Aeroport* aeroportSelectionne = nullptr;
+
+    sf::Texture backgroundImage, avionTexture, aeroportTexture, aeroportTexturelibre, aeroportTexturepaslibre, avionTexturemarche, aeroportVueTexture;
     sf::Font font;
 
     if (!backgroundImage.loadFromFile(path_image + "background.png") || 
         !avionTexture.loadFromFile(path_image + "avion.png") || 
-        !aeroportTexture.loadFromFile(path_image + "aeroport.png") || !aeroportTexturelibre.loadFromFile(path_image + "aeroportlibre.png") || !font.openFromFile(path_image + "arial.ttf") || !aeroportTexturepaslibre.loadFromFile(path_image + "aeroportpaslibre.png")) {
+        !aeroportTexture.loadFromFile(path_image + "aeroport.png") || 
+        !aeroportTexturelibre.loadFromFile(path_image + "aeroportlibre.png") || 
+        !font.openFromFile(path_image + "arial.ttf") || 
+        !aeroportTexturepaslibre.loadFromFile(path_image + "aeroportpaslibre.png") ||
+        !aeroportVueTexture.loadFromFile(path_image + "aeroportvue.png")) {
         throw std::runtime_error("Erreur pendant le chargement des images");
     }
     
-    sf::Sprite backgroundSprite(backgroundImage), avionSprite(avionTexture), avionSprite2(avionTexture), avionSprite3(avionTexture), avionSprite4(avionTexture), avionSprite5(avionTexture), avionSprite6(avionTexture), avionSprite7(avionTexture), avionSprite8(avionTexture), avionSprite9(avionTexture), avionSprite10(avionTexture);
+    sf::Sprite backgroundSprite(backgroundImage), 
+               avionSprite(avionTexture), 
+               avionSprite2(avionTexture), 
+               avionSprite3(avionTexture), 
+               avionSprite4(avionTexture), 
+               avionSprite5(avionTexture), 
+               avionSprite6(avionTexture), 
+               avionSprite7(avionTexture), 
+               avionSprite8(avionTexture), 
+               avionSprite9(avionTexture), 
+               avionSprite10(avionTexture);
     std::vector<sf::Sprite> aeroportsSprite;
     std::vector<sf::Sprite> avionsSprite;
     avionsSprite.push_back(avionSprite);
@@ -948,7 +968,7 @@ void Simulation::executer() {
     Aeroport aeroportDepart = aeroports[0];
     Aeroport aeroportArrivee = aeroports[8];
     for(int i = 0;i<avionsSprite.size();i++) {
-        avionsSprite[i].setScale(sf::Vector2f(0.4, 0.4));
+        avionsSprite[i].setScale(sf::Vector2f(0.4f, 0.4f));
     }    
     
 
@@ -963,11 +983,11 @@ void Simulation::executer() {
     texteFacteurTemps.setFont(font);
     texteFacteurTemps.setCharacterSize(20);
     texteFacteurTemps.setFillColor(sf::Color::White);
-    texteFacteurTemps.setPosition(sf::Vector2f(static_cast<float>(1080), static_cast<float>(60)));
+    texteFacteurTemps.setPosition(sf::Vector2f(1080.0f, 60.0f));
     horloge.setFont(font);
     horloge.setCharacterSize(50);
     horloge.setFillColor(sf::Color::White);
-    horloge.setPosition(sf::Vector2f(static_cast<float>(1090), static_cast<float>(0)));
+    horloge.setPosition(sf::Vector2f(1090.0f, 0.0f));
     
     while (app.isOpen()) {
         while (std::optional event = app.pollEvent()) {
@@ -985,7 +1005,124 @@ void Simulation::executer() {
                     monde.getTemps().ralentirTemps();
                 }
             }
+            
+            // Détection du clic sur un aéroport - MODIFICATION IMPORTANTE
+            if (auto* mouseEvent = event->getIf<sf::Event::MouseButtonPressed>()) {
+                if (mouseEvent->button == sf::Mouse::Button::Left) {
+                    sf::Vector2i mousePos = sf::Mouse::getPosition(app);
+                    
+                    std::cout << "DEBUG: Clic à la position: " << mousePos.x << ", " << mousePos.y << std::endl;
+                    
+                    // Vérifier si on clique sur un aéroport
+                    for (size_t i = 0; i < aeroports.size(); i++) {
+                        // Position de l'aéroport
+                        float aeroportX = static_cast<float>(aeroports[i].getPositionX());
+                        float aeroportY = static_cast<float>(aeroports[i].getPositionY());
+                        
+                        // Zone cliquable plus grande (150x150 pixels)
+                        float aeroportWidth = 150.0f;
+                        float aeroportHeight = 150.0f;
+                        
+                        std::cout << "DEBUG: Aéroport " << aeroports[i].getId() 
+                                  << " à la position: " << aeroportX << ", " << aeroportY << std::endl;
+                        
+                        // Vérifier si le clic est dans la zone de l'aéroport
+                        if (mousePos.x >= aeroportX && mousePos.x <= aeroportX + aeroportWidth &&
+                            mousePos.y >= aeroportY && mousePos.y <= aeroportY + aeroportHeight) {
+                            
+                            std::cout << "SUCCÈS: Aéroport " << aeroports[i].getId() << " cliqué!" << std::endl;
+                            aeroportSelectionne = &aeroports[i];
+                            fenetreAeroportOuverte = true;
+                            fenetreDetail.setVisible(true);
+                            break;
+                        }
+                    }
+                }
+            }
         }
+        
+        // Gestion de la fenêtre de détail
+        if (fenetreAeroportOuverte && aeroportSelectionne) {
+            while (std::optional eventDetail = fenetreDetail.pollEvent()) {
+                if (eventDetail->is<sf::Event::Closed>()) {
+                    fenetreDetail.setVisible(false);
+                    fenetreAeroportOuverte = false;
+                    aeroportSelectionne = nullptr;
+                }
+                
+                // Fermer avec Escape
+                if (auto* keyEvent = eventDetail->getIf<sf::Event::KeyPressed>()) {
+                    if (keyEvent->code == sf::Keyboard::Key::Escape) {
+                        fenetreDetail.setVisible(false);
+                        fenetreAeroportOuverte = false;
+                        aeroportSelectionne = nullptr;
+                    }
+                }
+            }
+            
+            // Dessin de la fenêtre de détail
+            fenetreDetail.clear(sf::Color(30, 30, 50));
+            
+            // Dessiner l'image de l'aéroport
+            sf::Sprite spriteVueAeroport(aeroportVueTexture);
+            fenetreDetail.draw(spriteVueAeroport);
+            
+            // Ajouter des informations textuelles sur l'aéroport
+            sf::Text titre(font);
+            titre.setString("Aeroport " + aeroportSelectionne->getId());
+            titre.setCharacterSize(30);
+            titre.setFillColor(sf::Color::White);
+            titre.setPosition(sf::Vector2f(50.0f, 50.0f));
+            fenetreDetail.draw(titre);
+            
+            sf::Text position(font);
+            position.setString("Position: (" + 
+                               std::to_string(static_cast<int>(aeroportSelectionne->getPositionX())) + ", " +
+                               std::to_string(static_cast<int>(aeroportSelectionne->getPositionY())) + ")");
+            position.setCharacterSize(20);
+            position.setFillColor(sf::Color::White);
+            position.setPosition(sf::Vector2f(50.0f, 100.0f));
+            fenetreDetail.draw(position);
+            
+            // Afficher l'état des parkings
+            sf::Text parkingTitre(font);
+            parkingTitre.setString("Parkings:");
+            parkingTitre.setCharacterSize(24);
+            parkingTitre.setFillColor(sf::Color::White);
+            parkingTitre.setPosition(sf::Vector2f(50.0f, 150.0f));
+            fenetreDetail.draw(parkingTitre);
+            
+            std::vector<std::string> parkings = aeroportSelectionne->getParking();
+            for (size_t i = 0; i < parkings.size(); i++) {
+                sf::Text parkingInfo(font);
+                parkingInfo.setString("Place " + std::to_string(i + 1) + ": " + 
+                                     (parkings[i] == "Rien" ? "Libre" : "Occupé par avion " + parkings[i]));
+                parkingInfo.setCharacterSize(18);
+                parkingInfo.setFillColor(parkings[i] == "Rien" ? sf::Color::Green : sf::Color::Red);
+                parkingInfo.setPosition(sf::Vector2f(70.0f, 180.0f + static_cast<float>(i * 25)));
+                fenetreDetail.draw(parkingInfo);
+            }
+            
+            // Afficher la disponibilité
+            sf::Text disponibilite(font);
+            disponibilite.setString("Disponibilite: " + 
+                                   std::string(aeroportSelectionne->parkingvide() ? "Oui" : "Non"));
+            disponibilite.setCharacterSize(22);
+            disponibilite.setFillColor(aeroportSelectionne->parkingvide() ? sf::Color::Green : sf::Color::Red);
+            disponibilite.setPosition(sf::Vector2f(50.0f, 300.0f));
+            fenetreDetail.draw(disponibilite);
+            
+            // Instructions
+            sf::Text instructions(font);
+            instructions.setString("Appuyez sur Echap pour fermer");
+            instructions.setCharacterSize(16);
+            instructions.setFillColor(sf::Color(200, 200, 200));
+            instructions.setPosition(sf::Vector2f(50.0f, 550.0f));
+            fenetreDetail.draw(instructions);
+            
+            fenetreDetail.display();
+        }
+        
         centre.gererRedecollages();
         monde.getTemps().update();
         texteFacteurTemps.setString("Vitesse du temps: " + std::to_string(monde.getTemps().getFacteurTemps()).substr(0, 3) + "x");
@@ -997,9 +1134,6 @@ void Simulation::executer() {
             if (!avions[i]->volDemarre) {
                 avionsSprite[i].setRotation(avions[i]->inclinaison());
                 avions[i]->volDemarre = true;
-                
-                
-                
                 
                 if (avions[i]->destination != nullptr) {
                     std::cout << "Avion " << avions[i]->getId() 
@@ -1035,13 +1169,13 @@ void Simulation::executer() {
         for (size_t i = 0; i < aeroports.size(); i++) {
             if(aeroports[i].parkingvide()) {
                 sf::Sprite aeroportSprite(aeroportTexturelibre);
-                aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
-                aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
+                aeroportSprite.setScale(sf::Vector2f(0.12f, 0.12f));
+                aeroportSprite.setPosition(sf::Vector2f(static_cast<float>(aeroports[i].getPositionX()), static_cast<float>(aeroports[i].getPositionY())));
                 aeroportsSprite.push_back(aeroportSprite);
             } else {
                 sf::Sprite aeroportSprite(aeroportTexturepaslibre);
-                aeroportSprite.setScale(sf::Vector2f(0.12, 0.12));
-                aeroportSprite.setPosition(sf::Vector2f(aeroports[i].getPositionX(), aeroports[i].getPositionY()));
+                aeroportSprite.setScale(sf::Vector2f(0.12f, 0.12f));
+                aeroportSprite.setPosition(sf::Vector2f(static_cast<float>(aeroports[i].getPositionX()), static_cast<float>(aeroports[i].getPositionY())));
                 aeroportsSprite.push_back(aeroportSprite);
             }
         }
@@ -1078,7 +1212,7 @@ void Simulation::executer() {
                 if(resultat) {
                     avions[i]->setBienAuSol();
                     avions[i]->estgare = true;
-                    avionsSprite[i].setPosition(sf::Vector2f(10000.0, 10000.0));
+                    avionsSprite[i].setPosition(sf::Vector2f(10000.0f, 10000.0f));
                 } else {
                     if(avions[i]->getEtat() != "en attente") {
                         avions[i]->setEtat("en attente");
@@ -1091,11 +1225,8 @@ void Simulation::executer() {
         app.draw(backgroundSprite);
         for(int i = 0;i<avionsSprite.size();i++) {
             app.draw(avionsSprite[i]);
-    
         }
 
-
-        
         for (auto& aeroportSprite : aeroportsSprite) {
             app.draw(aeroportSprite);
         }
@@ -1112,5 +1243,6 @@ void Simulation::executer() {
     for (auto& avion : avions) {
         avion->stop();
     }
+    fenetreDetail.close();
     monde.arreterSimulation();
 }
