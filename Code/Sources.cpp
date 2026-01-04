@@ -916,7 +916,7 @@ void Simulation::executer() {
     sf::RenderWindow app(sf::VideoMode({WINDOW_SIZE.x, WINDOW_SIZE.y}, 32), "Projet_INFO");
     app.setFramerateLimit(60);
 
-    // Fenêtre pour afficher les détails de l'aéroport
+    
     sf::RenderWindow fenetreDetail(sf::VideoMode({800, 600}, 32), "Détails Aéroport");
     fenetreDetail.setVisible(false);
     bool fenetreAeroportOuverte = false;
@@ -1006,27 +1006,27 @@ void Simulation::executer() {
                 }
             }
             
-            // Détection du clic sur un aéroport - MODIFICATION IMPORTANTE
+            
             if (auto* mouseEvent = event->getIf<sf::Event::MouseButtonPressed>()) {
                 if (mouseEvent->button == sf::Mouse::Button::Left) {
                     sf::Vector2i mousePos = sf::Mouse::getPosition(app);
                     
                     std::cout << "DEBUG: Clic à la position: " << mousePos.x << ", " << mousePos.y << std::endl;
                     
-                    // Vérifier si on clique sur un aéroport
+                    
                     for (size_t i = 0; i < aeroports.size(); i++) {
-                        // Position de l'aéroport
+                        
                         float aeroportX = static_cast<float>(aeroports[i].getPositionX());
                         float aeroportY = static_cast<float>(aeroports[i].getPositionY());
                         
-                        // Zone cliquable plus grande (150x150 pixels)
+                        
                         float aeroportWidth = 150.0f;
                         float aeroportHeight = 150.0f;
                         
                         std::cout << "DEBUG: Aéroport " << aeroports[i].getId() 
                                   << " à la position: " << aeroportX << ", " << aeroportY << std::endl;
                         
-                        // Vérifier si le clic est dans la zone de l'aéroport
+                        
                         if (mousePos.x >= aeroportX && mousePos.x <= aeroportX + aeroportWidth &&
                             mousePos.y >= aeroportY && mousePos.y <= aeroportY + aeroportHeight) {
                             
@@ -1041,7 +1041,7 @@ void Simulation::executer() {
             }
         }
         
-        // Gestion de la fenêtre de détail
+        
         if (fenetreAeroportOuverte && aeroportSelectionne) {
             while (std::optional eventDetail = fenetreDetail.pollEvent()) {
                 if (eventDetail->is<sf::Event::Closed>()) {
@@ -1050,7 +1050,7 @@ void Simulation::executer() {
                     aeroportSelectionne = nullptr;
                 }
                 
-                // Fermer avec Escape
+                
                 if (auto* keyEvent = eventDetail->getIf<sf::Event::KeyPressed>()) {
                     if (keyEvent->code == sf::Keyboard::Key::Escape) {
                         fenetreDetail.setVisible(false);
@@ -1060,14 +1060,14 @@ void Simulation::executer() {
                 }
             }
             
-            // Dessin de la fenêtre de détail
+            
             fenetreDetail.clear(sf::Color(30, 30, 50));
             
-            // Dessiner l'image de l'aéroport
+            
             sf::Sprite spriteVueAeroport(aeroportVueTexture);
             fenetreDetail.draw(spriteVueAeroport);
             
-            // Ajouter des informations textuelles sur l'aéroport
+            
             sf::Text titre(font);
             titre.setString("Aeroport " + aeroportSelectionne->getId());
             titre.setCharacterSize(30);
@@ -1084,7 +1084,7 @@ void Simulation::executer() {
             position.setPosition(sf::Vector2f(50.0f, 100.0f));
             fenetreDetail.draw(position);
             
-            // Afficher l'état des parkings
+            
             sf::Text parkingTitre(font);
             parkingTitre.setString("Parkings:");
             parkingTitre.setCharacterSize(24);
@@ -1103,7 +1103,7 @@ void Simulation::executer() {
                 fenetreDetail.draw(parkingInfo);
             }
             
-            // Afficher la disponibilité
+            
             sf::Text disponibilite(font);
             disponibilite.setString("Disponibilite: " + 
                                    std::string(aeroportSelectionne->parkingvide() ? "Oui" : "Non"));
@@ -1112,7 +1112,7 @@ void Simulation::executer() {
             disponibilite.setPosition(sf::Vector2f(50.0f, 300.0f));
             fenetreDetail.draw(disponibilite);
             
-            // Instructions
+            
             sf::Text instructions(font);
             instructions.setString("Appuyez sur Echap pour fermer");
             instructions.setCharacterSize(16);
